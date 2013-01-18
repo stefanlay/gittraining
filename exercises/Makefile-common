@@ -1,0 +1,50 @@
+ASCIIDOC ?= asciidoc
+ASCIIDOC_EXTRA ?=
+
+all: html pdf
+
+ifeq ($(origin VERSION), undefined)
+  VERSION := $(shell ../GEN-DOC-VERSION 2>/dev/null)
+endif
+
+clean:
+	@echo $(VERSION)
+	rm -rf $(TARGET)
+
+DOC_HTML := $(patsubst %.txt,$(TARGET)/%.html,$(wildcard *.txt))
+DOC_PDF := $(patsubst %.txt,$(TARGET)/%.pdf,$(wildcard *.txt))
+COMMIT := $(shell git describe HEAD | sed s/^v//)
+
+ifeq ($(VERSION),)
+  REVISION = $(COMMIT)
+else
+  ifeq ($(VERSION),$(COMMIT))
+    REVISION := $(VERSION)
+  else
+    REVISION := $(VERSION) (from v$(COMMIT))
+  endif
+endif
+
+html: $(DOC_HTML)
+
+$(DOC_HTML): $(TARGET)/%.html : %.txt
+	@mkdir -p $(TARGET)
+	@echo "FORMAT $@"
+	@rm -f $@+ $@
+	@$(ASCIIDOC) -a toc \
+		-a data-uri \
+		-a 'revision=$(REVISION)' \
+		-a 'newline=\n' \
+		-b xhtml11 \
+		-f ../../asciidoc.conf \
+		$(ASCIIDOC_EXTRA) \
+		-o $@+ $<
+	@mv $@+ $@
+
+pdf: $(DOC_PDF)
+
+$(DOC_PDF): $(TARGET)/%.pdf : %.txt
+	@mkdir -p $(TARGET)
+	@echo "FORMAT $@"
+	@rm -f $@+ $@
+	@a2x -f pdf -D $(dir $@) $<

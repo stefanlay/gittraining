@@ -1,0 +1,8 @@
+Bypassing Code Review
+---------------------
+
+CAUTION: NOT RECOMMENDED!!!
+
+But yes, it is possible.
+
+Simply assign `PUSH BRANCH` access right on `refs/heads/*`

@@ -1,0 +1,10 @@
+Submit
+------
+
+* Highest marks in all voting categories needed for change to be
+  merged
+* Voting the lowest mark means Veto
+* "Submit" merges the change into central branch
+
+image:../../img/reviewer-table.png[]
+

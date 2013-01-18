@@ -1,0 +1,31 @@
+== Git Exercises
+
+. link:clone-the-example-repository.html[Clone the example repository and import projects into Eclipse]
+. link:develop-a-feature.html[Develop a Feature/Bug Fix]
+. link:develop-feature-use-staging-view.html[Develop Another Feature and Use Staging View]
+. link:work-on-branches-in-parallel.html[Work on branches in parallel]
+. link:fetch-the-latest-state-from-upstream.html[Fetch The Latest
+  State From Upstream]
+. link:merge-rebase-and-resolving-conflicts.html[Merge, Rebase and
+  resolving Conflicts]
+. link:history-view.html[History View]
+. link:reset-branch-to-a-previous-state.html[Reset branch to a
+  previous state]
+. link:change-a-series-of-commits.html[Change a series of commits]
+. link:use-the-git-blame-feature.html[Use the 'git blame' feature]
+
+== Git Exercises - PDF Format
+
+. link:clone-the-example-repository.pdf[Clone the example repository and import projects into Eclipse]
+. link:develop-a-feature.pdf[Develop a Feature/Bug Fix]
+. link:develop-feature-use-staging-view.pdf[Develop Another Feature and Use Staging View]
+. link:work-on-branches-in-parallel.pdf[Work on branches in parallel]
+. link:fetch-the-latest-state-from-upstream.pdf[Fetch The Latest
+  State From Upstream]
+. link:merge-rebase-and-resolving-conflicts.pdf[Merge, Rebase and
+  resolving Conflicts]
+. link:history-view.pdf[History View]
+. link:reset-branch-to-a-previous-state.pdf[Reset branch to a
+  previous state]
+. link:change-a-series-of-commits.pdf[Change a series of commits]
+. link:use-the-git-blame-feature.pdf[Use the 'git blame' feature]

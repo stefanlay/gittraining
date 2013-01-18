@@ -1,0 +1,4 @@
+Exercises Landscape
+-------------------
+
+image::../../img/exercise-landscape.png[]

@@ -1,0 +1,72 @@
+== Change a series of commits
+In this exercise you learn how you can rewrite the local history
+before you share it with others. After you have committed locally you
+can still change all commits in your local feature branch.
+
+=== Preparation
+Follow the exercise link:merge-rebase-and-resolving-conflicts.html[
+Merge, Rebase and Resolving Conflicts]. After the rebase you end up
+with a branch which is two commits ahead of the remote branch
+'origin/master', it's the local 'master' branch in the screenshot
+below. Now you realize that you want to change the first commit and
+keep the second one on top of the changed commit.
+
+image:history-view-8.png[History View]
+
+=== Change the first commit
+
+* Create a new branch that points to the commit you want to change, in
+  the screenshot below it's the 'Add multiply operation' commit. Use
+  'Create Branch' to create a new branch, e.g. named 'newMaster'.
++
+image:history-view-9.png[History View]
++
+image:history-view-10.png[History View]
+
+* Edit the files in the workspace, e.g. add a class comment for the
+  'Multiply' class.
+* Now create a new commit with the combined changes of your first
+  commit and your current changes:
+** Select your project in the Package Explorer and select
+   'Team > Commit' or click 'Commit' in the Git Toolbar.
+** Press the 'Amend' button as shown below:
++
+image:commit-changes-with-amend-2.png[Commit Changes with Amend]
+
+** Click the Commit button
+
+* Now your history should look like this:
++
+image:history-view-11.png[History View]
++
+Note that the first version of your changed commit is still there, but
+your branch points now to the new one. Git always creates new commits
+when you rewrite history, it does not change old ones (from time to
+time it removes commits which are not reachable by a reference, e.g.
+a branch or a tag).
+
+=== Cherry-pick the rest
+
+* Select 'Cherry Pick' on the other commit. This will add the
+difference of this commit compared to its parent on top of your new
+commit.
++
+image:cherry-pick.png[Cherry Pick]
+
+* You may have to resolve conflicts
++
+image:cherry-pick-conflicts.png[Cherry Pick Conflicts]
++
+In that case, edit the conflicting files, add the changes and commit
+like in the exercise link:merge-rebase-and-resolving-conflicts.html[
+Merge, Rebase and Resolving Conflicts].
+
+* The result should look like this:
++
+image:history-view-12.png[History View]
+
+If you want to change more than one commit in a series git offers the
+powerful tool 'git rebase --interactive'. This is not yet available in
+EGit, but can be used from the Git commandline.
+
+link:index.html[Git Exercises]

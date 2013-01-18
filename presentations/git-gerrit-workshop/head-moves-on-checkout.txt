@@ -1,0 +1,37 @@
+HEAD
+----
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  F -> E -> B -> A
+  D -> C
+  C -> B [weight=0]
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+	HEAD [style=dashed, color=grey, fontcolor=grey]
+  "origin/master" [fillcolor=lightskyblue]
+
+  HEAD -> feature1 [style=dashed, color=grey]
+  feature1 -> D
+  "origin/master" -> E
+  bugfix15 -> F
+
+  { rank=same; F; D; bugfix15; feature1 }
+  { rank=same; "origin/master"; E; C }
+
+  D -> F [style=invis]
+  C -> E [style=invis]
+
+  HEAD1 [color=red, fillcolor=red, fontcolor=white, label=HEAD]
+  HEAD1 -> bugfix15 [color=red]
+}
+----
+
+[role="incremental"]
+* `checkout` moves `HEAD`
+* `checkout` also updates the working tree

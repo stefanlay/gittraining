@@ -1,0 +1,17 @@
+Commits
+-------
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  C -> B -> A
+}
+----
+
+Commit history
+
+* `C` is successor of `B`
+* `B` is successor of `A`

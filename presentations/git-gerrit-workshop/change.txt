@@ -1,0 +1,13 @@
+Change
+------
+
+Change consists of
+
+* Change-Id (important!)
+* metadata (owner, project, etc..)
+* one or more patch-sets
+* comments
+* votes
+
+Patch Set represents a Git Commit
+

@@ -1,0 +1,4 @@
+Git Configuration from Eclipse
+------------------------------
+
+image:../../img/git-config-eclipse-prefs.png[]

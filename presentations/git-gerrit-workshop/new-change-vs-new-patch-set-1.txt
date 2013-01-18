@@ -1,0 +1,12 @@
+New Change vs. new Patch Set
+----------------------------
+
+* Patch Set: New Version of an existing Change
+* A Change contains one ore more Patch Sets
+* Only the latest Patch Set is relevant
+* How does Gerrit know when you push
+** Is the new commit a new Change?
+** Or is it a new Patch Set?
++
+[role="incremental"]
+CAUTION: [red]*Change-Id*

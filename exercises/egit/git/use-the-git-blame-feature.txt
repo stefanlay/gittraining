@@ -1,0 +1,38 @@
+== Use the 'git blame' feature
+Using the History View and filtering the history is a useful tool for
+inspecting the project history. However, if you look at a particular
+file and find a bug in a particular line of code you would like to
+instantly know who was the last person who changed this line of code.
+Additionally, you would like to know why the developer did that i.e.
+locate the commit in which the change was done.
+
+In Git, this feature is called 'git blame' or 'git annotate'.
+
+* In Eclipse open a file for which you would like to see the Git
+  annotations. For example, open the 'Calculator.java' from the
+  example project.
+* Right-click the left margin in the editor and choose
+  'Show Annotations'
++
+image:show-annotations.png[Show Annotations]
+
+* A new 'annotations' column appears in the editor window
+* Right click the 'annotations' column and choose 'Revisions > Show
+  Author'
++
+image:show-author.png[Show Author]
++
+image:annotations.png[Annotations]
+
+* Now, for each line of the code you know who last changed it
+* Keep the mouse over an annotation for a couple of seconds. A window
+  pops up showing the info about the commit in which this line was
+  changed.
++
+image:annotation-info.png[Annotation Info]
+
+* Click on the commit-id in order to see full details of the commit.
++
+image:commit-details.png[Commit Details]
+
+link:index.html[Git Exercises]

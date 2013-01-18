@@ -1,0 +1,38 @@
+Commits are Complete Snapshots
+------------------------------
+
+[graphviz]
+----
+digraph {
+    node [shape=box, style=filled, fillcolor="#ABFFBB", fontname=arial, fontsize=18]
+    edge [arrowhead=none]
+
+    L [label="", shape=box, width=0, height=0]
+    R [label="", shape=box, width=0, height=0]
+    {rank=source; L; R}
+    commit1 [fillcolor="#FFAAA1", label="Commit 1"]
+    commit1 -> A -> B -> C
+
+    commit2 [fillcolor="#FFAAA1", label="Commit 2"]
+    link1B [label="B", style=dashed]
+    commit2 -> A1 -> link1B -> C1
+
+    commit3 [fillcolor="#FFAAA1", label="Commit 3"]
+    link2B [label="B", style=dashed]
+    link1A1 [label="A1", style=dashed]
+    commit3 -> link1A1 -> link2B -> C2
+
+    commit1 -> commit2 -> commit3 [style=invis]
+    {rank=same; commit1; commit2; commit3 }
+    L -> commit1 [style=invis]
+    R -> commit3 [style=invis]
+    L -> R [label=time, arrowhead=normal, fontsize=20, fontname=arial]
+}
+----
+
+[role="incremental"]
+* imagine our project contains 3 files: `A`, `B` and `C`
+* every time we commit changes a new commit is created: `Commit 1`, `Commit 2`
+  and `Commit 3`
+* every commit is a 'full snapshot' of the whole project
+* Git optimizes storage, will not create copies of non-modified files

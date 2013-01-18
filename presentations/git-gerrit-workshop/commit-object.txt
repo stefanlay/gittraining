@@ -1,0 +1,21 @@
+Commit Object Structure
+-----------------------
+
+[graphviz]
+----
+digraph {
+  rankdir=LR
+  node [shape=record, style=filled, fillcolor="#FFAAA1", fontname=arial, fontsize=18]
+  commit [label="commit|<f1> tree: 9ce23|Author: John Doe|Committer: John Doe|Initial commit of my project\n\n..."]
+
+  snapshot1 [fillcolor=grey, label="Snapshot 1"]
+  commit:f1 -> snapshot1
+}
+----
+
+[role="incremental"]
+* 'SHA1' - globally unique commit ID
+* 'SHA1' is function of the commit object content
+** 40-digit hexadecimal number
+** seen in `git log` output, git history view etc...
+** examples: `1590b5c...`, `97aff7a...`, `c0ffee...`

@@ -1,0 +1,22 @@
+= Gerrit and Code Review Best Practices
+:backend: slidy
+:max-width: 70em
+:data-uri:
+
+include::gerrit-and-code-review-best-practices-slides.txt[]
+
+++++
+<style type="text/css">
+#title-page {
+  border-bottom: 0;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  font-size: 60px;
+}
+#agenda-item {
+  border-bottom: 0;
+}
+</style>
+++++
+

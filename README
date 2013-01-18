@@ -1,0 +1,14 @@
+Building asciidoc presentation:
+- download and install asciidoc (with slidy) and graphviz
+- from the presentations folder run:
+	./makeslides
+
+Open a presentation:
+- open the resulting *.html document in a web browser
+- use the same keys like in PowerPoint to move forward and back
+
+Building exercises:
+- from exercise folder run:
+    make html
+  or
+    make pdf

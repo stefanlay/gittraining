@@ -1,0 +1,7 @@
+Fetch
+-----
+
+* Always safe to do
+* Updates only remote tracking branches
+* Does never change local branches
+* Never changes your working tree

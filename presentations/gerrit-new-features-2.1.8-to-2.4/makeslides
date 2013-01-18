@@ -1,0 +1,1 @@
+asciidoc -a icons -a iconsdir=/opt/local/etc/asciidoc/images/icons gerrit-new-features-2.1.8-to-2.4.txt

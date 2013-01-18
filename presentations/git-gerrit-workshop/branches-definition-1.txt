@@ -1,0 +1,30 @@
+Branches
+--------
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  C -> B -> A
+
+  D [style=invis]
+  D -> C [style=invis]
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master; C }
+
+  master -> C
+
+}
+----
+
+Branch is a named pointer to a commit
+
+* example: `master`
+* full name: `refs/heads/master`
+[role="incremental"]
+--
+* 'Q:' what happens when a new changes is committed?
+--

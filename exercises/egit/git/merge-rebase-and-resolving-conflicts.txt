@@ -1,0 +1,194 @@
+== Merge, Rebase and resolving Conflicts
+In this exercise you will learn how to combine the work done in
+different branches and how to resolve the conflicts which can occur
+during that process.
+
+=== Preparation
+Follow exercise 2, link:develop-a-feature.html[Develop a feature/bug fix],
+to create a commit on a feature branch based on the remote tracking
+branch 'origin/master'.
+
+=== Create a Conflicting commit
+You may skip this step if you have already created conflicting changes
+in the previous exercises. This is the case if you touched exactly the
+same line of the same file in different feature branches. If this is
+not the case please do the following:
+
+* Create a new local branch based on the remote tracking branch
+  'origin/master'
+* You may create the new branch from the History View:
+** Select the project, then click Show 'In > History'
+   (Some views, e.g. in the Java EE-Perspective, do not have this
+   shortcut, in this case use 'Team > Show in History')
+** In the History View click all toggle buttons as shown in the
+   screenshot (Link with Editor and Selection, Show all changes in
+   repository containing the selected resources, Compare Mode,
+   Show all Branches and Tags)
++
+image:history-view-2.png[History View]
+
+** Select 'Create Branch...' from the context menu on the commit where
+   'origin/master' points to
++
+image:create-branch-from-history-view.png[Create Branch from History View]
+
+* Or you may do that from the Repositories View:
++
+Select the remote tracking branch 'origin/master' and click 'Create
+Branch...'.
++
+image:create-branch-from-repositories-view.png[Create Branch from Repositories View]
+
+* Do a different change in the same class on the same line as in the
+  other branch (e.g. you may add a class 'Multiply' and add a
+  corresponding line to method 'setupDefaultOperations' in the
+  'Calculator' class) and commit this change.
++
+image:history-view-4.png[History View]
+
+=== Merge the feature branches
+Now you would like to have both new features in the master branch.
+One possibility to achieve that is to merge the branches into the
+master branch, one after the other. Later in this exercise you will
+learn another way, link:#rebase[rebasing].
+
+==== Trigger the first merge from the history view
+
+* Ensure that you have checked out the branch 'master' where you want
+  to have the merged state, i.e. where the merge commit will be
+  created, either by double clicking in the Repositories View, or by
+  selecting 'Checkout' in the History View, or by using
+  'Team > Switch To > master', or using the 'Checkout' button in the
+  Git tool bar.
+* In the History View, select 'Merge' in the context menu of the
+  'addDivideOperation' branch. This will merge the content of the
+  'addDivdeOperation' branch into the 'master' branch. Since there
+  was no work done on the 'master' branch and 'addDivideOperation'
+  points to a successor commit of the commit in 'master' there is not
+  much to do. Git simply advances the 'master' branch to the same
+  commit as the 'addDivideOperation' branch. Inspect this in the
+  History View.
++
+image:merge.png[Merge]
++
+image:fast-forward-merge.png[Fast Forward Merge]
+
+==== Trigger the second merge
+* In the History View, select 'Merge' in the context menu of the
+  branch which contains the conflicting commit. This will merge the
+  content of this branch into the 'master' branch. This time expect
+  that the merge operation ends with conflicts.
++
+image:merge-2.png[Merge]
++
+image:merge-with-conflicts.png[Merge with Conflicts]
+
+[[resolve-conflicts]]
+==== Resolving merge conflicts
+If a merge generates conflicts the repository is in a special state.
+The conflicts have to be resolved until normal work can go on.
+
+You can find the conflicting files by the conflict decorator in the
+package explorer:
+
+image:conflict-markers.png[Conflict Markers]
+
+If there are many conflicts it may be easier to find them in the Git
+Staging View:
+
+image:conflicts-in-staging-view.png[Conflicts in Staging View]
+
+* If you open the conflicting file in an editor you will find the
+conflict markers there. You can directly edit the file here.
++
+image:conflict-markers-2.png[Conflict Markers]
+
+* You may use the Merge tool to resolve the conflicts:
++
+'Select Team > Merge Tool'. You will see a dialog where you can
+configure the initial state of the left hand side of the editor.
+Which one you choose depends on your preference. In the first case
+you’ll already get the state which was merged by git, in the second
+case you get the version before the merge operation. Thus the first
+option is useful if git could already merge most of the changes
+automatically and only a small number of conflicts is left. With the
+second option will get a better overview of the changes in both
+branches.
++
+image:merge-mode.png[Merge Mode]
++
+image:merge-tool.png[Merge Tool]
++
+Edit the left side until you are happy with the change and save.
++
+image:merge-tool-resolved-conflict.png[Merge Tool with resolved conflict]
+
+* Now in the Package Explorer select 'Team > Add' on the files which
+  had conflicts. When you have done it for all such files the
+  repository state changes from 'Conflicts' to 'Merged'. You can also
+  use the Git Staging View to do this in one step for all files by
+  drag and drop.
+* Select 'Team > Commit' or press the 'Commit' button in the Git
+  Staging View. Note that there is already a commit message proposed
+  by Git. Leave it as it is (if you want to push the commit to Gerrit
+  a Change-Id line must be included into the commit message, not
+  needed for this exercise).
+
+=== Undo merging with Reset
+After you have done a merge as described above assume that you do not
+want the merge commit in your branch anymore. You can easily undo the
+merge with the Reset operation. (The same can also be done if the
+merge is not finished but your repository is in state 'Conflicting'
+or 'Merged').
+
+* Select 'Reset > Hard' on the commit where the branch pointed to
+  before you did the second merge.
++
+image:reset.png[Reset]
+
+* In case you do that when you have an unfinished merge the screenshot
+  looks like this:
++
+image:reset-2.png[Reset]
+
+[[rebase]]
+=== Rebase
+Now do a rebase of the conflicting commit instead of a merge.
+
+* In the History View, select 'Rebase on Top of' on the second feature
+  branch (the first one is checked out):
++
+image:rebase.png[Rebase]
+
+* The rebase stops because of a conflict. You see a dialog:
++
+image:rebase-with-conflicts.png[Rebase with Conflicts]
+
+* Click 'OK' to start the merge tool.
+* Click 'OK' to start conflict resolution (using pre-merged option).
++
+image:merge-mode.png[Merge Mode]
++
+image:merge-tool-2.png[Merge Tool]
+
+* Edit the left side until you are happy with the change and save
++
+image:merge-tool-resolved-conflict-2.png[Merge Tool with resolved conflict]
+
+* Now select 'Team > Add' on the files which had conflicts. You can
+  also use the Git Staging View to do this in one step by drag and
+  drop
+* In the Repositories View select your repository and click
+  'Rebase > Continue'
++
+image:rebase-continue.png[Rebase Continue]
+
+* Now the version graph should look like this:
++
+image:history-view-5.png[History View]
++
+Note that there is a reference 'ORIG_HEAD' pointing to the commit
+which was checked out before the rebase operation. You may revert the
+rebase operation with reset as described above.
+
+link:index.html[Git Exercises]

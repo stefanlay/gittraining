@@ -1,0 +1,35 @@
+Merge - Fast Forward
+--------------------
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+  C [style=invis]
+
+  C -> B [style=invis]
+  E -> B -> A
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [color=red, fontcolor=red]
+
+  HEAD -> master
+  master -> E [color=red]
+  feature1 -> E [weight=0]
+
+  OLD_HEAD [label=HEAD, style=invis]
+  old_master [label=master, style=dashed, color=grey, fontcolor=grey]
+  OLD_HEAD -> old_master [style=invis]
+  old_master -> B [style=dashed, color=grey]
+  {rank=same; OLD_HEAD; old_master; B }
+
+  { rank=same; E; HEAD; master; feature1 }
+}
+----
+
+[role="incremental"]
+* just move the pointer - 'Fast Forward'
+* no new (merge) commit created

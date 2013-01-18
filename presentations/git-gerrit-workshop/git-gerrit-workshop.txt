@@ -1,0 +1,289 @@
+Git/Gerrit Workshop
+===================
+:backend: slidy
+:max-width: 70em
+:data-uri:
+
+[[title-page]]
+Git and Gerrit Workshop
+-----------------------
+
+Agenda - Morning
+----------------
+
+[[agenda-item]]
+Introduction
+~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Basic Git Concepts
+~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Exercises: Local Development, Branches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Merge & Rebase
+~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Exercises: Merge, Rebase, History Rewriting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Agenda - Afternoon
+------------------
+<<<
+[[agenda-item]]
+Push
+~~~~
+<<<
+[[agenda-item]]
+Gerrit Concepts
+~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Exercises: Code Review with Gerrit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Q & A
+~~~~~
+
+include::distributed-versioning-systems-1.txt[]
+
+include::distributed-versioning-systems-2.txt[]
+
+<<<
+[[git-info]]
+include::git.txt[]
+
+<<<
+[[git-concepts]] +
+include::basic-git-concepts.txt[]
+
+<<<
+[[git-structure]]
+include::location-and-structure.txt[]
+
+<<<
+[[checkout]]
+include::checkout-to-workingtree.txt[]
+
+include::making-changes.txt[]
+
+include::staging-changes.txt[]
+
+<<<
+[[commit]]
+include::committing-changes.txt[]
+
+include::commits-are-snapshots.txt[]
+
+include::commit-knows-parents.txt[]
+
+include::commit-object.txt[]
+
+include::commit-message.txt[]
+
+include::commits.txt[]
+
+<<<
+[[branches]]
+include::branches-definition-1.txt[]
+
+include::branches-definition-2.txt[]
+
+include::branches-many.txt[]
+
+include::head.txt[]
+
+include::head-moves-on-checkout.txt[]
+
+include::branches-reset.txt[]
+
+<<<
+[[clone]] +
+include::cloning-and-fetching-title.txt[]
+
+include::clone-remote-repo.txt[]
+
+<<<
+[[fetch]]
+include::change-in-remote-after-clone.txt[]
+
+include::fetch-updates-remote-tracking-branches.txt[]
+
+include::fetch-facts.txt[]
+
+include::git-configuration-inheritance.txt[]
+
+include::git-configuration-commands.txt[]
+
+include::git-configuration-eclipse.txt[]
+
+include::exercises-title.txt[]
+
+include::sample-application.txt[]
+
+include::exercises-landscape.txt[]
+
+include::exercises1-list.txt[]
+
+<<<
+[[merge]] +
+include::merge-and-rebase-title.txt[]
+
+include::merge-concept-1.txt[]
+
+include::merge-concept-2.txt[]
+
+include::merge-fast-forward-question.txt[]
+
+include::merge-fast-forward-concept.txt[]
+
+<<<
+[[cherry-pick]]
+include::cherry-pick-concept-1.txt[]
+
+include::cherry-pick-concept-2.txt[]
+
+<<<
+[[rebase]]
+include::rebase.txt[]
+
+include::pull.txt[]
+
+include::exercises-title.txt[]
+
+include::exercises2-list.txt[]
+
+<<<
+[[push]] +
+include::push-0.txt[]
+
+include::push-1.txt[]
+
+include::push-2.txt[]
+
+include::push-3.txt[]
+
+<<<
+[[gerrit-intro]] +
+include::gerrit-0.txt[]
+
+include::gerrit-1.txt[]
+
+include::gerrit-2.txt[]
+
+<<<
+[[code-review]] +
+include::code-review.txt[]
+
+include::modern-code-review.txt[]
+
+include::code-review-benefits.txt[]
+
+<<<
+[[gerrit-concepts]] +
+include::gerrit-concepts.txt[]
+
+<<<
+[[push-for-review]]
+include::push-for-code-review-1.txt[]
+
+include::push-for-code-review-2.txt[]
+
+include::push-for-code-review-3.txt[]
+
+include::push-for-code-review-4.txt[]
+
+<<<
+[[change]]
+include::change.txt[]
+
+<<<
+[[review-and-vote]]
+include::review-and-vote.txt[]
+
+include::exercises-title.txt[]
+
+include::gerrit-exercises-1.txt[]
+
+<<<
+[[refine-change]] +
+include::refining-a-change.txt[]
+
+include::new-change-vs-new-patch-set-1.txt[]
+
+include::new-change-vs-new-patch-set-2.txt[]
+
+include::push-new-patch-set-1.txt[]
+
+include::push-new-patch-set-2.txt[]
+
+include::comparing-patch-sets.txt[]
+
+<<<
+[[fetch-open-change]]
+include::fetch-open-change-locally.txt[]
+
+include::push-new-patch-set-3.txt[]
+
+include::submitting-a-change.txt[]
+
+<<<
+[[submit]]
+include::submit.txt[]
+
+<<<
+[[path-conflict]]
+include::path-conflict.txt[]
+
+include::resolve-path-conflict-by-rebase.txt[]
+
+include::change-states.txt[]
+
+include::submitted-merge-pending.txt[]
+
+include::exercises-title.txt[]
+
+include::gerrit-exercises-2.txt[]
+
+<<<
+[[cip]]
+include::continuous-integration-builds.txt[]
+
+include::gerrit-workflow-1.txt[]
+
+include::gerrit-workflow-2.txt[]
+
+include::push-fails-why.txt[]
+
+include::notifications.txt[]
+
+include::queries.txt[]
+
+include::access-rights.txt[]
+
+include::bypassing-code-review.txt[]
+
+<<<
+[[best-practices]] +
+include::../gerrit-and-code-review-best-practices/gerrit-and-code-review-best-practices-slides.txt[]
+
+++++
+<style type="text/css">
+#title-page {
+  border-bottom: 0;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  font-size: 100px;
+}
+#agenda-item {
+  border-bottom: 0;
+}
+</style>
+++++
+

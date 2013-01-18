@@ -1,0 +1,416 @@
+= Eclipse and Gerrit
+:backend: slidy
+:max-width: 70em
+:data-uri:
+
+[[title-page]]
+== Eclipse and Gerrit
+
+== Eclipse and Gerrit
+
+<<<
+[[agenda-item]]
+=== 1. EGit
+
+<<<
+[[agenda-item]]
+=== 2. Mylyn
+
+
+[[title-page]]
+== EGit
+
+== EGit Installation
+
+* Install EGit from
++
+http://www.eclipse.org/egit/download/
++
+image:../../img/egit-download.png[EGit Download]
+
+== EGit Installation
+
+* Install EGit from:
++
+http://www.eclipse.org/egit/download/
++
+image:../../img/egit-installation.png[EGit Installation]
+
+== EGit
+
+* Clone a Git Repository
+
+image:../../img/clone-repository.png[Clone a Git Repository]
+
+== EGit
+
+* Clone a Git Repository
+
+image:../../img/clone-repository-2.png[Clone a Git Repository]
+
+== EGit
+
+* Clone a Git Repository
+
+image:../../img/clone-repository-3.png[Clone a Git Repository]
+
+== EGit
+
+* Clone a Git Repository
+
+image:../../img/clone-repository-4.png[Clone a Git Repository]
+
+== EGit
+
+image:../../img/git-repositories-view.png[Git Repositories View]
+
+== EGit
+
+* configure the Repository for Gerrit
+
+image:../../img/gerrit-configuration.png[Gerrit Configuration]
+
+== EGit
+
+* configure the Repository for Gerrit
+
+image:../../img/gerrit-configuration-2.png[Gerrit Configuration]
+
+== EGit
+
+* configure the Repository for Gerrit
+** automatically generate Change-Id's
+** fetch Gerrit review notes
+** push to `refs/for/master`
+
+image:../../img/gerrit-configuration-3.png[Gerrit Configuration]
+
+== EGit
+
+* commit via Staging View
+
+image:../../img/stage.png[Staging View]
+
+== EGit
+
+* commit via Staging View
+** stage by drap-and-drop
+** type commit message +
+   (placeholder for Change-Id is automatically inserted)
+** commit
+
+image:../../img/stage-2.png[Staging View]
+
+== EGit
+
+* inspect commit in History View
+
+image:../../img/history.png[History View]
+
+== EGit
+
+* inspect commit in History View
+
+image:../../img/history-2.png[History View]
+
+== EGit
+
+* Push to Gerrit
+
+image:../../img/push-to-gerrit.png[Push to Gerrit]
+
+== EGit
+
+* Push to Gerrit
+
+image:../../img/push-to-gerrit-2.png[Push to Gerrit]
+
+== EGit
+
+* Push for specific branch in Gerrit
+
+image:../../img/push-to-gerrit-3.png[Push to Gerrit]
+
+== EGit
+
+* Push for specific branch in Gerrit
+
+image:../../img/push-to-gerrit-4.png[Push to Gerrit]
+
+== EGit
+
+* Fetch Updates
+
+image:../../img/fetch-updates.png[Fetch Updates]
+
+== EGit
+
+* Fetch Updates
+
+image:../../img/fetch-updates-2.png[Fetch Updates]
+
+== EGit
+
+* Fetch Open Change from Gerrit
+
+image:../../img/fetch-open-change.png[Fetch Open Change]
+
+== EGit
+
+* Fetch Open Change from Gerrit
+** use content completion to select change
+
+image:../../img/fetch-open-change-2.png[Fetch Open Change]
+
+== EGit
+
+* Fetch Open Change from Gerrit
+
+image:../../img/fetch-open-change-3.png[Fetch Open Change]
+
+== EGit
+
+* Rebase
+
+image:../../img/rebase.png[Rebase]
+
+== EGit
+
+* Rebase
+
+image:../../img/rebase-2.png[Rebase]
+
+== EGit
+
+* Rebase
+** there may be conflicts
+
+image:../../img/rebase-3.png[Rebase]
+
+== EGit
+
+* Rebase
+** stage conflict resolution
+
+image:../../img/rebase-4.png[Rebase]
+
+== EGit
+
+* Rebase
+** continue rebase
+
+image:../../img/rebase-5.png[Rebase]
+
+== EGit
+
+* View Gerrit Code Review Notes
+** Open commit in Commit Viewer
+
+image:../../img/review-notes.png[Review Notes]
+
+== EGit
+
+* View Gerrit Code Review Notes
+** Open the `Notes` tab
+
+image:../../img/review-notes-2.png[Review Notes]
+
+== EGit
+
+* View Gerrit Code Review Notes
+
+image:../../img/review-notes-3.png[Review Notes]
+
+[[title-page]]
+== Mylyn
+
+== Mylyn - Installation
+
+* Install Gerrit Mylyn Connector from
++
+http://www.eclipse.org/mylyn/downloads/
++
+image:../../img/mylyn-downloads.png[Mylyn Download]
+
+== Mylyn - Installation
+
+* Install Gerrit Mylyn Connector from
++
+http://www.eclipse.org/egit/download/
++
+image:../../img/mylyn-installation.png[Mylyn Installation]
+
+== Mylyn
+
+* Add Gerrit Server
+
+image:../../img/add-gerrit-server.png[Add Gerrit Server]
+
+== Mylyn
+
+* Add Gerrit Server
+
+image:../../img/add-gerrit-server-2.png[Add Gerrit Server]
+
+== Mylyn
+
+* Add Gerrit Server
+
+image:../../img/add-gerrit-server-3.png[Add Gerrit Server]
+
+== Mylyn
+
+* The Gerrit Server at Eclipse is already preconfigured
+
+image:../../img/add-gerrit-server-4.png[Add Gerrit Server]
+
+== Mylyn
+
+* The Gerrit Server at Eclipse is already preconfigured
+
+image:../../img/add-gerrit-server-5.png[Add Gerrit Server]
+
+== Mylyn
+
+* Clone a Git Repository
+
+image:../../img/clone-repository-5.png[Clone a Git Repository]
+
+== Mylyn
+
+* Clone a Git Repository
+
+image:../../img/clone-repository-6.png[Clone a Git Repository]
+
+== Mylyn
+
+* Clone a Git Repository
+
+image:../../img/clone-repository-7.png[Clone a Git Repository]
+
+== Mylyn
+
+* Clone a Git Repository
+
+image:../../img/clone-repository-8.png[Clone a Git Repository]
+
+== Mylyn
+
+* Add a query
+
+image:../../img/query.png[Add Query]
+
+== Mylyn
+
+* Add a query
+
+image:../../img/query-2.png[Add Query]
+
+== Mylyn
+
+* Add a query
+
+image:../../img/query-3.png[Add Query]
+
+== Mylyn
+
+* Get notifications about changes
+
+image:../../img/notifications.png[Notifications]
+
+== Mylyn
+
+* Inspect Change
+
+image:../../img/change.png[Change]
+
+== Mylyn
+
+* Inspect Change
+
+image:../../img/change-2.png[Change]
+
+== Mylyn
+
+* Inspect Change
+
+image:../../img/change-3.png[Change]
+
+== Mylyn
+
+* Inspect Change
+
+image:../../img/change-4.png[Change]
+
+== Mylyn
+
+* Inspect Change
+
+image:../../img/diff.png[Diff]
+
+== Mylyn
+
+* Add Comment
+
+image:../../img/add-comment.png[Add Comment]
+
+== Mylyn
+
+* Add Comment
+
+image:../../img/add-comment-2.png[Add Comment]
+
+== Mylyn
+
+* Add Comment
+
+image:../../img/add-comment-3.png[Add Comment]
+
+== Mylyn
+
+* Add Comment
+
+image:../../img/add-comment-4.png[Add Comment]
+
+== Mylyn
+
+* Fetch Change
+
+image:../../img/fetch.png[Fetch]
+
+== Mylyn
+
+* Fetch Change
+
+image:../../img/fetch-2.png[Fetch]
+
+== Mylyn
+
+* Fetch Change
+
+image:../../img/publish.png[Publish]
+
+== Mylyn
+
+* Fetch Change
+
+image:../../img/publish-2.png[Publish]
+
+[[title-page]]
+== THE END
+
+++++
+<style type="text/css">
+#title-page {
+  border-bottom: 0;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  font-size: 60px;
+}
+#agenda-item {
+  border-bottom: 0;
+}
+</style>
+++++
+

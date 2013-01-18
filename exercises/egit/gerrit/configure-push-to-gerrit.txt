@@ -1,0 +1,52 @@
+== Configure Push to Gerrit
+In this exercise you learn how you configure your local repository for
+the work with Gerrit.
+
+=== Preparation
+Clone the example repository as described in the exercise
+link:../git/clone-the-example-repository.html[Clone the Example
+Repository]. Do a fresh clone and do *not* re-use the clone of the
+example repository that was created during the
+link:../git/index.html[Git Exercises]. The reason for this is that the
+work with Gerrit requires the usage of Change-Id's in the commit
+messages and the commits created during the Git exercises do not have
+Change-Id's. To avoid trouble with missing Change-Id's we recommend to
+clone the repository newly for the Gerrit exercises.
+
+=== Configure the Remote
+When you use Gerrit as a server for the central repository you need to
+do some configuration settings on your local repository.
+
+* When working with Gerrit you normally do not directly push into the
+  branch on the remote repository, but into the review queue. Before
+  you push to Gerrit you have to configure once on your local
+  repository that by default all commits should be pushed for code
+  review.
+* A commit can normally only be pushed to Gerrit if the commit message
+  contains a Change-Id. You can configure the local repository so that
+  EGit always creates a Change-Id automatically.
+* You may want to fetch the review notes from Gerrit (More details in
+  another exercise).
+
+==== Gerrit configuration wizard
+
+Open the node 'Remotes' of your repository in the Git Repositories
+View and choose 'Gerrit Configuration...' from the context menu on the
+'origin' repository.
+
+image:gerrit-configuration.png[Gerrit Configuration]
+
+You can keep the default values in this Wizard page and confirm with
+'Finish':
+
+image:gerrit-configuration-2.png[Gerrit Configuration]
+
+=== Resulting Repository Configuration
+You can check the result in the configuration of the local repository.
+Select 'Properties' from the context menu on the repository node in
+the Git Repositories View.
+
+image:gerrit-configuration-3.png[Gerrit Configuration]
+
+
+link:index.html[Gerrit Exercises]

@@ -1,0 +1,22 @@
+Git Configuration Files
+-----------------------
+
+[graphviz]
+----
+digraph {
+  rankdir=BT
+  node [style=bold, shape=box, fontname=arial, fontsize=20, width=4, height=1.2]
+  edge [style=bold, arrowhead=empty, arrowsize=2]
+
+  system [label="System\n<gitinst>/etc/gitconfig", style=filled, fillcolor="#FFAAA1"]
+  global [label="User Global\n$HOME/.gitconfig", style=filled, fillcolor=lightskyblue]
+  repository [label="Repository Specific\n.git/config", style=filled, fillcolor="#ABFFBB"]
+  repository -> global -> system
+}
+----
+
+3 levels of configurations files:
+[role="incremental"]
+* system wide
+* user global
+* repository local

@@ -1,0 +1,28 @@
+Checkout
+--------
+
+[graphviz]
+----
+digraph {
+  edge [style=bold, arrowhead=none, fontname=arial, fontsize=24]
+  node [style=bold, shape=folder, fontname=arial, fontsize=24, height=1, width=2]
+  wtree [shape=plaintext, label="<working tree>"]
+  p1 [label="", width=0, height=0]
+  p2 [label="", width=0, height=0]
+  git [label=".git", width=2]
+
+  Calculator -> p1
+  p1 -> git
+  { rank=same; p1; git }
+
+  p1 -> p2
+  p2 -> wtree
+  { rank=same; p2; wtree }
+
+  git -> wtree [color=red, arrowhead=normal, label=" git checkout", fontcolor=red]
+}
+----
+
+Checkout
+
+* populate the working tree with the commit you want to start working from

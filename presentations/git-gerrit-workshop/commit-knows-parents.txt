@@ -1,0 +1,32 @@
+Commits know their Parent
+-------------------------
+
+[graphviz]
+----
+digraph {
+  node [shape=box, style=filled, fillcolor="#ABFFBB", fontname=arial, fontsize=18]
+
+  L [label="", shape=box, width=0, height=0]
+  R [label="", shape=box, width=0, height=0]
+  {rank=source; L; R}
+  commit1 [fillcolor="#FFAAA1", label="Commit 1"]
+  commit2 [fillcolor="#FFAAA1", label="Commit 2"]
+  commit3 [fillcolor="#FFAAA1", label="Commit 3"]
+
+  snapshot1 [fillcolor=grey, label="Snapshot 1"]
+  snapshot2 [fillcolor=grey, label="Snapshot 2"]
+  snapshot3 [fillcolor=grey, label="Snapshot 3"]
+  commit1 -> snapshot1
+  commit2 -> snapshot2
+  commit3 -> snapshot3
+
+  commit1 -> commit2 -> commit3 [dir=back]
+  {rank=same; commit1; commit2; commit3 }
+  L -> commit1 [style=invis]
+  R -> commit3 [style=invis]
+  L -> R [label=time, arrowhead=normal, fontsize=20, fontname=arial]
+}
+----
+
+[role="incremental"]
+* each commit knows its parent

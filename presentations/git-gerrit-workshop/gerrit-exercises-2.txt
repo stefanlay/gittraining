@@ -1,0 +1,7 @@
+Exercises
+---------
+
+[start=4]
+. Improve a change
+. Submit a change to the codebase
+. View Gerrit review notes

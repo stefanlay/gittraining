@@ -1,0 +1,730 @@
+Push
+----
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", fillcolor=lightskyblue]
+
+  { rank=same; HEAD; feature; C }
+  feature -> C [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B}
+  master -> B [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to feature branch on own column
+  I [style=invis]
+  C -> I [style=invis]
+  { rank=same; A; I }
+
+  // the "push" arrow
+  node [style=invis]
+  L -> R [label="push?", style=dotted, penwidth=2, arrowhead=vee,
+          color=red, fontname=arial, fontsize=30]
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  D1 -> B1
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master", style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master1; D1 }
+  master1 -> D1 [weight=0]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left, right and arrow graph
+  { rank=same; A; A1; L; R }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; master; space}
+  space [label="some space here"]
+  space -> master [weight=0]
+
+  { rank=same; HEAD; space2 }
+  space2 [label="spaace"]
+  space2 -> HEAD [weight=0]
+}
+----
+
+Remote branch has changed
+
+`Q:` What happens on `git push`?
+
+[role="incremental"]
+`A:` `git push` will fail because fast forward is not possible
+
+Push
+----
+
+Possibility One
+
+* [silver]+fetch+[silver]#,# [silver]+merge+[silver]#,# [silver]+push+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", fillcolor=lightskyblue]
+
+  { rank=same; HEAD; feature; C }
+  feature -> C [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B}
+  master -> B [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to feature branch on own column
+  I [style=invis]
+  C -> I [style=invis]
+  { rank=same; A; I }
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  D1 -> B1
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master", style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master1; D1 }
+  master1 -> D1 [weight=0]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left and right graph
+  { rank=same; A; A1; }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; master; space}
+  space [label="some space here"]
+  space -> master [weight=0]
+
+  { rank=same; HEAD; space2 }
+  space2 [label="spaace"]
+  space2 -> HEAD [weight=0]
+}
+----
+
+Push
+----
+
+Possibility One
+
+* +fetch+[silver]#,# [silver]+merge+[silver]#,# [silver]+push+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  D [style=filled, fillcolor=coral1, color=red]
+  D -> B
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", color=red, fontcolor=red]
+
+  { rank=same; HEAD; feature; C }
+  feature -> C [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B}
+  B -> master [dir=back, style=dashed, color=grey]
+  master -> D [weight=0, color=red]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to have feature branch on own
+  // column on the right
+  C -> master [style=invis]
+  { rank=same; D; C }
+
+  // the "fetch" arrow
+  node [style=invis]
+  L -> R [label="fetch", style=dotted, penwidth=2, arrowhead=vee,
+          color=red, fontname=arial, fontsize=30, dir=back]
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  D1 -> B1
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master", style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master1; D1 }
+  D1 -> master1 [dir=back]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left, right and arrow graph
+  { rank=same; A; A1; L; R }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; D1; space2 }
+  space2 [label="spaace"]
+  space2 -> D1
+}
+----
+
+Push
+----
+
+Possibility One
+
+* +fetch+, +merge+[silver]#,# [silver]+push+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  E [style=filled, fillcolor=darkseagreen1, color=green]
+  E -> D [weight=0, color=green]
+  E -> C [color=green]
+  D [style=filled, fillcolor=coral1, color=red]
+  D -> B
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [color=red, fillcolor=red, fontcolor=white]
+  feature [color=red, fontcolor=red]
+  featureold [label="feature", style=dashed, color=grey, fontcolor=grey]
+  master [label="origin/master", fillcolor=lightskyblue]
+
+  { rank=same; featureold; C }
+  featureold -> C [weight=0, style=dashed, color=grey]
+
+  { rank=same; HEAD; feature; E }
+  feature -> E [weight=0, color=red]
+  HEAD -> feature [weight=0, color=red]
+
+  { rank=same; master; B}
+  master -> D [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to have feature branch on own
+  // column on the right
+  C -> master [style=invis]
+  D -> C [style=invis]
+  { rank=same; D; C }
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  D1 -> B1
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master", style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master1; D1 }
+  D1 -> master1 [dir=back]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left and right graph
+  { rank=same; A; A1 }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; D1; space2 }
+  space2 [label="spaace"]
+  space2 -> D1
+}
+----
+
+Push
+----
+
+Possibility One
+
+* +fetch+, +merge+, +push+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  E [style=filled, fillcolor=darkseagreen1, color=green]
+  E -> D [weight=0, color=green]
+  E -> C [color=green]
+  D [style=filled, fillcolor=coral1, color=red]
+  D -> B
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", fillcolor=lightskyblue]
+
+  { rank=same; HEAD; feature; E }
+  feature -> E [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B}
+  master -> D [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to have feature branch on own
+  // column on the right
+  C -> master [style=invis]
+  { rank=same; D; C }
+
+  // the "push" arrow
+  node [style=invis]
+  L -> R [label="push", style=dotted, penwidth=2, arrowhead=vee,
+          color=red, fontname=arial, fontsize=30]
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  C1 [label="C"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  E1 [label="E", style=filled, fillcolor=darkseagreen1, color=green]
+  E1 -> D1 [weight=0, color=green]
+  E1 -> C1 [color=green]
+  D1 -> B1
+  C1 -> B1 [weight=0]
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master", color=red, fontcolor=red]
+  { rank=same; master1; E1 }
+  E1 -> master1 [dir=back, color=red]
+
+  master1old [label="master", style=dashed, color=grey, fontcolor=grey]
+  { rank=same; master1old; B1 }
+  D1 -> master1old [style=dashed, dir=back, color=grey]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // formatting
+  { rank=same; D1; C1 }
+  D1 -> C1  [style=invis]
+  C1 -> master1old [style=invis]
+
+  // align left, right and arrow graph
+  { rank=same; A; A1; L; R }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; E1; space2 }
+  space2 [label="spaace"]
+  space2 -> E1
+}
+----
+
+Push
+----
+
+Possibility Two
+
+* [silver]+fetch+[silver]#,# [silver]+rebase+[silver]#,# [silver]+push+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", fillcolor=lightskyblue]
+
+  { rank=same; HEAD; feature; C }
+  feature -> C [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B}
+  master -> B [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to feature branch on own column
+  I [style=invis]
+  C -> I [style=invis]
+  { rank=same; A; I }
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  D1 -> B1
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master", style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master1; D1 }
+  master1 -> D1 [weight=0]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left and right graph
+  { rank=same; A; A1; }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; master; space}
+  space [label="some space here"]
+  space -> master [weight=0]
+
+  { rank=same; HEAD; space2 }
+  space2 [label="spaace"]
+  space2 -> HEAD [weight=0]
+}
+----
+
+Push
+----
+
+Possibility Two
+
+* +fetch+[silver]#,# [silver]+rebase+[silver]#,# [silver]+push+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  D [style=filled, fillcolor=coral1, color=red]
+  D -> B
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", color=red, fontcolor=red]
+
+  { rank=same; HEAD; feature; C }
+  feature -> C [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B}
+  B -> master [dir=back, style=dashed, color=grey]
+  master -> D [weight=0, color=red]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to have feature branch on own
+  // column on the right
+  C -> master [style=invis]
+  { rank=same; D; C }
+
+  // the "fetch" arrow
+  node [style=invis]
+  L -> R [label="fetch", style=dotted, penwidth=2, arrowhead=vee,
+          color=red, fontname=arial, fontsize=30, dir=back]
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  D1 -> B1
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master", style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master1; D1 }
+  D1 -> master1 [dir=back]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left, right and arrow graph
+  { rank=same; A; A1; L; R }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; D1; space2 }
+  space2 [label="spaace"]
+  space2 -> D1
+}
+----
+
+Push
+----
+
+Possibility Two
+
+* +fetch+, +rebase+[silver]#,# [silver]+push+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  CP [label="C'", style=filled, fillcolor=darkseagreen1, color=green]
+  CP -> D [weight=0, color=green]
+  D [style=filled, fillcolor=coral1, color=red]
+  D -> B
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [color=red, fillcolor=red, fontcolor=white]
+  feature [color=red, fontcolor=red]
+  master [label="origin/master", fillcolor=lightskyblue]
+  featureold [label="feature", style=dashed, color=grey, fontcolor=grey]
+
+  { rank=same; HEAD; feature; CP }
+  feature -> CP [weight=0, color=red]
+  HEAD -> feature [weight=0, color=red]
+
+  { rank=same; featureold; C }
+  featureold -> C [weight=0, style=dashed, color=grey]
+
+  { rank=same; master; B}
+  master -> D [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to have feature branch on own
+  // column on the right
+  CP -> C [style=invis]
+  C -> master [style=invis]
+  { rank=same; D; C }
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  D1 -> B1
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master", style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master1; D1 }
+  D1 -> master1 [dir=back]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left and right graph
+  { rank=same; A; A1; }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; D1; space2 }
+  space2 [label="spaace"]
+  space2 -> D1
+}
+----
+
+Push
+----
+
+Possibility Two
+
+* +fetch+, +rebase+, +push+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  CP [label="C'", style=filled, fillcolor=darkseagreen1, color=green]
+  CP -> D [weight=0, color=green]
+  D [style=filled, fillcolor=coral1, color=red]
+  D -> B
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", fillcolor=lightskyblue]
+
+  { rank=same; HEAD; feature; CP }
+  feature -> CP [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B}
+  master -> D [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to have feature branch on own
+  // column on the right
+  CP -> C [style=invis]
+  C -> master [style=invis]
+  { rank=same; D; C }
+
+  // the "push" arrow
+  node [style=invis]
+  L -> R [label="push", style=dotted, penwidth=2, arrowhead=vee,
+          color=red, fontname=arial, fontsize=30]
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  D1 [label="D", style=filled, fillcolor=coral1, color=red]
+  CP1 [label="C'", style=filled, fillcolor=darkseagreen1, color=green]
+  CP1 -> D1 [color=green]
+  D1 -> B1
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  master1 [label="master", color=red, fontcolor=red]
+  { rank=same; master1; CP1 }
+  CP1 -> master1 [dir=back, color=red]
+
+  master1old [label="master", style=dashed, color=grey, fontcolor=grey]
+  { rank=same; master1old; D1 }
+  D1 -> master1old [dir=back, style=dashed, color=grey]
+
+  // graph name
+  remote [label="remote 'origin' repo" shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left, right and arrow graph
+  { rank=same; A; A1; L; R }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; CP1; space2 }
+  space2 [label="spaace"]
+  space2 -> CP1
+}
+----

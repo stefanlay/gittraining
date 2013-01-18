@@ -1,0 +1,44 @@
+== Reset branch to a previous state
+Accidentally committing changes in a wrong branch can happen. For
+example you may switch between several branches, forget to checkout
+the branch in which you plan to continue your work and then commit in
+a wrong branch. Resetting the wrongly updated branch to its previous
+state is the topic of this exercise.
+
+Suppose you want to fix the warning for the unused 'serialVersionUID'
+field in the SWT 'CalculatorUI' class
+('org.eclipse.example.calc.internal.ui.swt.CalculatorUI'). You create
+a new local branch for this purpose 'fixWarnings'. However, let’s
+pretend that you forgot to checkout the 'fixWarnings' branch.
+Instead you are on the 'addDivideOperation'.
+
+* Checkout the 'addDivideOperation' branch
+* Create a new branch called 'fixWarnings' based on the
+  'origin/master' branch but make sure the 'checkout new branch'
+  checkbox is deselected. The new branch gets created but the
+  'addDivideOperation' branch is still checked out.
++
+image:create-branch-3.png[Create Branch]
+
+* Remove the field 'serialVersionUID' from
+  'org.eclipse.example.calc.internal.ui.swt.CalculatorUI'. Commit the
+  changes. This updated the 'addDivideOperation' branch.
+* Realize that you committed changes in a wrong branch. Don’t panic.
+* Reset the 'addDivideOperation' branch back to its previous state but
+  keep the changes in the working tree:
+** Using the History View find the parent commit of the tip of the
+  'addDivideOperation' branch and select 'Reset > Mixed' from the
+   context menu:
++
+image:history-view-7.png[History View]
+
+** The 'addDivideOperation' branch is reset back to its previous state
+   and doesn’t contain the commit that fixed the warning anymore.
+** However, the fix for the warning is still in the working tree!
+* Checkout the correct branch, the 'fixWarnings' branch
+* The changes are still in the working tree. Commit the changes.
+
+'Q:' What if you realized that you are on a wrong branch before
+committing the changes in the wrong branch?
+
+link:index.html[Git Exercises]

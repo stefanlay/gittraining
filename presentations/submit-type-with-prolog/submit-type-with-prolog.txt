@@ -1,0 +1,437 @@
+= Submit Type With Prolog
+:backend: slidy
+:max-width: 70em
+:data-uri:
+
+[[title-page]]
+== Submit Type With Prolog
+
+== Submit Type With Prolog
+
+<<<
+[[agenda-item]]
+=== 1. The Submit Type
+
+<<<
+[[agenda-item]]
+=== 2. Fast Forward Only
+
+<<<
+[[agenda-item]]
+=== 3. Merge If Necessary
+
+<<<
+[[agenda-item]]
+=== 4. The Problem
+
+<<<
+[[agenda-item]]
+=== 5. The Solution
+
+<<<
+[[agenda-item]]
+=== 6. DEMO
+
+<<<
+[[agenda-item]]
+=== 7. Possible Further Development
+
+[[title-page]]
+== The Submit Type
+
+== The Submit Type
+
+****
+The submit type is the *strategy* that is used on *submit* +
+to integrate the change into the destination branch.
+****
+
+[role="incremental"]
+--
+Supported Submit Types:
+
+* `Fast Forward Only`
+* `Merge If Necessary`
+* `Merge Always`
+* `Cherry Pick`
+* `Rebase If Necessary` (only from Gerrit 2.6)
+--
+
+[[title-page]]
+== Fast Forward Only
+
+== Fast Forward Only - Case 1
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  I [style=invis]
+
+  C -> B [weight=0]
+  I -> B [style=invis]
+  B -> A
+
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  master -> B
+  change -> C [weight=0]
+
+  { rank=same; B; master }
+  { rank=same; C; change }
+}
+----
+
+== Fast Forward Only - Case 1
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  I [style=invis]
+
+  I -> B [style=invis]
+  C -> B -> A
+
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master [color=red, fontcolor=red]
+
+  master -> C [color=red]
+  change -> C [weight=0]
+
+  old_master [label=master, style=dashed, color=grey, fontcolor=grey]
+  old_master -> B [style=dashed, color=grey]
+  {rank=same; old_master; B }
+
+  { rank=same; C; master; change }
+}
+----
+
+* on *submit* the destination branch is *fast forwarded* +
+  by updating the branch pointer
+
+== Fast Forward Only - Case 2
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  I [style=invis]
+
+  I -> B [weight=0, style=invis]
+  C -> B -> A
+  D -> B [weight=0]
+
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  master -> C
+  change -> D [weight=0]
+
+  { rank=same; C; D; master; change }
+
+  node [shape=circle]
+}
+----
+
+[role="incremental"]
+* *submit fails* because the destination branch +
+  can't be fast forwarded
++
+image:../../img/fast-forward-submit-failure.png[Fast Forward Submit Failure]
+
+== Fast Forward Only
+
+=== Advantages
+* if every change is verified, +
+  the main build can never break
+* linear history
+
+[role="incremental"]
+=> `Fast Forward Only` is a good choice for +
+&#160;&#160;&#160;&#160; *stable release* branches
+
+[role="incremental"]
+=== Disadvantages
+* whenever a change gets submitted, +
+  all open changes have to be rebased
+
+=> `Fast Forward Only` doesn't work well for +
+&#160;&#160;&#160;&#160; *development branches* with parallel development +
+&#160;&#160;&#160;&#160; and a high frequency of changes
+
+[[title-page]]
+== Merge If Necessary
+
+== Merge If Necessary - Case 1
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  I [style=invis]
+
+  C -> B [weight=0]
+  I -> B [style=invis]
+  B -> A
+
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  master -> B
+  change -> C [weight=0]
+
+  { rank=same; B; master }
+  { rank=same; C; change }
+}
+----
+
+== Merge If Necessary - Case 1
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  I [style=invis]
+
+  I -> B [style=invis]
+  C -> B -> A
+
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master [color=red, fontcolor=red]
+
+  master -> C [color=red]
+  change -> C [weight=0]
+
+  old_master [label=master, style=dashed, color=grey, fontcolor=grey]
+  old_master -> B [style=dashed, color=grey]
+  {rank=same; old_master; B }
+
+  { rank=same; C; master; change }
+}
+----
+
+* on *submit* the destination branch is *fast forwarded* +
+  if possible
+
+== Merge If Necessary - Case 2
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  I [style=invis]
+  M [style=invis]
+  M -> C [style=invis]
+  I -> B [weight=0, style=invis]
+  C -> B -> A
+  D -> B [weight=0]
+
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  master -> C
+  change -> D [weight=0]
+
+  { rank=same; C; D; master; change }
+
+  node [shape=circle]
+}
+----
+
+== Merge If Necessary - Case 2
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  M [style=filled, fillcolor=coral1, color=red]
+
+  M -> C [color=red]
+  M -> D [weight=0, color=red]
+  C -> B -> A
+  D -> B [weight=0]
+
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  old_master [label=master, style=dashed, color=grey, fontcolor=grey]
+  old_master -> C [style=dashed, color=grey]
+
+  master -> M
+  change -> D [weight=0]
+
+  I [style=invis]
+  I -> B [weight=0, style=invis]
+  I -> D [style=invis]
+  { rank=same; B; I }
+  { rank=same; master; M }
+  { rank=same; C; D; old_master; change }
+
+  node [shape=circle]
+}
+----
+
+* on *submit* Gerrit tries to *merge* automatically +
+  if there are conflicting changes
+* `Automatically Resolve Conflicts` decides if a content +
+  merge should be done if the same files were touched
+
+== Merge If Necessary
+
+=== Advantages
+* if possible conflicts are automatically resolved
+* no manual rebase/merge is needed
+
+[role="incremental"]
+=> `Merge If Necessary` is a good choice for +
+&#160;&#160;&#160;&#160; *development* branches
+
+[role="incremental"]
+=== Disadvantages
+* the merge commits are not verified, +
+  the main build may get broken
+* non-linear history
+
+=> `Merge If Necessary` is bad for *stable release* +
+&#160;&#160;&#160;&#160;&#160;branches where stability of the build is
+important
+
+== The Problem
+
+****
+We want to use
+
+* `Fast Forward Only` for *stable release* branches and
+* `Merge If Necessary` for *development* branches
+****
+
+[role="incremental"]
+--
+[WARNING]
+Submit Type is a project *global* setting!
+
+image:../../img/submit-type.png[Submit Type]
+--
+
+== The Problem
+
+****
+Some companies have *policies* for release branches +
+that must be *globally enforced*.
+****
+
+[role="incremental"]
+[TIP]
+It should be possible to define a *final submit type* +
+for release branches on a *parent project*.
+
+== The Solution
+
+****
+Enable controlling the submit type from *Prolog*.
+****
+
+[role="incremental"]
+[TIP]
+For each change invoke the `submit_type` predicate +
+to compute the submit type for the change.
+
+[role="incremental"]
+[TIP]
+Implement a `submit_type_filter` to enforce a +
+submit type for child projects.
+
+[role="incremental"]
+[WARNING]
+*NOT* contained in Gerrit 2.5, +
+comes with *Gerrit 2.6*
+
+== The Solution
+
+****
+`Q:` Why should this be done in Prolog?
+****
+
+[role="incremental"]
+* Similar requirements as for submit rules
+* Complete Prolog infrastructure is already in place, +
+  filters allow enforcement through parent projects
+* Prolog provides maximum flexibility
++
+Submit type can be controlled per change (not only per branch).
+
+[[title-page]]
+== DEMO
+
+== Example 1
+* use `Fast Forward Only` for all `refs/heads/stable*` branches
+* use the project's default submit type for all other branches
+
+.rules.pl
+[source,prolog]
+----
+submit_type(fast_forward_only) :-
+  gerrit:change_branch(B), regex_matches('refs/heads/stable.*', B), !.
+
+submit_type(T) :- gerrit:project_default_submit_type(T).
+----
+
+== Example 2
+* for all `refs/heads/stable*` branches
+** use the project's default submit type if only documentation was
+   changed
+** otherwise use `Fast Forward Only`
+
+* use the project's default submit type for all other branches
+
+.rules.pl
+[source,prolog]
+----
+submit_type(fast_forward_only) :-
+  gerrit:commit_delta('(?<!\.txt)$'),
+  gerrit:change_branch(B), regex_matches('refs/heads/stable.*', B), !.
+submit_type(T) :- gerrit:project_default_submit_type(T).
+----
+
+== Possible Further Development
+
+* The `submit_type` predicate may return +
+  more than 1 submit type for a change
++
+=> the user may choose on submit which +
+&#160;&#160;&#160;&#160; submit type should be used
++
+=> e.g. optionally allow to cherry-pick a change +
+&#160;&#160;&#160;&#160; (see
+link:http://code.google.com/p/gerrit/issues/detail?id=1034[issue
+1034])
+
+[[title-page]]
+== THE END
+
+++++
+<style type="text/css">
+#title-page {
+  border-bottom: 0;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  font-size: 60px;
+}
+#agenda-item {
+  border-bottom: 0;
+}
+</style>
+++++
+

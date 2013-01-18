@@ -1,0 +1,58 @@
+== Develop Another Feature and Use Staging View
+In this exercise you learn how work on multiple features in parallel. You will
+also get used to the Git Staging view.
+
+=== Create another local Feature Branch and check it out
+When you develop features/bug-fixes in parallel make sure you develop them in
+different branches. Make sure to set the starting point of these branches
+correctly.  Right-click on your Project and select 'Team > Switch to > New
+branch'. Select as 'Source ref' the remote tracking branch
+'refs/remotes/origin/master' and type into 'Branch name' the name of the new
+branch 'addPower'. Check 'Checkout new branch' and press 'Finish'. This will
+create and checkout a new branch which starts where the remote tracking branch
+'refs/remotes/origin/master' points to.
+
+image:create-branch-2.png[Create branch]
+
+=== Develop the new feature
+Develop a 'Power' class similar to the 'Plus' class in the package
+'org.eclipse.example.calc.internal.operations' in project
+'org.eclipse.example.calc'. Don't forget to register the new class in the
+'Calculator.setupDefaultOperations()'.
+
+=== Do a modification you don't want to commit
+Sometimes you want to locally change a file but don't want this modification to
+be included in the next commit. E.g. certain project modifications are
+important to you but others shouldn't see them. To simulate this right-click on
+your project and select 'Properties > FindBugs' and select the button 'Run
+automatically' (only available if FindBugs is installed in your Eclipse).
+
+=== Open the Git Staging view and inspect the status
+Open the staging view by selecting 'Window > Show View > Other… > Git Staging'.
+This view presents which files you have touched and which files will be in the
+next commit. 'Unstaged Changes' lists those changes which you have done locally
+but which you have not yet added to the index. 'Staged Changes' list those
+changes which you already have added to the index. You can drag and drop files
+from one area to the other.
+
+Git Staging view should list three files '.project', 'Calculator.java' and
+'Power.java'. Drag only 'Calculator.java' and 'Power.java' to 'Staged changes'.
+Double-click on '.project' to inspect which changes you have done.
+
+image:staging-view.png[Staging view]
+
+Drag and drop 'Calculator.java' and 'Power.java' to the 'Staged Changes' area
+to mark that they should be included in the next commit.
+
+image:staging-view-2.png[Staging view]
+
+=== Commit your change
+In Git Staging View enter a commit message in the 'Commit message' field and
+press the 'Commit' button near the top-right corner of the view.
+
+=== Cleanup
+After inspecting your change to '.project' you decide that you don't want this
+change anymore. Revert your change by right-clicking on the '.project' file in
+'Git Staging View' and select 'Replace with File in Git Index'.
+
+link:index.html[Git Exercises]

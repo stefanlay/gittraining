@@ -1,0 +1,270 @@
+= What's new in Gerrit 2.5
+:backend: slidy
+:max-width: 70em
+:data-uri:
+
+[[title-page]]
+== What's new in Gerrit 2.5
+
+== What's new in Gerrit 2.5
+* link:http://gerrit-documentation.googlecode.com/svn/ReleaseNotes/ReleaseNotes-2.5.html[
+Release Notes]
+
+* Statistics
++
+[width="50%",cols=">s,^m,^m",options="header"]
+|==========================
+|                |Gerrit 2.5 |Gerrit 2.4
+|commits         |790        |181
+|resolved issues
+|link:http://code.google.com/p/gerrit/issues/list?can=1&q=FixedIn-2.5&colspec=ID+Type+Stars+Milestone+Status+Priority+Owner+Summary&cells=tiles[51]
+|http://code.google.com/p/gerrit/issues/list?can=1&q=FixedIn-2.4&colspec=ID+Type+Stars+Milestone+Status+Priority+Owner+Summary&cells=tiles[35]
+|contributors    |34         |22
+|==========================
+
+== Selection of Patch Sets from Patch Header
+There is a new header on the Patch Screen that allows to quickly
+select the patch sets to be compared.
+
+.Side-by-Side:
+image:../../img/compare-patch-sets.png[Compare Patch Sets]
+
+.Unified-Diff:
+image:../../img/compare-patch-sets-2.png[Compare Patch Sets]
+
+.Gerrit 2.4:
+image:../../img/compare-patch-sets-old.png[Compare Patch Sets]
+
+== Preference to show Line Endings
+There is a new user preference that allows to display Windows
+EOL/CR-LF.
+
+image:../../img/line-endings.png[Line Endings]
+
+== Streamlined Review Workflow
+Which files were reviewed can be seen in the file list of the patch.
+
+image:../../img/reviewed-markers.png[Reviewed Markers]
+
+A link was added next to the `Reviewed` checkbox that marks the
+current patch as reviewed +
+and goes to the next unreviewed patch.
+
+image:../../img/streamlined-review-workflow.png[Streamlined Review Workflow]
+
+
+=== Manual Review
+This works best if in the preferences `Manual Review` was chosen so
+that the +
+`Reviewed` checkbox is not automatically selected.
+
+image:../../img/manual-review.png[Manual Review]
+
+=== Key Commands
+There are key commands
+
+* to toggle the reviewed flag for a patch (`m`) and
+* to mark the patch as reviewed and navigate to the next unreviewed
+  patch (`M`).
+
+image:../../img/mark-as-reviewed-keys.png[Marks as Reviewed Keys]
+
+== Change Screen Cleanup
+The commit message on the Change Screen is now placed in a box with
+a title and emphasis on the commit summary.  The star icon and the
+permalink are displayed in the box header.  The header from the change
+screen is removed as it only held duplicate information.
+
+.Gerrit 2.5:
+image:../../img/change-screen-2.5.png[Change Screen 2.5]
+
+.Gerrit 2.4:
+image:../../img/change-screen-2.4.png[Change Screen 2.4]
+
+== Visually less distracting Line Numbers in Side-by-Side Diff Viewer
+
+.Gerrit 2.5:
+image:../../img/line-numbers-2.5.png[Line Numbers 2.5]
+
+.Gerrit 2.4:
+image:../../img/line-numbers-2.4.png[Line Numbers 2.4]
+
+== Approval Table on the Publish Comments Screen
+The approval table that shows the reviewers and their current votes
+is now shown on the Publish Comments Screen.  This allows the reviewer
+to see all existing votes and reviewers when doing the own voting
+and publishing of comments.  Seeing the existing votes helps the
+reviewer in understanding which votes are still required before the
+change can be submitted.
+
+image:../../img/publish-comments.png[Publish Comments]
+
+== Dependency Table Improvements
+
+* Open the dependency section automatically when the change is needed
+  by an open change
+* Only show a change as needed by if its current patch set depends on
+  the change
+* Only show draft change dependency if the current user is owner or
+  reviewer of the draft change
+
+image:../../img/dependencies.png[Dependency Table]
+
+== Offer Suggestions for the Search Operators in the Search Panel
+When typing a query, auto completion is now offered for the
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.5/user-search.html#_search_operators[
+search operators].
+
+image:../../img/search-completion.png[Search Completion]
+
+== Support alias `self` in Queries
+Some link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.5/user-search.html#_search_operators[
+search operators] which can be used in queries expect a user as
+argument, e.g. `owner:'USER'`, `reviewer:'USER'`, `starredby:'USER'`
+etc. Instead of a user you can now provide the alias `self` which will
+be resolved to the username of the caller. E.g. the query
+`owner:self status:open` will return all changes that the caller owns
+and that are still open.
+
+With the `self` alias it's possible to define queries in a generic
+way. The URL's for generic queries can be shared between team members
+without need to adapt them individually.
+
+image:../../img/owner-self.png[owner:self]
+
+== Support for Custom Dashboards
+Results for user-defined queries can now be displayed in
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.5/user-custom-dashboards.html[
+custom dashboards].
+
+image:../../img/custom-dashboard.png[Custom Dashboard]
+
+== Allow to propose Changes to Access Rights through Code Review
+Users [1] can now propose changes to the access rights of a project.
+This will create an open change in the review queue of the project.
+The project owners are automatically added as reviewer and can accept
+the modification to the access rights by approving and submitting this
+change.
+
+image:../../img/access-rights-save-for-review.png[Access Rights - Save for Review]
+
+image:../../img/access-rights-save-for-review-2.png[Access Rights - Open Change]
+
+image:../../img/access-rights-save-for-review-3.png[Access Rights - project.config diff]
+
+[1] users who can read the `refs/meta/config` branch in which the
+access rights are persisted
+
+== Add Unified Diff to `newchange` Mail Template
+The unified diff for a change can now be included into the e-mail
+notifications:
+
+image:../../img/email-unified-diff.png[E-Mail Unified Diff]
+
+== Move the Admin Menu Items to the top level Menu
+The new `Projects` and `Groups` top level menus replace the `Admin`
+top level menu.
+
+.Gerrit 2.5:
+image:../../img/top-level-menu-projects.png[Top Level Menu Projects]
+
+image:../../img/top-level-menu-groups.png[Top Level Menu Groups]
+
+.Gerrit 2.4:
+image:../../img/top-level-menu-admin.png[Top Level Menu Admin]
+
+== Show for each Project in the Project List a Link to the Repository Browser (e.g. GitWeb)
+
+image:../../img/project-repo-browser.png[Project Repo Browser]
+
+== Plugins
+The Gerrit server functionality can now be extended by installing
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.5/dev-plugins.html[
+plugins].
+
+image:../../img/plugins.png[Plugins]
+
+== Cookbook for Prolog Submit Rules
+Projects can define custome submit rules in Prolog. A submit rule
+decides when a change becomes submittable. In the Gerrit documentation
+there is now a
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.5/prolog-cookbook.html[
+cookbook] that explains how to write such submit rules in Prolog.
+
+E.g. it is possible to implement a
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.5/prolog-cookbook.html#_example_8_make_change_submittable_only_if_tt_code_review_2_tt_is_given_by_a_non_author[
+Prolog rule that makes the change only submittable if the is a +2 Code
+Review vote from a non author.]
+
+image:../../img/need-non-author-code-review.png[Need Non Author Code Review]
+
+Developing submit rules in Prolog is now eased by an
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.5/cmd-test-submit-rule.html[
+SSH command that allows to test submit rules].
+
+== REST API
+Gerrit now supports a
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.5/rest-api.html[REST
+like API] available over HTTP.
+
+The API is suitable for automated tools to build upon, as well as
+supporting some ad-hoc scripting use cases.
+
+.List Projects:
+image:../../img/rest-list-projects.png[REST List Projects]
+
+.Query Changes:
+image:../../img/rest-query-changes.png[REST Query Changes]
+
+== Ask user to sign in if change is not found
+
+.Gerrit 2.5:
+image:../../img/session-expired.png[Session Expired]
+
+.Gerrit 2.4:
+image:../../img/not-found.png[Not Found]
+
+== Do not show "Session cookie not available" on sign in
+
+.Gerrit 2.5:
+image:../../img/sign-in.png[Sign In]
+
+.Gerrit 2.4:
+image:../../img/session-cookie-not-available.png[Session Cookie Not Available]
+
+==  Fix disappearance of download command in Firefox
+
+.Gerrit 2.5:
+image:../../img/download-command.png[Download Command]
+
+.Gerrit 2.4:
+image:../../img/disappeared-download-command.png[Disappeared Download Command]
+
+== Other important fixes
+
+* link:http://code.google.com/p/gerrit/issues/detail?id=1548[Create a
+  ref for the patch set that is created when a change is
+  cherry-picked]
+
+* Fix reject message if bypassing code review is not allowed
++
+now it's "prohibited by Gerrit" instead of "can not update the
+reference as a fast forward"
+
+* link:http://code.google.com/p/gerrit/issues/detail?id=1554[Fix
+  cloning of new projects from slave servers]
+
+* link:http://code.google.com/p/gerrit/issues/detail?id=1491[Fix
+  nested submodule updates]
+
+++++
+<style type="text/css">
+#title-page {
+  border-bottom: 0;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  font-size: 60px;
+}
+</style>
+++++

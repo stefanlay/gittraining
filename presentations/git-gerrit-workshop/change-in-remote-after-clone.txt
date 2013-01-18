@@ -1,0 +1,78 @@
+Remote Branch Moves
+-------------------
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  G [style=filled, fillcolor=coral1, color=red]
+  G -> F [color=red]
+  F -> E
+  E -> B [weight=0]
+  D -> C -> B -> A
+
+  L[style=invis] R[style=invis]
+  A1[label=A]
+  B1[label=B]
+  C1[label=C]
+  D1[label=D]
+  E1[label=E]
+  F1[label=F]
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+	HEAD [fillcolor="#555555", fontcolor=white]
+
+  HEAD -> master -> D
+  "release1.0" [color=red, fontcolor=red]
+  "release1.0" -> G [weight=0, color=red]
+  { rank=same; G; "release1.0" }
+
+  { rank=same; F; D; master; release_old }
+  { rank=same; E; C }
+
+  release_old [label="release1.0", style=dashed, color=grey, fontcolor=grey]
+  F -> release_old [dir=back, style=dashed, color=grey]
+
+  D -> F [style=invis]
+  release_old -> L [style=invis]
+
+  L [style=invis] R [style=invis] L -> R [label=clone, style=invis, penwidth=2,
+    arrowhead=vee, color=red, fontname=arial, fontsize=30]
+  { rank=same; A; L; R; A1 }
+
+	edge [arrowhead=none]
+
+  F1 -> E1
+  E1 -> B1 [weight=0]
+  D1 -> C1 -> B1 -> A1
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+	HEAD1 [label=HEAD, fillcolor="#555555", fontcolor=white]
+  master1 [label="master"]
+  "origin/master" [fillcolor=lightskyblue]
+  "origin/release1.0" [fillcolor=lightskyblue]
+
+  HEAD1 -> master1 -> D1
+  "origin/release1.0" -> F1
+  { rank=same; F1; D1; master1; "origin/release1.0" }
+  "origin/master" -> D1
+
+  D1 -> F1 [style=invis]
+  master1 -> R [style=invis]
+
+
+  remote [label="remote 'origin' repo", style=none, color=none]
+  A -> remote [style=invis]
+  local [label="local repo", style=none, color=none]
+  A1 -> local [style=invis]
+}
+----
+
+[role="incremental"]
+--
+* 'Q:' how to bring changes done in the remote repo into the local repo?
+--

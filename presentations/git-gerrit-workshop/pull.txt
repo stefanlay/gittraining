@@ -1,0 +1,12 @@
+Pull
+----
+
+'git pull' = 'git fetch' + 'git merge'
+
+*OR*
+
+'git pull' = 'git fetch' + 'git rebase'
+
+*OR*
+
+'git pull' = 'git fetch'

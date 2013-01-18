@@ -1,0 +1,1 @@
+asciidoc -a icons -a iconsdir=/opt/local/etc/asciidoc/images/icons gerrit-and-code-review-best-practices.txt

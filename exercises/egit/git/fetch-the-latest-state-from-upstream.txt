@@ -1,0 +1,38 @@
+== Fetch the latest state from upstream
+In this exercise you will learn how to fetch the latest state from
+upstream. Fetching the latest state will update the remote tracking
+branch(es) in your local repository. It will not try to change any of
+your local branches or your working tree.
+
+Before starting to develop a feature or doing a bug-fix you should
+fetch the latest state from the central repository. This will update
+the remote tracking branch 'origin/master' which will be the base
+for your local changes.
+
+* Go to the Git Repositories View
+* Select your repository and click 'Fetch from Upstream'
++
+image:fetch-from-upstream.png[Fetch from Upstream]
+
+* Alternatively select the project and click on the 'Fetch changes
+  from upstream' button in the Git toolbar.
++
+image:fetch-from-upstream-in-git-toolbar.png[Fetch from Upstream in
+git Toolbar]
+
+* The "Fetch Results" dialog displays the result of the fetch action
+** If new changes have been fetched it looks like this:
++
+image:fetch-results.png[Fetch Results]
+
+** If you already have the latest state available on the server it
+  shows the message "everything up to date" and the list is empty
++
+image:fetch-results-up-to-date.png[Fetch Results up to Date]
+
+* Now, after the remote tracking branch 'origin/master' is up to date
+  it is a good basis for creating a new local feature branch
+* In the History View the (updated) 'origin/master' branch shows the
+  status of the master branch in the remote repository.
+
+link:index.html[Git Exercises]

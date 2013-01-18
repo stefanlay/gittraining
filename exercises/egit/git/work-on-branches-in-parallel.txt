@@ -1,0 +1,115 @@
+== Work on branches in parallel
+In this exercise you will learn how to change commits using the amend
+functionality. This is for example useful if you work in different
+branches in parallel and you want to temporarily save your work. You
+will commit an unfinished change and later on replace this commit with
+a new, refined commit using the amend feature of git.
+
+=== Preparation
+Follow exercise 2, link:develop-a-feature.html[Develop a feature/bug fix],
+to create a commit on a feature branch based on the remote tracking
+branch 'origin/master'.
+
+=== Start working on another feature
+
+* Create a new local branch based on the remote tracking branch
+  'origin/master'
+* You may create the new branch from the History View:
+** Select the project, then click Show 'In > History'
+   (Some views, e.g. in the Java EE-Perspective, do not have this
+   shortcut, in this case use 'Team > Show in History')
+** In the History View click all toggle buttons as shown in the
+   screenshot (Link with Editor and Selection, Show all changes in
+   repository containing the selected resources, Compare Mode,
+   Show all Branches and Tags)
++
+image:history-view-2.png[History View]
+
+** Select 'Create Branch...' from the context menu on the commit where
+   'origin/master' points to
++
+image:create-branch-from-history-view.png[Create Branch from History View]
+
+* Or you may do that from the Repositories View:
++
+Select the remote tracking branch 'origin/master' and click 'Create
+Branch...'.
++
+image:create-branch-from-repositories-view.png[Create Branch from Repositories View]
+
+* Enter "addMultiplyOperation" as the name of the new branch, make sure
+  the 'checkout new branch' checkbox is selected and click on 'Finish'
+* Check that now you don’t see the changes of the first exercise
+  anymore in your workspace.
+* Start working on a change, e.g. add a 'Multiply' operation, do not
+  commit yet, first read on.
+
+=== Switch branches
+Now you want to switch to another branch but you want to continue
+working at your new feature later on. The easiest thing to do is to
+just commit your work in progress and change that commit later on.
+
+* Select your project in the Package Explorer and select
+  'Team > Commit' or click 'Commit' in the Git Toolbar
+* In the commit dialog enter a preliminary message, e.g.
+  "[Unfinished] Add multiply operation", select the files to be
+  committed and click on 'Commit'
++
+image:commit-changes.png[Commit Changes]
+
+* Now you can switch to the first feature branch "addDivideOperation",
+  either by double clicking on the branch node in the Git Repositories
+  View, by selecting 'Team > Switch To > addDivideOperation' or by
+  selecting 'Checkout' from the context menu on the
+  "addDivideOperation" branch in the History View.
+* Check that your workspace contains the changes you committed in your
+  first feature (implementing divide) branch. You could now continue
+  working here. For example: you may want to fix the division by zero
+  issue if it is not already handled. If you do any changes in the
+  "addDivideOperation" branch don’t forget to commit them with amend
+  before the next step
+* Switch back to the "addMultiplyOperation" branch
+
+=== Continue working on the branch adding Multiply
+* Do another change in the workspace improving Multiply.
+* Compare your changed project with the first, preliminary commit by
+  selecting 'Compare With > HEAD revision'. This will show you the
+  changes you will add on top of the first commit.
+* Compare your changed project with the parent commit of your first,
+  preliminary commit by selecting 'Compare With > Previous revision'.
+  This will show you the changes you will have in your new commit after
+  the next step.
+* Create a new commit with the combined changes of your first,
+  preliminary commit and your current changes
+** Select your project in the Package Explorer and select
+   'Team > Commit' or click 'Commit' in the Git Toolbar.
+** Press the 'Amend' button as shown below.
++
+image:commit-changes-with-amend.png[Commit Changes with Amend]
+
+** Now you see again the commit message of the last commit you made in
+   this branch. Change it to something meaningful and click the
+   'Commit' button.
+** In the History View you can now see that your first, preliminary
+   commit was replaced by the new one.
++
+image:history-view-3.png[History View]
+
+=== Fixing the commit message
+The amend feature is often used to fix the commit message of what you
+just committed.
+
+* In order to change the commit message of the last commit:
++
+Select your project in the Package Explorer and select 'Team > Commit'
+or click 'Commit in' the Git Toolbar.
+
+* Because there are no changes to commit EGit asks you if you want to
+  amend the last commit:
++
+image:amend-dialog.png[Amend Dialog]
+
+* Click 'Yes'.
+* Change the commit message and click on the 'Commit' button.
+
+link:index.html[Git Exercises]

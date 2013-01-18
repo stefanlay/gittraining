@@ -1,0 +1,25 @@
+= Workshop Preparations
+
+For attending a Git/Gerrit training do the following preparations
+*before* the workshop.
+
+* install Eclipse with
+  link:http://www.eclipse.org/egit/download/[latest EGit]
+* install a git command line
+* Configure Git via Eclipse: `Eclipse` > `Preferences` > `Team` >
+  `Git` > `Configuration`:
++
+----
+user.name = <Your Full Name> (example: Edwin Kempin)
+user.email = <Your SAP Mailaddress> (example: edwin.kempin@gmail.com)
+----
+
+* sign-in into the Gerrit WebUI and configure your preferred e-mail
+  address
+* generate an SSH key pair
+* upload the public key to Gerrit
+* for git over HTTP generate a HTTP password in Gerrit
+* configure the SSH key in Eclipse
+
+We recommend using Unix line-endings for all source code and it is
+already configured for the project we use for the workshop.

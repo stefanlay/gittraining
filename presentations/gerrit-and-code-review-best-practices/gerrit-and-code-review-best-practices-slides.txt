@@ -1,0 +1,398 @@
+[[title-page]]
+== Gerrit and Code Review Best Practices
+
+== Gerrit and Code Review Best Practices
+
+<<<
+[[agenda-item]]
+=== 1. Best Practices - Making Changes
+
+<<<
+[[agenda-item]]
+=== 2. Best Practices - Reviewing Changes
+
+<<<
+[[agenda-item]]
+=== 3. Best Practices - Project Setup
+
+[[title-page]]
+== Best Practices - Making Changes
+
+== Making Changes
+each change should add something *usable*
+
+[role="incremental"]
+--
+----
+  change = complete feature
+----
+
+*or*
+
+----
+  change = bug-fix
+----
+--
+
+[role="incremental"]
+=> Have a releasable state after every change.
+
+== Making Changes
+each change should focus on only *one thing*
+
+[role="incremental"]
+* do not mix features, bug-fixes
+
+[role="incremental"]
+****
+`Q:` Why is this bad?
+
+[role="incremental"]
+`A:`
+[role="incremental"]
+* You need the bug-fix in another branch. +
+  -> `git cherry-pick` is not easy
+* The feature broke something. +
+  -> `git revert` cannot be used
+* It's more difficult to review.
+****
+
+== Making Changes
+push only changes that are *ready*
+
+[role="incremental"]
+****
+`Q:` Who wants to merge unfinished changes?
+****
+
+[role="incremental"]
+****
+`Q:` Who wants to review unfinished changes?
+[role="incremental"]
+--
+`A:` It is unclear for reviewers
+
+* what is an issue and
+* what is simply not done yet
+--
+****
+
+== Making Changes
+mark *unfinished and experimental changes* as `[RFC]` (Request For
+Comments), +
+but tell reviewers which feedback you expect
+
+image:../../img/rfc.png[RFC]
+
+Examples:
+
+* https://gerrit-review.googlesource.com/#/c/24202/
+* https://gerrit-review.googlesource.com/#/c/24064/
+
+== Making Changes
+write *good commit message*
+
+[role="incremental"]
+* make the change attractive to reviewers
+
+[role="incremental"]
+****
+`Q:` Who wants to review this change?
+
+image:../../img/bad-commit-message.png[Bad Commit Message]
+****
+
+== Making Changes
+write *good commit message*
+
+* make the change attractive to reviewers
+
+****
+`Q:` This one looks more interesting, doesn't it?
+image:../../img/good-commit-message.png[Good Commit Message]
+****
+
+== Making Changes
+write *good commit message*
+
+* have precise subjects
++
+image:../../img/git-log-oneline.png[git log --onoline]
+
+== Making Changes
+explain the *motivation* for the change
+
+[role="incremental"]
+* what was changed can be seen from the diff
+
+[role="incremental"]
+****
+`Q:` Why is this commit message bad?
+
+image:../../img/no-motivation.png[Commit Message without motivation]
+[role="incremental"]
+`A:` No info about *why* this had to be disabled. +
+&#160;&#160;&#160;&#160;&#160;&#160;`git blame` gets less useful.
+****
+
+== Making Changes
+prefer *small* changes
+
+[role="incremental"]
+****
+`Q:` Who wants to review this change?
+
+image:../../img/huge-change.png[Huge Change]
+****
+
+== Making Changes
+make big features as *series of small changes*
+
+[role="incremental"]
+* each change adds something *usable*
+* mark the change series as a *topic*
+
+[role="incremental"]
+--
+Example:
+
+image:../../img/topic.png[Topic]
+
+https://gerrit-review.googlesource.com/#/q/status:merged+project:gerrit+branch:master+topic:ssh-list-groups,n,z
+--
+
+== Making Changes
+split refactoring from feature
+
+[role="incremental"]
+* makes change *smaller*
+* the refactoring change is *"easier"* to review
+** even without knowing anything about the change, +
+one can check if the old and new code do the same
+
+== Making Changes
+provide *screenshots* for UI changes
+
+image:../../img/screenshot-attached.png[Screenshot Attached]
+
+Example:
+
+https://gerrit-review.googlesource.com/#/c/36460/
+
+== Making Changes
+reply to *every* comment
+
+[role="incremental"]
+* use `Reply Done` if issue was addressed
++
+image:../../img/done.png[Done Comment]
+
+* write reply why comment was ignored
++
+image:../../img/reply.png[Comment Reply]
+
+== Making Changes - Summary
+
+****
+Better *one developer* invests time to polish a change +
+than *n reviewers* waste time on review.
+****
+
+[[title-page]]
+== Best Practices - Reviewing Changes
+
+== Reviewing Changes
+review *each* change
+
+[role="incremental"]
+--
+`Q:` Looks good!?
+
+image:../../img/small-change-1.png[Small Change]
+--
+
+== Reviewing Changes
+review *each* change
+
+--
+`Q:` And now?
+
+image:../../img/small-change-2.png[Small Change]
+--
+
+== Reviewing Changes
+*everyone* should do reviews
+
+[role="incremental"]
+* helps to distribute knowledge
+* share the review effort
+
+[role="incremental"]
+*follow reviews* of others
+
+[role="incremental"]
+* learn from it
+
+== Reviewing Changes
+*cooperate* to find best solution
+
+[role="incremental"]
+* no fault finding, no finger pointing
+* propose improvements
++
+image:../../img/improvement.png[Improvement]
+
+== Reviewing Changes
+mark *optional* comments as `[optional]`
+
+image:../../img/optional-comment.png[Optional Comment]
+
+[role="incremental"]
+--
+comment on *nits*
+
+image:../../img/nit-comment.png[Nit Comment]
+--
+
+== Reviewing Changes
+*try out* changes
+
+[role="incremental"]
+* fetch the change
+* try to break the feature
+* if something doesn't work, +
+  find the error in the code and +
+  *comment inline*
+* vote in *Verified*
+
+== Reviewing Changes
+issue in *merged code*
+
+[role="incremental"]
+* upload a change that fixes the issue
+* find the change that introduced the issue +
+  and comment on it
+* report the issue in the issue tracker system
+
+== Reviewing Changes
+*Code Review* Voting
+
+[role="incremental"]
+* +2: fully understood, all correct, looks good
+* +1: looks good, don't see anything wrong
+* 0: optional comment, just a question
+* -1: feature is good, but there are issues that should be fixed
+* -2: veto, must not be merged
+
+== Reviewing Changes
+do *not* self approve changes
+
+[role="incremental"]
+* 4-eyes principle
+* may be enforced via
+  link:https://gerrit-review.googlesource.com/Documentation/prolog-cookbook.html#_example_8_make_change_submittable_only_if_tt_code_review_2_tt_is_given_by_a_non_author[
+  Prolog submit rule]
++
+image:../../img/need-non-author-code-review.png[Need Non Author Code Review]
+
+== Reviewing Changes
+review takes *time*
+
+[role="incremental"]
+* days, weeks or even months
+* merge changes only when they are ready
+* some changes may never be merged
+
+== Reviewing Changes - Summary
+
+****
+Being a good reviewer is a different *qualification* than being a good
+developer.
+****
+
+[role="incremental"]
+****
+Code Review works!
+
+https://gerrit-review.googlesource.com/#/c/30171/
+****
+
+[[title-page]]
+== Best Practices - Project Setup
+
+== Project Setup
+*automate* verification
+
+[role="incremental"]
+* link:https://wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger[
+  Gerrit Trigger] Plugin for Jenkins
++
+image:../../img/jenkins-voter-1.png[Jenkins Voter]
++
+image:../../img/jenkins-voter-2.png[Jenkins Voter]
+
+== Project Setup
+* define *code styles*
+* agree on line endings
+* have a *contributor guide*
++
+https://gerrit-review.googlesource.com/Documentation/dev-contributing.html
+
+== Project Setup
+not everyone needs *submit* privileges
+
+[role="incremental"]
+* committer vs. contributor
+* committer election process
+
+== Project Setup
+use *text format* for documentation
+
+[role="incremental"]
+* e.g. link:http://www.methods.co.nz/asciidoc/userguide.html[ASCIIDOC]
+* makes documentation changes reviewable
+* version documentation together with the code
++
+image:../../img/docu-change.png[Documentation Change]
+
+* vote `-1` if documentation is missing
++
+image:../../img/missing-documentation.png[Missing Documentation]
+
+== Project Setup
+customize *submit rules* via
+link:https://gerrit-review.googlesource.com/Documentation/prolog-cookbook.html[
+Prolog]
+
+== Project Setup
+choose right *submit type*
+
+[role="incremental"]
+* merge/rebase effort vs. risk to break main build
+* enable `Automatically resolve conflicts`
++
+image:../../img/automatically-resolve-conflicts.png[Automatically Resolve
+Conflicts]
+
+== Project Setup
+do *not* version large binaries
+
+[role="incremental"]
+* results in bad performance
+* use Maven repo, Nexus to store build artefacts
+* link:https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#receive.maxObjectSizeLimit[
+  configure max object size] to make push fail
+
+[role="incremental"]
+find *right granularity* for the repositories
+
+[role="incremental"]
+* avoid too big repositories
+* version together what needs to be released together
+
+== Project Setup
+*learn* Git/Gerrit tooling and workflow
+
+[role="incremental"]
+* offer Git/Gerrit trainings
+* offer support via mailing list

@@ -1,0 +1,181 @@
+Git/Gerrit Workshop
+===================
+:copyright: SAP AG
+:backend: slidy
+:max-width: 45em
+:data-uri:
+
+Agenda Day 1
+------------
+- Introduction
+- Basic Git Concepts
+- Exercises: Local Development, Branches
+- Merge & Rebase
+- Exercises: Merge, Rebase, History Rewriting
+
+Agenda Day 2
+------------
+- Push
+- Gerrit Concepts
+- Exercises: Code Review with Gerrit
+- Q & A
+
+include::distributed-versioning-systems-1.txt[]
+
+include::distributed-versioning-systems-2.txt[]
+
+include::git.txt[]
+
+Git at SAP
+----------
+Project using Git:
+
+- HANA, JPaaS, Avatar, ...
+
+Product Standards
+
+Committer/Contributor Model
+
+- SAP-UI5, Java Server
+
+Centrally hosted and operated
+
+Git/Gerrit Team
+
+Git/Gerrit Team
+---------------
+Support
+
+- mailing list, bug trackers
+
+Training
+
+Hosting
+
+- central Gerrit server with backup
+
+Development of Tools
+
+- contribution to EGit, JGit, Gerrit
+
+Basic Git Concepts
+------------------
+
+Making Changes
+--------------
+Structure in the file system
+
+- one working tree per repository
+- `.git` folder is the *version database*
+- files/folders next to `.git` folder are the *working tree*
+
+image:../../img/git-fs-layout.png[]
+
+Making Changes
+--------------
+Checkout
+
+- populate the working tree with the commit you want to start working from
+
+image:../../img/git-checkout.png[]
+
+
+Making Changes
+--------------
+Just start doing your changes
+
+- modify, add, delete files
+
+Tell Git which changes you intend to commit:
+
+	git add <file-name>
+
+EGit helps by auto-detecting changed files
+
+Committing Changes
+------------------
+
+	git commit
+
+- provide a commit message
+- commit represents a version of the complete repository
+- each commit is identified by a globally unique ID (SHA1)
+
+Commit Message
+--------------
+
+- first line is header
+- separated by a blank line follows the body
+- last paragraph is for meta dat in the `key: value` format
+
+----
+First line is header, shall be shorter than 70 chars
+
+Separate the body from the header by an empty line. The commit message
+should describe why you are doing the change. That's what typically helps
+best to understand what the change is all about. The details of what you
+changed are visible from the file diffs.
+
+Body can be as many paragraphs as you want, shouldn't exceed width of 80
+chars. This helps command line tools to render it nicely. Paragraphs are
+separated by empty lines.
+
+Bug: NGP-123 is rendered as a hyperlink to jtrack
+----
+
+Making Changes
+--------------
+Commit
+
+- create a new commit in the repository with the changes done in the working
+  tree
+
+image:../../img/git-commit.png[]
+
+Staging Changes - Git Index
+---------------------------
+*Index* or *Staging Area* is where the next commit is prepared
+
+image:../../img/git-add-to-index.png[]
+
+Commits
+-------
+- commit history
+	- B is successor of A
+	- C is successor of B
+
+image::../graph/git/bin/abc.png[align="center"]
+
+Branches
+--------
+- branch is a named pointer to a commit, example: `master`
+- full name is `refs/heads/master`
+- the commit command moves the pointer
+
+image::../../img/git-commit-moves-branch.png[align="center"]
+
+Branches
+--------
+
+- branch can also be moved "manually" to any commit
+
+	git reset
+
+image::../../img/git-reset-branch.png[]
+
+Branches
+--------
+
+- what happens on next `git commit`?
+- `C` and `D` continue to exist but they are not in the history of the master
+  branch
+
+image::../../img/git-commit-after-reset.png[]
+
+Branches
+--------
+
+- usualy there are many branches in a Git repository
+- branches can also be deleted
+
+image::../../img/git-many-branches-and-deletion.png[]

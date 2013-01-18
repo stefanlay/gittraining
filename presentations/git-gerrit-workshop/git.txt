@@ -1,0 +1,14 @@
+Git
+---
+Git is increasingly popular
+
+image:../../img/linux-logo.png[]
+image:../../img/android-logo.png[]
+image:../../img/github-logo.png[]
+image:../../img/eclipse-logo.png[]
+
+* Linux, Android, Eclipse, Ruby on Rails
+* Github
+* integration into Eclipse, Netbeans, XCode
+* Google, SAP, Qualcomm, Sony Mobile, NVIDIA, Twitter, Garmin,
+  Spotify, ...

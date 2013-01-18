@@ -1,0 +1,24 @@
+Staging Changes - Git Index
+---------------------------
+
+[graphviz]
+----
+digraph {
+  edge [style=bold, fontname=arial, fontsize=24]
+  node [style=bold, shape=folder, fontname=arial, fontsize=24, height=1, width=2]
+  wtree [shape=plaintext, label="<working tree>"]
+
+  subgraph cluster_git {
+    label = ".git"
+    fontsize=24
+    fontname=arial
+    index [color=red, fontcolor=red]
+    index -> objects [label=" git commit ", style=invis]
+    {rank=same; index; objects}
+  }
+
+  index -> wtree [color=red, dir=back, label=" git add <file>", fontcolor=red]
+}
+----
+
+'Index' or 'Staging Area' is where the next commit is prepared

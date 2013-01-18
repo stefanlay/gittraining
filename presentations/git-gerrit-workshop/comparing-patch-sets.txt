@@ -1,0 +1,10 @@
+Comparing Patch Sets
+--------------------
+
+image:../../img/compare-patch-sets-1.png[]
+
+Comparing Patch Sets
+--------------------
+
+image:../../img/compare-patch-sets-2.png[]
+

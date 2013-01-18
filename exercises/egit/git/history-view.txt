@@ -1,0 +1,80 @@
+== History View
+In this exercise you will learn how to use the History View to inspect
+the revision history in a repository.
+
+=== Preparation
+Open the History View on your project by right-clicking on your
+project and selecting 'Show In > History'. You should see the revision
+graph of your repository.
+
+=== How to configure History View to your needs
+This history view displays Author, Date, Commit Message and modified
+files of commits. The History View has quite some options to configure
+which commits are displayed.
+
+image:history-view-6.png[History View]
+
+image:history-view-buttons.png[History View Buttons]
+
+Depending on the use case you may want to ...
+
+a. ... show only those commits which are reachable from the current
+   branch. Hide all commits on other topic branches.
+b. ... see only those commits which changed the selected resource
+   (file, project, subfolder) or it’s children. E.g. display only
+   those commits which touched the selected java file. The current
+   selection is shown in the top right corner of the History view.
+c. ... see only those commits which changed anything in the parent
+   folder of the selected resource (file, project, subfolder) or it’s
+   children. E.g. display only those commits which changed the same
+   package as the selected java source.
+d. ... see only those commits which changed anything in the same
+   project as the selected resource or it’s children. Used when you
+   are working in a repository which contains multiple projects.
+e. ... don’t filter at all. Show all commits of the current repository
+
+The ptions b., c. and d. are tied to the currently selected resource.
+Button g. allows that the history view automatically updates when you
+change the selection.
+
+TIP: If you got lost with the different filters and the history
+doesn’t show what you expect, set it back to show everything.
+Therefore make sure that 'Show all branches and tags' (a) is turned on
+and 'Show all changes in repository' (e) is selected.
+
+=== Searching for Commits
+Turn on 'Show Find toolbar' (f) and type in a search string in the
+'Find' field. You can select where to search this string (in author or
+committer name, commit message, ID of the change. The found commits
+are highlighted. You can combine this search with the filters
+explained above.
+
+=== Exercises
+With the help of filters and search find out ...
+* ... which commits have been done to package
+  'org.eclipse.example.calc.internal'
+* ... who has done commit '92f83b4af8ef307e...' and which files have
+  been touched in this commit
+* ... how many branches are known which have commits changing
+  'Calculator.java'
+
+=== Actions on Commits
+If you double-click on a file touched by a commit in the History View
+you will get an editor with the content of that file in that commit.
+If you turn on 'Compare Mode' (h) then a compare view opens which
+compares the state of the file during that commit to the state in the
+previous commit. This tells which lines have been changed by a certain
+commit.
+
+Once you have selected a commit in the History View the context menu
+offers a lot of operations you can do on a commit.
+
+* Create a new branch starting from the commit with id
+  '51101ae160c684...'
+* Compare commit '92f83b4af8e...' with the second last commit on your
+  branch. Which files are different in these two commits?
+* Inspect commit 'a8c0e743721d81072de...' in the Commit Viewer. Get a
+  single list of all modifications done by this commit by switching to
+  the Diff pane in Commit Viewer.
+
+link:index.html[Git Exercises]

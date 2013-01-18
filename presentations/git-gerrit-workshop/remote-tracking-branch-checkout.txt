@@ -1,0 +1,74 @@
+Remote Tracking Branch - Checkout
+---------------------------------
+
+* it is OK to checkout a remote tracking branch
+
+  git checkout origin/release1.0
+
+* `HEAD` gets detached - doesn't point to any branch
+* detached heads means there is no current branch
+* what if someone now changes some files and commits changes?
+
+[[graph-left0]]
+--
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  F -> E
+  E -> B [weight=0]
+  D -> C -> B -> A
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+	HEAD [fillcolor="#555555", fontcolor=white]
+  "origin/release1.0" [fillcolor=lightskyblue]
+  "origin/master" [fillcolor=lightskyblue]
+
+  HEAD -> master -> D
+  "origin/release1.0" -> F
+  "origin/master" -> D
+
+  { rank=same; F; D; master; "origin/release1.0" }
+  { rank=same; E; C }
+
+  D -> F [style=invis]
+}
+----
+--
+
+[[graph-right]]
+--
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  F -> E
+  E -> B [weight=0]
+  D -> C -> B -> A
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+	HEAD [fillcolor="#555555", fontcolor=white]
+  "origin/release1.0" [fillcolor=lightskyblue]
+  "origin/master" [fillcolor=lightskyblue]
+  HEAD [color=red, fillcolor=red]
+
+  HEAD -> F [color=red]
+  master -> D
+  "origin/release1.0" -> F
+  "origin/master" -> D
+
+  { rank=same; F; D; master; "origin/release1.0" }
+  { rank=same; E; C }
+  { ranke=same; "origin/master"; HEAD }
+
+  D -> F [style=invis]
+  C -> E [style=invis]
+}
+----
+--

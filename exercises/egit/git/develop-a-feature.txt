@@ -1,0 +1,79 @@
+== Develop a Feature/Bug Fix
+
+In this exercise you will learn how to develop a new feature using EGit.
+We recommend to use a new local branch for each new change (feature or
+bug fix).
+
+=== Create a local feature branch
+The development of a new feature (or bug-fix) should normally only depend on
+the submitted state of the project (and not depend on pending changes that
+might or might not pass the code review). This is why every new feature or
+bug-fix should be developed in isolation on its own branch which is usually
+created based on the latest state of the master branch available on the server
+(this is the remote tracking branch 'origin/master' in your local clone).
+
+Go to the 'Git Repositories View'
+
+Select the remote tracking branch 'origin/master' under 'repository > Branches
+> Remote Tracking' and click 'Create Branch...'
+
+image:create-branch.png[Create branch]
+
+In the new branch dialog:
+
+* enter a name for the local feature branch into the 'Branch Name' field (this
+  is just a local name that is not exposed to anybody else)
+* set the 'Pull Strategy' to 'Rebase'
+* keep 'Checkout new branch' selected
+* confirm the dialog by clicking on 'Finish'
+
+image:create-branch-dialog.png[Create new branch]
+
+This creates and checks out the new branch:
+
+image:new-branch-checked-out.png[New branch checked out]
+
+=== Develop the feature
+Simply start editing the source code and implement the feature. The example
+project implements a simple calculator, you may want to add an operation.
+Create a new class 'Divide.java' in the package
+'org.eclipse.example.calc.internal.operations' that implements the interface
+'org.eclipse.example.calc.BinaryOperation' and add a corresponding line to
+the 'Calculator.setupDefaultOperations'.
+
+You may also decide to do something else like polish the SWT or Swing UI.
+
+=== Test your feature
+Run the unit tests. To keep the tutorial setup simple there are only unit tests
+for the logic but no UI tests.
+
+=== Commit your changes locally
+Now you want to create a new version of the local repository in your current
+feature branch containing your changes. This is called 'commit'.
+
+There are two ways to perform a commit: with the 'Commit Dialog' or from the
+'Staging View'. In this exercise we will use the commit dialog.  Select your
+project in the 'Package Explorer' and select 'Team > Commit' or click 'Commit'
+in the 'Git Toolbar'
+
+image:team-commit.png[Commit]
+
+
+In the 'Commit Changes' dialog:
+
+* Enter a commit message (explaining why the change was done is more important
+  than what was done since this can anyway be seen from the file diffs)
+* Verify that 'Author' and 'Committer' contain both your full name and your
+  correct e-mail address in the following format: 'John Doe <john.doe@example.org>'
+
+NOTE: If author and committer are not preset correctly you need to change the
+Git configuration parameters 'user.name' and/or 'user.email'. In this case
+cancel the dialog and open 'Preferences > Team > Git > Configuration > User
+Settings' and correct the values for 'user.name' and 'user.email'.
+
+* Select all files that you want to commit
+* Click 'Commit'. As result your changes are committed in your *local* repository
+
+image:commit-dialog.png[Commit dialog]
+
+link:index.html[Git Exercises]

@@ -1,0 +1,22 @@
+Git Configuration Commands
+--------------------------
+
+.Listing and editing git configuration
+----
+git config -l           <1>
+git config -l --global  <1>
+git config -l --system  <1>
+
+git config user.name "John Doe"           <2>
+git config --global user.name "John Doe"  <2>
+git config --system user.name "John Doe"  <2>
+
+git config -e           <3>
+git config -e --global  <3>
+git config -e --system  <3>
+----
+
+<1> List configuration options: overlayed, user global or system wide
+<2> Set an option for: current repository, user global or system wide
+<3> Open the config file for: current repository, user global or system
+wide in the default editor

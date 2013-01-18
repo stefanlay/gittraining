@@ -1,0 +1,6 @@
+Merge vs Rebase
+---------------
+
+image:../../img/path-conflict.png[]
+
+CAUTION: Resolve Path Conflict not by merge, but by rebase!

@@ -1,0 +1,93 @@
+== Clone the example repository and import projects into Eclipse
+
+Open the 'Git Repositories' view:
+'Window > Show View > Other > Git > Git Repositories'
+
+image:git-repositories-view.png[Git repositories view]
+
+Click 'Clone a Git repository' in the git repositories view.
+Enter the following URI in the URI field:
+
+====
+  ssh://<your-user-id>@<gerrit-host>:29418/training/calculator
+====
+
+image:clone-git-repository.png[Clone Git repository]
+
+NOTE: Do not enter anything into the password field, an extra dialog comes up
+if the SSH passphrase is required.
+
+Click 'Next'.
+
+If asked, accept the authenticity of Gerrit host. You will have to
+accept it only once, on the first access.
+
+You should see some branch names in the next dialog. Make sure all shown
+branches are selected:
+
+image:branch-selection.png[Branch selection]
+
+Click 'Next'. In the 'Directory' field, choose a path where to store the local
+repository.
+
+NOTE: The default path can be configured in 'Preferences > Team > Git' in the
+field 'Default Repository folder'
+
+Make sure the 'Import all existing projects after clone finishes' checkbox is
+selected and click 'Finish':
+
+image:finish-clone.png[Finish Git clone]
+
+=== Get Familiar with the Example Project
+
+The example repository contains two projects:
+
+* 'org.eclipse.example.calc' - contains a simple calculator
+* 'org.eclipse.example.calc.test' - contains unit tests
+
+Both projects contain launch configurations. Use them to start the calculator
+or run the unit tests.
+
+NOTE: For Mac there is a specific launch configuration with the 'Mac' in the
+name.
+
+=== Get Familiar with Eclispe EGit
+
+==== EGit Documentation
+The EGit user guide is bundled with the EGit feature, invoke it via 'Help > Help
+Contents > EGit Documentation'.
+
+==== Git Workbench Toolbar and Menu
+In order to simplify usage of the most frequently used Git actions the Git
+Command Group can be activated to show a Git Workbench Toolbar and/or Menu.
+
+* go in the menu to 'Window' > 'Customize perspective...'
+* in the tab 'Command Groups Availability' click 'Git', this will enable both
+  the Git workbench toolbar and menu
+* in the tabs 'Toolbar Visibility and Menu Visibility' you may configure which
+  actions should appear in the Git Workbench toolbar and menu
+
+image:git-workbench-toolbar-menu-1.png[]
+image:git-workbench-toolbar-menu-2.png[]
+
+
+==== Git Repositories View
+To get an overview on your git repositories open the 'Git Repositories View'.
+Select the example project and click 'Show in > Git Repositories'.
+
+image:git-repositories-view-2.png[Git repositories view]
+
+Under 'Remotes > origin' you see the fetch and the just created push
+configuration. To see the details select the URL and click in the context menu
+on 'Show In > Properties'. To see the complete repository configuration, click
+the same menu entry on the repository node.
+
+==== History View
+To browse the history of the repository, open the History View: On the
+repository node in the Git Repositories View click 'Show In > History'. Best you
+arrange the Repositories View and the History View next to each other, as shown
+below.
+
+image:history-view.png[History view]
+
+link:index.html[Git Exercises]

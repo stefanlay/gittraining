@@ -1,0 +1,6 @@
+Exercises
+---------
+
+. Configure Push to Gerrit
+. Push change to Gerrit
+. Review change

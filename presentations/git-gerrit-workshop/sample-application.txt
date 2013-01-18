@@ -1,0 +1,4 @@
+Sample Application
+------------------
+
+image::../../img/calculator.png[]

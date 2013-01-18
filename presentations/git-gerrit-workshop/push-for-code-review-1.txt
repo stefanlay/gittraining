@@ -1,0 +1,16 @@
+Push for Code Review
+--------------------
+
+Push to Gerrit is the same like push to Git
+
+* with one Gerrit speciality: +
+  [red]+refs/for/+ +
+  as the prefix for the target branch name
+
+Compare:
+
+* Push to Git: +
+  `git push origin HEAD:master`
+* Push to Gerrit: +
+  `git push origin HEAD:`[red]+refs/for/+`master`
+

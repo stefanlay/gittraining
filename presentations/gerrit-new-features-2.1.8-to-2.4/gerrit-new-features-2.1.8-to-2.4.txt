@@ -1,0 +1,183 @@
+= New Gerrit Features 2.1.8 -> 2.4
+:backend: slidy
+:max-width: 70em
+:data-uri:
+
+== New Gerrit Features 2.1.8 -> 2.4
+An upgrade of Gerrit from version 2.1.8 to version 2.4 makes a lot of
+new features available.  This presentation explains those new features
+which are most interesting to end users.
+
+For the complete list of new features and bug-fixes please consult the
+official link:http://gerrit-documentation.googlecode.com/svn/ReleaseNotes/index.html[
+release notes].
+
+[[title-page]]
+== WebUI
+
+== `Rebase Change` Button on the Change Screen
+There is a new button on the change screen that allows you to do a
+trivial rebase directly in the WebUI.  It will automatically rebase
+the change and create a new patch set.  If the rebase results in
+conflicts the operation fails and the rebase has to be done in the
+local repository as usual.
+
+image:../../img/rebase-change.png[Rebase Change]
+
+== Support for expanding the Context for a Diff
+When doing reviews there is often a need to see additional context
+around the changed lines. The context can now be extended by a single
+click:
+
+image:../../img/expand-context.png["Expand Context",width=1400]
+
+== Highlight Outdated Dependencies on Change Screen
+If a change depends on an old patch set of another change it cannot
+get merged.  This outdated dependency is now highlighted in red on the
+change screen.
+
+image:../../img/outdated-dependency.png[Outdated Dependency]
+
+== Top Level Menu on the Patch Screen
+On the Patch Screen there is now a top level menu that allows you to
+
+* switch between the Side-by-Side diff and the Unified Diff
+* to change the compared patch sets
+* to see additional change information (commit message, file list)
+* to change the user preferences
+
+image:../../img/patch-screen-top-level-menus.png[Top Level Menus]
+
+== Display Merge Commits as Differences from Automatic Merge Result
+This allows you to do code review for merge commits.
+
+image:../../img/merge-commit.png[Merge Commit]
+
+== Adding Groups as Reviewer
+Groups can now be added as reviewer on a change.  On adding the group
+will be expanded so that every member of the group is added as
+reviewer to the change.
+
+image:../../img/add-group-as-reviewer.png[Add Group as Reviewer]
+
+== Case insensitive login to Gerrit WebUI
+For LDAP the login to the Gerrit WebUI can now be configured to be
+case insensitive.
+
+[[title-page]]
+== Access Rights
+
+== Refinement of the Access Rights
+The access rights were reworked and are now more fine-grained.  In the
+Gerrit documentation a
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.4/access-control.html#conversion_table[
+conversion table] for the access rights is available.  The new access
+rights are all
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.4/access-control.html#access_category[
+documented] in details.
+
+== New Screen for editing the Access Rights
+
+image:../../img/access-rights-screen.png[Access Rights Screen]
+
+== Access Rights stored in the Git Repository
+The access rights for a project are now stored directly in the
+project's git repository in a special branch called
+`refs/meta/config`.  By this, changes to the access rights are now
+versioned.  When changing the access rights a commit message can be
+provided.  From the history of the `refs/meta/config` branch you can
+see who changed which permission.
+
+image:../../img/access-rights-in-git.png[Access Rights in Git]
+
+== Support blocking Access Rights
+Access rights can now be blocked.  This feature is used to globally
+disallow deletion and changing of tags (which would break build
+reproducability).  With this feature it is now again possible for
+project owners to assign force push on branches.
+
+== Documentation of Example Access Rights for Typical Roles
+In the link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.4/access-control.html#_examples_of_typical_roles_in_a_project[
+Gerrit access right documentation] it is now explained for typical
+roles which access rights should normally be assigned.
+
+== Permissions for Administrative Actions can now be assigned on a Fine-Grained Level
+The system capabilities that can be assigned are explained in the
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.4/access-control.html#_system_capabilities[
+Gerrit access rights documentation].
+
+[[title-page]]
+== Other
+
+== Support for custom Submit Rules on Project Level
+It is now possible to write a submit rule in Prolog and to configure
+it for a project.  A submit rule defines when a change is submittable.
+E.g. it's possible to implement a submit rule that makes the change
+only submittable if at least 2 reviewers gave a positive voting.
+
+== Support for Draft Patch Sets
+Patch sets can now be uploaded as drafts.  A draft patch set is only
+visible to the author.  Only after explicitly publishing it, it gets
+visible to other users.  Draft patch sets can be deleted by the
+author.  A draft patch set may be shared with other users by explictly
+adding them as reviewer on the change.  With this you might get
+feedback on your draft patch set from certain reviewers without
+exposing it to all users.
+
+To push a commit as draft, it has to be pushed to
+`refs/drafts/<target-branch>`.
+
+image:../../img/draft-1.png[Draft]
+
+image:../../img/draft-2.png[Draft]
+
+image:../../img/draft-3.png[Draft]
+
+WARNING: The Gerrit Trigger Plugin is not aware of draft patch sets
+yet.  If you publish a draft patch set the Gerrit Trigger Plugin does
+*NOT* trigger a build for this patch set, but you have to trigger the
+build manually as described
+link:https://wiki/wiki/display/LeanDI/Git+Gerrit+-+FAQ#GitGerrit-FAQ-HowcanIrepeatthebuildandHudsonvotingforapendingGerritchange%3F[here].
+
+== Support for Project States
+Projects can now be set to different states:
+
+* `Active`:
++
+A regular project that is active (default value)
+
+* `Read Only`:
++
+Users can see the project if `Read` permission is granted, but all
+modification operations are disabled
+
+* `Hidden`:
++
+The project is not visible for those who are not project owners
+
+image:../../img/project-states.png[Project States]
+
+== Documentation
+
+=== A quick Introduction to Gerrit
+http://gerrit-documentation.googlecode.com/svn/Documentation/2.4/intro-quick.html
+
+=== Quick Get Started Guide
+In addition to the detailed
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.4/install.html[
+installation instructions] there is now a
+link:http://gerrit-documentation.googlecode.com/svn/Documentation/2.4/install-quick.html[
+quick get started guide].
+
+++++
+<style type="text/css">
+#title-page {
+  border-bottom: 0;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  font-size: 100px;
+}
+</style>
+++++
+

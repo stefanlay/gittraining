@@ -1,0 +1,28 @@
+Branches
+--------
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  D [style=filled, fillcolor=coral1, color=red]
+  D -> C [color=red]
+  C -> B -> A
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  master [color=red, fontcolor=red, label=master]
+  master -> D [color=red]
+  { rank=same; master; D }
+
+  master_old [style=dashed, label=master, color=grey, fontcolor=grey]
+  master_old -> C [style=dashed, color=grey]
+  { rank=same; master_old; C }
+
+}
+----
+
+New commit `D` gets created and the branch is moved

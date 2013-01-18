@@ -1,0 +1,10 @@
+Push for Code Review
+--------------------
+
+It seems like every push to Gerrit goes to the same branch
+`refs/for/master`
+
+However, Gerrit tricks your git client:
+
+* it creates a new branch for the commit(s) you push
+* and creates a new open Gerrit change for each pushed commit

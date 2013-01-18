@@ -1,0 +1,22 @@
+Commit Message
+--------------
+
+----
+First line is header, shall be shorter than 70 chars
+
+Separate the body from the header by an empty line. The commit message
+should describe why you are doing the change. That's what typically helps
+best to understand what the change is all about. The details of what you
+changed are visible from the file diffs.
+
+Body can be as many paragraphs as you want, shouldn't exceed width of 80
+chars. This helps command line tools to render it nicely. Paragraphs are
+separated by empty lines.
+
+Bug: NGP-123 is rendered as a hyperlink to jtrack
+----
+
+[role="incremental"]
+* first line is header
+* separated by a blank line follows the body
+* last paragraph is for meta dat in the `key: value` format

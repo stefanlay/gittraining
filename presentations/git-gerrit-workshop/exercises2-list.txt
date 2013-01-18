@@ -1,0 +1,9 @@
+Exercises
+---------
+
+[start=6]
+. Merging, Rebasing, Resolving Conflicts
+. History View
+. Reset Branch to Previous State
+. Change a Series of Commits
+. Git Blame
