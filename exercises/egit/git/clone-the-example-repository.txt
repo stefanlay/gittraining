@@ -8,18 +8,32 @@ image:git-repositories-view.png[Git repositories view]
 Click 'Clone a Git repository' in the git repositories view.
 Enter the following URI in the URI field:
 
+.for HTTP:
 ====
-  ssh://<your-user-id>@<gerrit-host>:29418/training/calculator
+  https://<your-user-id>@<gerrit-host>/training/sample
 ====
+
+.for SSH:
+====
+  ssh://<your-user-id>@<gerrit-host>:29418/training/sample
+====
+
+[NOTE]
+For HTTP you need to enter a password for the authentication. +
+For SSH leave the 'Password' field blank (an extra dialog comes up
+if an SSH passphrase is required).
+
+.Using the 'training/sample' repository from 'gerrit-review.googlesource.com':
+[NOTE]
+Please note that SSH is not enabled on
+'gerrit-review.googlesource.com'. +
+Cloning the repository over HTTP works without authentication.
 
 image:clone-git-repository.png[Clone Git repository]
 
-NOTE: Do not enter anything into the password field, an extra dialog comes up
-if the SSH passphrase is required.
-
 Click 'Next'.
 
-If asked, accept the authenticity of Gerrit host. You will have to
+If asked, accept the authenticity of the Gerrit host. You will have to
 accept it only once, on the first access.
 
 You should see some branch names in the next dialog. Make sure all shown
@@ -51,6 +65,11 @@ or run the unit tests.
 NOTE: For Mac there is a specific launch configuration with the 'Mac' in the
 name.
 
+image:launch-sample-application.png[Launche Sample Application]
+
+.The sample application:
+image:sample-application.png[Sample Application]
+
 === Get Familiar with Eclispe EGit
 
 ==== EGit Documentation
@@ -75,19 +94,23 @@ image:git-workbench-toolbar-menu-2.png[]
 To get an overview on your git repositories open the 'Git Repositories View'.
 Select the example project and click 'Show in > Git Repositories'.
 
-image:git-repositories-view-2.png[Git repositories view]
+image:git-repositories-view-2.png[Git Repositories View]
 
 Under 'Remotes > origin' you see the fetch and the just created push
 configuration. To see the details select the URL and click in the context menu
-on 'Show In > Properties'. To see the complete repository configuration, click
+on 'Properties'. To see the complete repository configuration, click
 the same menu entry on the repository node.
+
+image:repository-properties.png[Repository Properties]
 
 ==== History View
 To browse the history of the repository, open the History View: On the
-repository node in the Git Repositories View click 'Show In > History'. Best you
-arrange the Repositories View and the History View next to each other, as shown
-below.
+repository node in the Git Repositories View click 'Show In > History'
+(Some views, e.g. in the Java EE-Perspective, do not have this
+shortcut, in this case use 'Team > Show in History'). Best you
+arrange the Repositories View and the History View next to each other,
+as shown below.
 
-image:history-view.png[History view]
+image:history-view.png[History View]
 
 link:index.html[Git Exercises]

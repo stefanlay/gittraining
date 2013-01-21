@@ -36,16 +36,27 @@ image:new-branch-checked-out.png[New branch checked out]
 === Develop the feature
 Simply start editing the source code and implement the feature. The example
 project implements a simple calculator, you may want to add an operation.
+
 Create a new class 'Divide.java' in the package
-'org.eclipse.example.calc.internal.operations' that implements the interface
-'org.eclipse.example.calc.BinaryOperation' and add a corresponding line to
+'org.eclipse.example.calc.internal.operations' that
+
+* implements the interface 'org.eclipse.example.calc.BinaryOperation' and
+* extends the class 'org.eclipse.example.calc.internal.operations.AbstractOperation'
+
+image:divide-class.png[Divide Class]
+
+To register the new operation add a corresponding line to
 the 'Calculator.setupDefaultOperations'.
+
+image:register-divide.png[Register Divide]
 
 You may also decide to do something else like polish the SWT or Swing UI.
 
 === Test your feature
 Run the unit tests. To keep the tutorial setup simple there are only unit tests
 for the logic but no UI tests.
+
+image:run-tests.png[Run Tests]
 
 === Commit your changes locally
 Now you want to create a new version of the local repository in your current

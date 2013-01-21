@@ -15,13 +15,12 @@ branch 'origin/master'.
 * Create a new local branch based on the remote tracking branch
   'origin/master'
 * You may create the new branch from the History View:
-** Select the project, then click Show 'In > History'
+** Select the project, then click 'Show In > History'
    (Some views, e.g. in the Java EE-Perspective, do not have this
    shortcut, in this case use 'Team > Show in History')
 ** In the History View click all toggle buttons as shown in the
-   screenshot (Link with Editor and Selection, Show all changes in
-   repository containing the selected resources, Compare Mode,
-   Show all Branches and Tags)
+   screenshot (Show all changes in repository containing the selected
+   resources, Compare Mode, Show all Branches and Tags)
 +
 image:history-view-2.png[History View]
 
@@ -43,6 +42,11 @@ image:create-branch-from-repositories-view.png[Create Branch from Repositories V
   anymore in your workspace.
 * Start working on a change, e.g. add a 'Multiply' operation, do not
   commit yet, first read on.
+
+image:multiply-class.png[Multiply Class]
+
+.Calculator.java:
+image:register-multiply.png[Register Multiply]
 
 === Switch branches
 Now you want to switch to another branch but you want to continue
@@ -88,8 +92,8 @@ image:commit-changes.png[Commit Changes]
 image:commit-changes-with-amend.png[Commit Changes with Amend]
 
 ** Now you see again the commit message of the last commit you made in
-   this branch. Change it to something meaningful and click the
-   'Commit' button.
+   this branch. Change it to something meaningful (e.g remove
+   '[UNFINISHED]') and click the 'Commit' button.
 ** In the History View you can now see that your first, preliminary
    commit was replaced by the new one.
 +

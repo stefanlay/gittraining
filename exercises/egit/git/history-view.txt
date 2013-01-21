@@ -69,8 +69,7 @@ commit.
 Once you have selected a commit in the History View the context menu
 offers a lot of operations you can do on a commit.
 
-* Create a new branch starting from the commit with id
-  '51101ae160c684...'
+* Create a new branch starting from the commit with id '27792504fad8...'
 * Compare commit '92f83b4af8e...' with the second last commit on your
   branch. Which files are different in these two commits?
 * Inspect commit 'a8c0e743721d81072de...' in the Commit Viewer. Get a

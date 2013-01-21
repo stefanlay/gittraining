@@ -36,8 +36,12 @@ View and choose 'Gerrit Configuration...' from the context menu on the
 
 image:gerrit-configuration.png[Gerrit Configuration]
 
-You can keep the default values in this Wizard page and confirm with
-'Finish':
+Normally you can keep the default values in this Wizard page and
+confirm with 'Finish'.
+
+[WARNING]
+When working with 'gerrit-review.googlesource.com' you need to remove
+the '/p' from the 'Push URI'
 
 image:gerrit-configuration-2.png[Gerrit Configuration]
 

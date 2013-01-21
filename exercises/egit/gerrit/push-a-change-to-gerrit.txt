@@ -28,13 +28,18 @@ chose the 'Push to Upstream' command from the context menu:
 
 image:push-to-upstream.png[Push to Upstream]
 
+If you are pushing over HTTP you are asked to provide user and
+password (if not configured already):
+
+image:http-login.png[HTTP Login]
+
 After the change is pushed the confirmation dialog will appear:
 
 image:push-confirmation.png[Push Confirmation]
 
 From the confirmation dialog we see the URL under which the change is
 exposed in Gerrit. We also see that the numerical ID of the change is
-'127485' in this case.
+'41480' in this case.
 
 === Check your Change in Gerrit
 
@@ -44,7 +49,7 @@ exposed in Gerrit. We also see that the numerical ID of the change is
 image:change-in-gerrit.png[Change in Gerrit]
 
 * *OR* simply open
-  link:https://<gerrit-host>/#/q/status:open,n,z[Gerrit] in
+  link:https://gerrit-review.googlesource.com/#/q/status:open,n,z[Gerrit] in
   your web browser and find your change in the list of open changes.
   Usually, it is the one on the top as the entries are sorted by time
   of last update. Click on the change to get to the change details.

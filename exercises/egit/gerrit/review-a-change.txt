@@ -81,9 +81,9 @@ image:review.png[Review]
 +
 image:code-review-voting.png[Code Review Voting]
 
-* The voting in the 'Verified' category will be automatically done by
-  the 'HudsonVoter' user, but you may also manually vot ein this
-  category.
+* If a Gerrit Trigger build job is configured the voting in the
+  'Verified' category will be automatically done, but you may also
+  manually vote in this category.
 +
 image:hudson-voter-voting.png[HudsonVoter Voting]
 

@@ -17,7 +17,7 @@ not the case please do the following:
 * Create a new local branch based on the remote tracking branch
   'origin/master'
 * You may create the new branch from the History View:
-** Select the project, then click Show 'In > History'
+** Select the project, then click 'Show In > History'
    (Some views, e.g. in the Java EE-Perspective, do not have this
    shortcut, in this case use 'Team > Show in History')
 ** In the History View click all toggle buttons as shown in the
@@ -190,5 +190,12 @@ image:history-view-5.png[History View]
 Note that there is a reference 'ORIG_HEAD' pointing to the commit
 which was checked out before the rebase operation. You may revert the
 rebase operation with reset as described above.
+
+You may hide the additional references such as 'ORIG_HEAD' and
+'FETCH_HEAD' from the History View by disabling 'Show' > 'Additional
+Refs' in the drop-down menu.
+
+image:show-additional-refs.png[Show Additional Refs]
+
 
 link:index.html[Git Exercises]
