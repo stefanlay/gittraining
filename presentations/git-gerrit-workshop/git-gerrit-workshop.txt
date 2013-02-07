@@ -8,8 +8,8 @@ Git/Gerrit Workshop
 Git and Gerrit Workshop
 -----------------------
 
-Agenda - Morning
-----------------
+Agenda - First Day
+------------------
 
 [[agenda-item]]
 Introduction
@@ -31,20 +31,24 @@ Merge & Rebase
 Exercises: Merge, Rebase, History Rewriting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Agenda - Afternoon
-------------------
+Agenda - Second day
+-------------------
 <<<
 [[agenda-item]]
 Push
 ~~~~
 <<<
 [[agenda-item]]
-Gerrit Concepts
-~~~~~~~~~~~~~~~
+Exercises: Pushing to Github, Pull Request
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <<<
 [[agenda-item]]
-Exercises: Code Review with Gerrit
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Working with Remote Repositories, Branching models
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Exercises: Updating from remote, rebasing local work
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <<<
 [[agenda-item]]
 Q & A
