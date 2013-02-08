@@ -1,9 +1,0 @@
-Modern Code Review - What is it?
---------------------------------
-
-[role="incremental"]
-* When one developer writes code, another developer is asked to review that code
-* A careful line-by-line critique 
-* Happens in a non-threatening context
-* Goal is cooperation, not fault-finding
-* Integral part of coding process

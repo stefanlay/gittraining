@@ -1,8 +1,0 @@
-Access Rights
--------------
-
-Decentralized access rights configuration
-
-* Every team is responsible for the access rights of their own projects.
-
-image:../../img/access-rights-configuration.png[]

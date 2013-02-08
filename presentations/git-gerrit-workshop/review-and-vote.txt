@@ -1,8 +1,0 @@
-Review and Vote
----------------
-
-* Add inline comments
-* Click `Review` to vote or comment
-
-image:../../img/voting.png[]
-
