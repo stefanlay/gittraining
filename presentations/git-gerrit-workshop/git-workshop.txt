@@ -1,12 +1,12 @@
-Git/Gerrit Workshop
-===================
+Git Workshop
+============
 :backend: slidy
 :max-width: 70em
 :data-uri:
 
 [[title-page]]
-Git and Gerrit Workshop
------------------------
+Git Workshop
+------------
 
 Agenda - First Day
 ------------------

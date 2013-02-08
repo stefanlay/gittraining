@@ -1,0 +1,201 @@
+Git Training
+===================
+:backend: slidy
+:max-width: 70em
+:data-uri:
+
+[[title-page]]
+Git Training
+-----------------------
+
+Agenda - First Day
+----------------
+
+[[agenda-item]]
+Introduction
+~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Basic Git Concepts
+~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Exercises: Local Development, Branches
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Merge & Rebase
+~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Exercises: Merge, Rebase, History Rewriting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Agenda - Second Day
+------------------
+<<<
+[[agenda-item]]
+Push
+~~~~
+<<<
+[[agenda-item]]
+Exercises: Pushing to Github, Pull Request
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Working with Remote Repositories, Branching models
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Exercises: Updating from remote, rebasing local work
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Q & A
+~~~~~
+
+include::distributed-versioning-systems-1.txt[]
+
+include::distributed-versioning-systems-2.txt[]
+
+<<<
+[[git-info]]
+include::git.txt[]
+
+<<<
+[[git-concepts]] +
+include::basic-git-concepts.txt[]
+
+<<<
+[[git-structure]]
+include::location-and-structure.txt[]
+
+<<<
+[[checkout]]
+include::checkout-to-workingtree.txt[]
+
+include::making-changes.txt[]
+
+include::staging-changes.txt[]
+
+<<<
+[[commit]]
+include::committing-changes.txt[]
+
+include::commits-are-snapshots.txt[]
+
+include::commit-knows-parents.txt[]
+
+include::commit-object.txt[]
+
+include::commit-message.txt[]
+
+include::commits.txt[]
+
+<<<
+[[branches]]
+include::branches-definition-1.txt[]
+
+include::branches-definition-2.txt[]
+
+include::branches-many.txt[]
+
+include::head.txt[]
+
+include::head-moves-on-checkout.txt[]
+
+include::branches-reset.txt[]
+
+<<<
+[[init]] +
+include::init-repo-title.txt[]
+
+include::init-repo.txt[]
+
+<<<
+[[clone]] +
+include::cloning-and-fetching-title.txt[]
+
+include::clone-remote-repo.txt[]
+
+<<<
+[[fetch]]
+include::change-in-remote-after-clone.txt[]
+
+include::fetch-updates-remote-tracking-branches.txt[]
+
+include::fetch-facts.txt[]
+
+include::git-configuration-inheritance.txt[]
+
+include::git-configuration-commands.txt[]
+
+include::git-configuration-eclipse.txt[]
+
+include::exercises-title.txt[]
+
+include::sample-application.txt[]
+
+include::exercises-landscape.txt[]
+
+include::exercises1-list.txt[]
+
+<<<
+[[merge]] +
+include::merge-and-rebase-title.txt[]
+
+include::merge-concept-1.txt[]
+
+include::merge-concept-2.txt[]
+
+include::merge-fast-forward-question.txt[]
+
+include::merge-fast-forward-concept.txt[]
+
+<<<
+[[cherry-pick]]
+include::cherry-pick-concept-1.txt[]
+
+include::cherry-pick-concept-2.txt[]
+
+<<<
+[[rebase]]
+include::rebase.txt[]
+
+include::pull.txt[]
+
+include::exercises-title.txt[]
+
+include::exercises2-list.txt[]
+
+<<<
+[[push]] +
+include::push-0.txt[]
+
+include::push-1.txt[]
+
+include::push-2.txt[]
+
+include::push-3.txt[]
+
+<<<
+[[remote]]
+include::remote-0.txt[]
+
+include::remote-1.txt[]
+
+++++
+<style type="text/css">
+#title-page {
+  border-bottom: 0;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  font-size: 100px;
+}
+#agenda-item {
+  border-bottom: 0;
+}
+</style>
+++++
+
