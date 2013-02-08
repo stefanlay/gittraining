@@ -2,5 +2,5 @@
 
 * link:abstract.html[Training Abstract]
 * link:git-gerrit-workshop.html[Slides]
-* link:../../exercises/egit/git/index.html[Git Exercises]
-* link:../../exercises/gerrit/egit/index.html[Gerrit Exercises]
+* link:../../target/exercises/egit/git/index.html[Git Exercises]
+* link:../../target/exercises/gerrit/egit/index.html[Gerrit Exercises]
