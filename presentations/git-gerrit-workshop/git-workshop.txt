@@ -8,7 +8,7 @@ Git Workshop
 Git Workshop
 ------------
 
-Agenda - First Day
+Agenda
 ------------------
 
 [[agenda-item]]
@@ -31,7 +31,7 @@ Merge & Rebase
 Exercises: Merge, Rebase, History Rewriting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Agenda - Second day
+Agenda
 -------------------
 <<<
 [[agenda-item]]
