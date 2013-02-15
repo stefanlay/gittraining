@@ -1,4 +1,4 @@
-asciidoc -a icons -a iconsdir=/opt/local/etc/asciidoc/images/icons git-workshop.txt
-asciidoc -a icons -a iconsdir=/opt/local/etc/asciidoc/images/icons workshop-preparations.txt
-asciidoc -a icons -a iconsdir=/opt/local/etc/asciidoc/images/icons abstract.txt
-asciidoc -a icons -a iconsdir=/opt/local/etc/asciidoc/images/icons index.txt
+asciidoc -a icons -a iconsdir=/usr/share/doc/asciidoc/doc/images/icons git-workshop.txt
+asciidoc -a icons -a iconsdir=/usr/share/doc/asciidoc/doc/images/icons workshop-preparations.txt
+asciidoc -a icons -a iconsdir=/usr/share/doc/asciidoc/doc/images/icons abstract.txt
+asciidoc -a icons -a iconsdir=/usr/share/doc/asciidoc/doc/images/icons index.txt
