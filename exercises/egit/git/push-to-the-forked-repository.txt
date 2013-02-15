@@ -1,0 +1,13 @@
+== Push to the forked repository
+
+=== Add a new remote
+
+=== Create a new commit in master
+
+=== Push to remote
+
+=== Create a new commit in a new branch
+
+=== Push to remote
+
+link:index.html[Git Exercises]

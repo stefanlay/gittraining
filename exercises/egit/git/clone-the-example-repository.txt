@@ -8,33 +8,18 @@ image:git-repositories-view.png[Git repositories view]
 Click 'Clone a Git repository' in the git repositories view.
 Enter the following URI in the URI field:
 
-.for HTTP:
 ====
-  https://<your-user-id>@<gerrit-host>/training/sample
-====
-
-.for SSH:
-====
-  ssh://<your-user-id>@<gerrit-host>:29418/training/sample
+  https://github.com/stefanlay/gittraining.git
 ====
 
+
+.Using the 'training/sample' repository from 'github.com':
 [NOTE]
-For HTTP you need to enter a password for the authentication. +
-For SSH leave the 'Password' field blank (an extra dialog comes up
-if an SSH passphrase is required).
-
-.Using the 'training/sample' repository from 'gerrit-review.googlesource.com':
-[NOTE]
-Please note that SSH is not enabled on
-'gerrit-review.googlesource.com'. +
-Cloning the repository over HTTP works without authentication.
+Cloning the repository over HTTPS works without authentication.
 
 image:clone-git-repository.png[Clone Git repository]
 
 Click 'Next'.
-
-If asked, accept the authenticity of the Gerrit host. You will have to
-accept it only once, on the first access.
 
 You should see some branch names in the next dialog. Make sure all shown
 branches are selected:

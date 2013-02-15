@@ -17,3 +17,10 @@ include::reset-branch-to-a-previous-state.txt[]
 include::change-a-series-of-commits.txt[]
 
 include::use-the-git-blame-feature.txt[]
+
+include::fork-the-example-repository.txt[]
+
+include::push-to-the-forked-repository.txt[]
+
+include::fetch-rebase-and-push.txt[]
+
