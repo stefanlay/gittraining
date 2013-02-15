@@ -1,0 +1,7 @@
+Exercises
+---------
+
+[start=11]
+. Fork the Repository on Github
+. Push to the forked Repository
+
