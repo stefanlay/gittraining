@@ -130,9 +130,7 @@ image:merge-tool-resolved-conflict.png[Merge Tool with resolved conflict]
   drag and drop.
 * Select 'Team > Commit' or press the 'Commit' button in the Git
   Staging View. Note that there is already a commit message proposed
-  by Git. Leave it as it is (if you want to push the commit to Gerrit
-  a Change-Id line must be included into the commit message, not
-  needed for this exercise).
+  by Git. Leave it as it is.
 
 === Undo merging with Reset
 After you have done a merge as described above assume that you do not
