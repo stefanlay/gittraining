@@ -1,17 +1,49 @@
 == Fork the example repository on github
 
+In the following exercises you will work with remote repositories.
+First you will learn how to work with a repository where only you have
+access. Such a repository can easily be created at github. 
+
+In github there are two ways to get a repository.
+
+* Create a new one and push the initial content from a local repository
+* Create a copy of an existing repository hosted at github. in github, this is called 'Fork'
+
+As we have already worked with the repositoy at 
+https://github.com/laytraining/gittraining-sample.git, we use the second way.
+
 === Sign up at github
+
+Before you can fork a repository you have to create an account at github.
+
+Open http://www.github.com in a browser. Enter a username, an e-mail adress and a password.
+The e-mail address should match the address you used for the git setup; github uses the e-mail
+address to identify the author of a commit.
 
 image:githubstart.png[Sign up at Github]
 
 === Fork the Repository
 
+Once you have signed up you can read about forking by pressing the fork button.
+
 image:fork_button.png[Fork Help]
+
+In order to fork a repository you have to look it up in github.
+
+Enter "gittraining-sample" in the search box:
 
 image:search-github.png[Search Repository]
 
+Once you found it, click on the link:
+
 image:search-github2.png[Search Result]
 
+Now you can create your own fork by pressing the 'Fork' button:
+
 image:fork-button2.png[Fork Button]
+
+You have now created your own copy of the training repository on github.
+
+In the next exercise you will learn how you can link your local clone to the new repository and how you can push to it.
 
 link:index.html[Git Exercises]
