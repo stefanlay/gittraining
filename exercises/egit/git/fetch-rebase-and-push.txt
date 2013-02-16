@@ -1,20 +1,52 @@
 == Fetch, Rebase and Push
 
-=== Try to push to origin
+In this exercise you learn a typical workflow when you work with others at the same remote repository.
+All developers push to the same branch. Typically this branch has evolved since you started your local feature and a push will fail.
+Here you learn how you can handle this common situation. 
+
+=== Preparation
+
+For this exercise, we use the original training repository at https://github.com/laytraining/gittraining-sample.git.
+
+Ask the trainers to add you as a coworker to this repository. Otherwise you are not authorized to push.
+
+Follow exercise 2, link:develop-a-feature.txt[Develop a feature] or exercise 3, link:develop-feature-use-staging-view.txt[Develop a feature using the staging view], 
+to create a new commit in your local repository. 
+
+=== Configure push
+
+First you have to configure that a push to origin pushes to the master branch. Select 'Configure Push...'
 
 image:configure_push_to_master.png[Configure Push to Origin]
 
+Now enter master into the 'Remote branch' field. Leave 'HEAD' in the 'Local branch' field. This means that always the currently checked out
+commit will be pushed to master (and of course all its ancestors which are not yet in the remote repository).
+
 image:refspec_master.png[Push Refspec]
+
+=== Try to push to origin
+
+The trainers have created a commit in the master branch of the central repository such that push to master will fail.
+
+Select 'Push to Upstream' in the Git Repositories View or 'Team > Push to Upstream' in the package explorer.
+You should get the following error dialog:
 
 image:push_rejected.png[Push Rejected]
 
-=== Fetch from origin
+This means that git cannot incorporate your commit into the master branch, because your commit is not based on its
+latest state. You first have to fetch the latest state and rebase your local branch on top of it.
 
-=== Rebase locally
+=== Fetch from origin and Rebase
+
+Follow link:fetch-the-latest-state-from-upstream.txt[Fetch the latest state from upstream]  and 
+link:merge-rebase-and-resolving-conflicts.txt[Merge, rebase and resolve conflicts].
 
 image:rebaseontop.png[Rebase on top]
 
 === Push
+
+Now you can try to push again. If you are lucky and no other training participant has successfully pushed in the meantime, 
+your push will succeed
 
 image:after_push.png[After push]
 
