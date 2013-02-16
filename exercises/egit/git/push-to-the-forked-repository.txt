@@ -1,30 +1,82 @@
 == Push to the forked repository
 
+In this exercise you will learn how to push commits from your local repository
+to a remote repository. You will reuse your already cloned repository and add
+the fork as another remote repository. 
+
+[NOTE]
+Another way to achieve the goal would be
+to create a new clone of the forked repository. However, having everything in one
+repository has many advantages. For example, in eclipse you can then easily
+checkout versions of your projects from the two remote repositories
+
+=== Preparation
+Follow exercise 1, link:clone-the-example-repository.txt[Clone the example repository].
+Follow exercise 12, link:fork-the-example-repository.txt[Fork the example repository],
+to create your own copy of the training repository on github
+
 === Add a new remote
+
+As git is a distributed versioning system, there can be more than one remote repository for a local repository.
+In the local repository you can address each remote repository by a shortcut.
+This shortcut is simply called 'remote'. For such a remote several properties can be 
+specified, e.g. URL, branches to fetch or branches to push. When you cloned your repository, git already created
+a default remote called 'origin'. You now create a second remote for your fork at github.
+
+You will need the URL. Copy it to the clipboard from github.	
 
 image:copyurl.png[Copy URL from Github]
 
+In the Git Repositories View, select 'Create Remote' on the 'Remotes' node of your clone.
+
 image:createremote.png[Create Remote]
+
+In the next dialog, enter a name and select the radiobutton 'Configure fetch'
 
 image:remote_github.png[Configure Remote]
 
+Now press the button 'Change' next to the URL field.
+
 image:githubconfigurefetch.png[Configure Fetch]
+
+The URL will be automatically taken from the clipboard in the next dialog.
 
 image:githubdestination.png[Fetch URL]
 
+Now you can press finish. In order to test if everything worked well you can fetch from your new remote.
+See exercise 5, link:fetch-the-latest-state-from-upstream.txt[Fetch the latest state from upstream]
+ for more details.
+
 image:github_fetch.png[Fetch from Github]
+
+Even if there is no commit in the remote repository you don't already have locally, the fetch command does something: 
+It creates the  branch 'github/master' which points to the same commit as the master branch at the remote tracking branch. This is a so-called 
+remote-tracking-branch. 
 
 image:github_fetch_result.png[Github fetch result]
 
 === Create a new commit in a new branch
 
+Follow exercise 2, link:develop-a-feature.txt[Develop a feature] or exercise 3, link:develop-feature-use-staging-view.txt[Develop a feature using the staging view], 
+to create a new commit in your local repository. You should create the local branch based on the new remote, see screenshot below.
+When you do this, the push operation will push this branch to the new remote repository per default.
+
 image:createbranchgithub.png[Local branch]
 
 === Push to remote
 
+Select 'Push to Upstream' in the Git Repositories View or 'Team > Push to Upstream' in the package explorer.
+Now github needs your username and password. Note that you could clone and fetch without authentication,
+but in order to push, you need valid credentials.
+
 image:push_github_login.png[Push login]
 
+Once you have successfully pushed, you see the following result dialog:
+
 image:github_pushresult.png[Push result]
+
+Per default, egit pushes the currently checked out branch to a branch with the same name.
+ Note that git created a new remote tracking branch:
 
 image:github_remote_tracking.png[Remote tracking branch]
 
