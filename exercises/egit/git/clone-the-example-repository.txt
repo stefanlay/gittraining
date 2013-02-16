@@ -9,7 +9,7 @@ Click 'Clone a Git repository' in the git repositories view.
 Enter the following URI in the URI field:
 
 ====
-  https://github.com/stefanlay/gittraining.git
+  https://github.com/laytraining/gittraining-sample.git
 ====
 
 

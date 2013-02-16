@@ -2,6 +2,16 @@
 
 === Sign up at github
 
+image:githubstart.png[Sign up at Github]
+
 === Fork the Repository
+
+image:fork_button.png[Fork Help]
+
+image:search-github.png[Search Repository]
+
+image:search-github2.png[Search Result]
+
+image:fork-button2.png[Fork Button]
 
 link:index.html[Git Exercises]

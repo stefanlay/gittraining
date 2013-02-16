@@ -2,12 +2,30 @@
 
 === Add a new remote
 
-=== Create a new commit in master
+image:copyurl.png[Copy URL from Github]
 
-=== Push to remote
+image:createremote.png[Create Remote]
+
+image:remote_github.png[Configure Remote]
+
+image:githubconfigurefetch.png[Configure Fetch]
+
+image:githubdestination.png[Fetch URL]
+
+image:github_fetch.png[Fetch from Github]
+
+image:github_fetch_result.png[Github fetch result]
 
 === Create a new commit in a new branch
 
+image:createbranchgithub.png[Local branch]
+
 === Push to remote
+
+image:push_github_login.png[Push login]
+
+image:github_pushresult.png[Push result]
+
+image:github_remote_tracking.png[Remote tracking branch]
 
 link:index.html[Git Exercises]

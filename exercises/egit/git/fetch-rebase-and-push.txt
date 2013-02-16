@@ -2,10 +2,20 @@
 
 === Try to push to origin
 
+image:configure_push_to_master.png[Configure Push to Origin]
+
+image:refspec_master.png[Push Refspec]
+
+image:push_rejected.png[Push Rejected]
+
 === Fetch from origin
 
 === Rebase locally
 
+image:rebaseontop.png[Rebase on top]
+
 === Push
+
+image:after_push.png[After push]
 
 link:index.html[Git Exercises]
