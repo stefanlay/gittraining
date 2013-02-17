@@ -2,62 +2,41 @@
 
 [width="30%",cols="s,^m"]
 |=======
-|Target Audience |Git/Gerrit Beginners
-|Duration |1 day
+|Target Audience |Git Beginners
+|Duration |2 days
 |Language |English
-|Type |hand-on workshop
+|Type |hands-on workshop
 |=======
 
 == Abstract
 
-The Git/Gerrit training is a hands-on workshop where participants learn
-how to work with EGit and Gerrit. +
+The Git training is a hands-on workshop where participants learn
+how to work with git and the git tools in eclipse (EGit). +
 There are exercises so that everybody can get familiar with the tools
 and the workflows. +
-The basic Git and Gerrit concepts will be explained in details. +
-Additionally background information about code review and best
-practices will be provided.
+The basic Git concepts will be explained in details. +
 
-== Training preparation
-
-To attend the training every participant has to
-link:workshop-preparations.html[setup the local environment] *before*
-the training.
 
 == Content
 
-* link:git-gerrit-workshop.html#git-info[General information about Git]
-* link:git-gerrit-workshop.html#git-concepts[Git Concepts]:
-** link:git-gerrit-workshop.html#git-structure[Repository Structure]
-** link:git-gerrit-workshop.html#checkout[Checkout]
-** link:git-gerrit-workshop.html#commit[Committing Changes]
-** link:git-gerrit-workshop.html#branches[Branches]
-** link:git-gerrit-workshop.html#clone[Clone] &
-   link:git-gerrit-workshop.html#fetch[Fetch]
-** link:git-gerrit-workshop.html#merge[Merge],
-   link:git-gerrit-workshop.html#cherry-pick[Cherry-Pick],
-   link:git-gerrit-workshop.html#rebase[Rebase]
-** link:git-gerrit-workshop.html#push[Push]
-* link:git-gerrit-workshop.html#gerrit-intro[Gerrit Introduction]
-* link:git-gerrit-workshop.html#code-review[Code Review]
-* link:git-gerrit-workshop.html#gerrit-concepts[Gerrit Concepts]:
-** link:git-gerrit-workshop.html#push-for-review[Push for Code Review]
-** link:git-gerrit-workshop.html#change[Change]
-** link:git-gerrit-workshop.html#review-and-vote[Review and Voting]
-** link:git-gerrit-workshop.html#refine-change[Refining a Change]
-** link:git-gerrit-workshop.html#fetch-open-change[Fetch Open Changes]
-** link:git-gerrit-workshop.html#submit[Submit]
-** link:git-gerrit-workshop.html#path-conflict[Path Conflicts]
-** link:git-gerrit-workshop.html#cip[Continuous Integration Builds]
-* link:git-gerrit-workshop.html#best-practices[Best Practices]
-* link:exercises/git/index.html[Git Exercises]
-* link:exercises/gerrit/index.html[Gerrit Exercises]
+* link:git-workshop.html#git-info[General information about Git]
+* link:git-workshop.html#git-concepts[Git Concepts]:
+** link:git-workshop.html#git-structure[Repository Structure]
+** link:git-workshop.html#checkout[Checkout]
+** link:git-workshop.html#commit[Committing Changes]
+** link:git-workshop.html#branches[Branches]
+** link:git-workshop.html#clone[Clone] &
+   link:git-workshop.html#fetch[Fetch]
+** link:git-workshop.html#merge[Merge],
+   link:git-workshop.html#cherry-pick[Cherry-Pick],
+   link:git-workshop.html#rebase[Rebase]
+** link:git-workshop.html#push[Push]
+* link:../../target/exercises/egit/git/index.html[Git Exercises]
 
 == Training Material
 
-* link:git-gerrit-workshop.html[Slides]
-* link:../../exercises/egit/git/index.html[Git Exercises]
-* link:../../exercises/egit/gerrit/index.html[Gerrit Exercises]
+* link:git-workshop.html[Slides]
+* link:../../target/exercises/egit/git/index.html[Git Exercises]
 
-WARNING: To watch the training material we recommand to use a browser
+WARNING: To watch the training material we recommend to use a browser
 different than Internet Explorer.
