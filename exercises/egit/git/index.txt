@@ -13,6 +13,9 @@
   previous state]
 . link:change-a-series-of-commits.html[Change a series of commits]
 . link:use-the-git-blame-feature.html[Use the 'git blame' feature]
+. link:fork-the-example-repository.html[Fork the example repository]
+. link:push-to-the-forked-repository.html[Push to the forked repository]
+. link:fetch-rebase-and-push.html[Fetch, rebase and push]
 
 == Git Exercises - PDF Format
 
@@ -29,3 +32,6 @@
   previous state]
 . link:change-a-series-of-commits.pdf[Change a series of commits]
 . link:use-the-git-blame-feature.pdf[Use the 'git blame' feature]
+. link:fork-the-example-repository.pdf[Fork the example repository]
+. link:push-to-the-forked-repository.pdf[Push to the forked repository]
+. link:fetch-rebase-and-push.pdf[Fetch, rebase and push]
