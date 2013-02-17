@@ -170,7 +170,15 @@ include::push-1.txt[]
 
 include::push-2.txt[]
 
+include::exercises-title.txt[]
+
+include::exercises3-list.txt[]
+
 include::push-3.txt[]
+
+include::exercises-title.txt[]
+
+include::exercises4-list.txt[]
 
 
 ++++
