@@ -1,0 +1,36 @@
+Tags
+----
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  C -> B -> A
+
+  D [style=invis]
+  D -> C [style=invis]
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master; C }
+
+  master -> C
+
+  E [style=invis]
+  E -> C [style=invis]
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=gold, color=black]
+  { rank=same; "release_1.0"; C }
+
+  "release_1.0" -> C
+
+}
+----
+
+'Q:' How to mark a commit as a released version?
+
+* tags can be checked out, but are not moved on commit
+* tags can contain further text (annotated tags)
+* tags can be signed with GPG
+

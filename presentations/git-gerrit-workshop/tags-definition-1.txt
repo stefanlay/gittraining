@@ -1,0 +1,25 @@
+Tags
+----
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  C -> B -> A
+
+  D [style=invis]
+  D -> C [style=invis]
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master; C }
+
+  master -> C
+
+}
+----
+
+'Q:' How to mark a commit as a released version?
+
+* branches should not be used for that, they easily move

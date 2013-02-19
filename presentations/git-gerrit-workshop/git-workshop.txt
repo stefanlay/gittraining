@@ -107,6 +107,13 @@ include::head-moves-on-checkout.txt[]
 include::branches-reset.txt[]
 
 <<<
+[[tags]]
+include::tags-definition-1.txt[]
+
+include::tags-definition-2.txt[]
+
+
+<<<
 [[clone]] +
 include::cloning-and-fetching-title.txt[]
 
