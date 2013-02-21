@@ -2,8 +2,7 @@ Git Repository Location and Structure
 -------------------------------------
 
 image:../../img/git-fs-layout.png[]
-
-[role="incremental"]
+	
 * `.git` folder is the 'Git repository'
 * files/folders next to `.git` folder are the 'working tree'
 * one working tree per repository
