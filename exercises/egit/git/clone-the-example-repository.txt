@@ -55,7 +55,7 @@ image:launch-sample-application.png[Launche Sample Application]
 .The sample application:
 image:sample-application.png[Sample Application]
 
-=== Get Familiar with Eclispe EGit
+=== Get Familiar with Eclipse EGit
 
 ==== EGit Documentation
 The EGit user guide is bundled with the EGit feature, invoke it via 'Help > Help
