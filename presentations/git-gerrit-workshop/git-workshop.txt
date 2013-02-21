@@ -9,7 +9,7 @@ Git Workshop
 ------------
 
 Agenda
-------------------
+------
 
 [[agenda-item]]
 Introduction
@@ -32,7 +32,7 @@ Exercises: Merge, Rebase, History Rewriting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Agenda
--------------------
+------
 <<<
 [[agenda-item]]
 Push
