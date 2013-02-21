@@ -1,0 +1,9 @@
+What is a version control system?
+---------------------------------
+
+* Allows the creation of a history for a collection of files
+* Functionality to revert the collection of files to another state
+* The collection of files and the complete history are stored in a repository
+
+image:./img/vcs_state10.png[]
+

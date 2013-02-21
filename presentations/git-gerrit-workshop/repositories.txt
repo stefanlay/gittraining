@@ -1,0 +1,7 @@
+Git Repositories
+----------------
+
+* Always a complete repository with all the history 
+* If copied (cloned) from another repository both are equal
+* Clone repository remembers its origan and setup a connection to it
+

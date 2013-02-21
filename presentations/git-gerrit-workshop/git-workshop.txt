@@ -54,10 +54,13 @@ Exercises: Updating from remote, rebasing local work
 Q & A
 ~~~~~
 
-include::distributed-versioning-systems-1.txt[]
+include::./dvcs/distributed-versioning-systems-1.txt[]
 
-include::distributed-versioning-systems-2.txt[]
+include::./dvcs/distributed-versioning-systems-2.txt[]
 
+include::./dvcs/distributed-versioning-systems-3.txt[]
+
+include::./dvcs/distributed-versioning-systems-4.txt[]
 <<<
 [[git-info]]
 include::git.txt[]
@@ -66,8 +69,10 @@ include::git.txt[]
 [[git-concepts]] +
 include::basic-git-concepts.txt[]
 
+
 <<<
 [[git-structure]]
+include::repositories.txt[]
 include::location-and-structure.txt[]
 
 <<<

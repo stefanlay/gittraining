@@ -1,0 +1,15 @@
+Advantages of distributed version control systems
+-------------------------------------------------
+Distributed means no central repository
+
+* each developer has a complete, local repository
+* easy offline usage
+* easy to branch a project
+
+No reasons anymore not to commit
+
+* in CVCS your commit affects others
+* might break the build
+
+DVCS allows larger refactoring and developments without affecting the main developer branch
+

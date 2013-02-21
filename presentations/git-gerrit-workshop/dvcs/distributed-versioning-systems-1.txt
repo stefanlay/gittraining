@@ -1,0 +1,9 @@
+What is a distributed version control system?
+---------------------------------------------
+
+* no central server
+* all repositories are equal
+* copying a repository is called cloning
+* local operations are possible
+
+
