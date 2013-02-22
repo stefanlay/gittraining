@@ -7,8 +7,8 @@ digraph {
   edge [style=bold, arrowhead=none, fontname=arial, fontsize=24]
   node [style=bold, shape=folder, fontname=arial, fontsize=24, height=1, width=2]
   wtree [shape=plaintext, label="<working tree>"]
-  p1 [label="", width=0, height=0]
-  p2 [label="", width=0, height=0]
+  p1 [style=invis, label="", width=0, height=0]
+  p2 [style=invis, label="", width=0, height=0]
   git [label=".git", width=2]
 
   Calculator -> p1
