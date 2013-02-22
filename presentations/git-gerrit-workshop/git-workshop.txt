@@ -8,7 +8,7 @@ Git Workshop
 Git Workshop
 ------------
 
-Agenda
+Agenda 
 ------
 
 [[agenda-item]]
@@ -114,6 +114,8 @@ include::branches-reset.txt[]
 include::amend-1.txt[]
 
 include::amend-2.txt[]
+
+include::detached-head.txt[] 
 
 <<<
 [[tags]]

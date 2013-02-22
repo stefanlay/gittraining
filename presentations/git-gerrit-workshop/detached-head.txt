@@ -1,0 +1,39 @@
+Detached Head
+-------------
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  A[label=A]
+  B[label=B]
+  D[label=D]
+  C[label=C]
+ 
+  C -> B [weight=0]
+  D -> B -> A
+ 
+  E [style=invis]
+  E -> D [style=invis]
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  HEAD [fillcolor="#555555", fontcolor=white]
+  HEAD -> C
+  master -> D
+
+ { rank=same; HEAD; master; D; C }
+
+}
+----
+
+HEAD can directly point to a commit
+
+* The state is called "Detached Head"
+* A commit will work as usual
+* Can be achieved by checkout of a commit, a tag or a remote tracking branch
+* When checking out another branch or commit, commit C will not be visible anymore
+* C is still there (also logged in reflog)
+
