@@ -19,11 +19,11 @@ digraph {
   E -> D [style=invis]
 	edge [arrowhead=normal]
 	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
-  { rank=same; master; D }
 
-  master -> D
+  HEAD [fillcolor="#555555", fontcolor=white]
+  HEAD -> master -> D
 
-{ rank=same; D; C }
+ { rank=same; HEAD; master; D; C }
 
 }
 ----

@@ -13,9 +13,10 @@ digraph {
   D -> C [style=invis]
 	edge [arrowhead=normal]
 	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
-  { rank=same; master; C }
-
-  master -> C
+ 
+  HEAD [fillcolor="#555555", fontcolor=white]
+  HEAD -> master -> C
+ { rank=same; HEAD; master; C }
 
 }
 ----
