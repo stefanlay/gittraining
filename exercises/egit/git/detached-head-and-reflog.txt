@@ -1,0 +1,51 @@
+== Detached Head and Reflog
+
+Once you get used to git you appreciate that git does not throw away anything which is added to the repository. 
+For example,  if a commit is not reachable from any branch or reference, it is still there in the repository.
+There are some tools which help to find it. One powerful tool is the so-called reflog.
+
+In this exercise you create such an unreferenced commit by committing with a detached head. There are other
+scenarios where a commit gets lost, e.g. after an amend or a reset.
+
+=== Detach your head
+A simple way to create a detached head is to check out a remote tracking branch. This is a common scenario. 
+You may want to test the state in the remote repository.
+
+Go to the Git repositories view and checkout origin/master.
+
+image:checkout_remote.png[Check out remote tracking branch]
+
+Egit warns you that you now have a detached head.
+
+image:detached_head.png[Detached head]
+
+Now you come back from lunch and you do not realize that you have not checked out a branch.
+You create a very complicated feature and commit it.
+
+The history view looks like this:
+
+image:detached_head2.png[Detached head history view]
+
+=== "Loose" your commit 
+
+The next morning you come back to your office and you urgently have to fix a bug. Checkout another branch.
+
+The commit you made before is not visible anymore in the history view.
+
+image:detached_head3.png[Detached head history view after checkout]
+
+=== Find it again in the reflog
+
+Git has not only kept the commit in the repository, it has even written a log entry that the HEAD had pointed to it.
+To find it again, open the Git Reflog view, either with Ctrl+3 and typing reflog or from the Git repositories view, 
+Show in -> Git reflog. Now you see a table with all the commits where HEAD pointed to, together with the 
+commit message, the date and a description of why the HEAD changed.
+
+image:reflog1.png[]
+
+When you click on the branch symbol on the upper right corner, you can select a branch. Then you will
+ see all the commits where the branch has pointed to.
+
+From the table you can directly check out the commit, or you can open the Git Commit Viewer.
+
+image:reflog2.png[]

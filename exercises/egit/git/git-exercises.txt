@@ -24,4 +24,7 @@ include::push-to-the-forked-repository.txt[]
 
 include::fetch-rebase-and-push.txt[]
 
+include::detached-head-and-reflog.txt[]
+
+
 

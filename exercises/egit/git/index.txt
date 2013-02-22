@@ -16,6 +16,7 @@
 . link:fork-the-example-repository.html[Fork the example repository]
 . link:push-to-the-forked-repository.html[Push to the forked repository]
 . link:fetch-rebase-and-push.html[Fetch, rebase and push]
+. link:detached-head-and-reflog.html[Detached head and reflog]
 
 == Git Exercises - PDF Format
 
@@ -35,3 +36,4 @@
 . link:fork-the-example-repository.pdf[Fork the example repository]
 . link:push-to-the-forked-repository.pdf[Push to the forked repository]
 . link:fetch-rebase-and-push.pdf[Fetch, rebase and push]
+. link:detached-head-and-reflog.pdf[Detached head and reflog]
