@@ -1,0 +1,27 @@
+Amend
+-----
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  C -> B -> A
+
+  D [style=invis]
+  D -> C [style=invis]
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master; C }
+
+  master -> C
+
+}
+----
+
+Commit --amend allows to change the content of the current commit
+
+* You realize that commit C should be fixed
+* Do the fix in the working tree
+

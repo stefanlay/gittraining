@@ -111,6 +111,10 @@ include::head-moves-on-checkout.txt[]
 
 include::branches-reset.txt[]
 
+include::amend-1.txt[]
+
+include::amend-2.txt[]
+
 <<<
 [[tags]]
 include::tags-definition-1.txt[]
