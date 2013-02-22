@@ -1,0 +1,26 @@
+Git reflog
+----------
+
+[graphviz]
+----
+digraph {
+  edge [style=bold, fontname=arial, fontsize=24]
+  node [style=bold, shape=folder, fontname=arial, fontsize=24, height=1, width=2]
+  commit [shape=plaintext, label="HEAD or branch changed"]
+
+  subgraph cluster_git {
+    label = ".git"
+    fontsize=24
+    fontname=arial
+    reflog [color=red, fontcolor=red]
+    {rank=same; objects; index; reflog}
+  }
+
+  reflog -> commit [color=red, dir=back, label=" write entry", fontcolor=red]
+}
+----
+
+* git records each change of HEAD or branch pointer
+* git reflog command lists all entries
+* reflog can expire
+

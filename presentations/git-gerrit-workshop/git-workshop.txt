@@ -201,6 +201,9 @@ include::exercises-title.txt[]
 include::exercises4-list.txt[]
 
 
+include::reflog.txt[]
+
+
 ++++
 <style type="text/css">
 #title-page {
