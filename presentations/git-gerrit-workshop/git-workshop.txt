@@ -200,6 +200,10 @@ include::exercises-title.txt[]
 
 include::exercises4-list.txt[]
 
+<<<
+[[advanced]]
+
+include::further-topics.txt[]
 
 include::reflog.txt[]
 
