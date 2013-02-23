@@ -207,6 +207,12 @@ include::further-topics.txt[]
 
 include::reflog.txt[]
 
+include::stash.txt[]
+
+include::stash2.txt[]
+
+include::stash-apply.txt[]
+
 
 ++++
 <style type="text/css">

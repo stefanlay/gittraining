@@ -1,0 +1,31 @@
+Stash
+-----
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  E -> B -> A
+  C -> B
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  bugfix15 -> E
+  feature1 -> C
+  "working tree" [style=dashed, color=black, fontcolor=black]
+  "working tree" -> C [style=dashed, color=black]
+
+  { rank=same; feature1; E; C; bugfix15 }
+
+}
+----
+
+Switching branches with changes in working tree
+
+* Checking out bugfix15 would be possible if no file changed in working tree is affected
+* This is often not what the user wants
+* Solution 1: Creating a commit in feature1
+* Solution 2: Stash away the changes

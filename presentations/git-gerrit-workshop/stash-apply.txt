@@ -1,0 +1,34 @@
+Stash Apply
+-----------
+
+[graphviz]
+----
+digraph {
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+	edge [style=bold, color="#385d8a", arrowhead=none]
+
+  E -> B -> A
+  C -> B
+
+	edge [arrowhead=normal]
+	node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+
+  bugfix15 -> E
+  feature1 -> C
+  "working tree" [style=dashed, color=black, fontcolor=black]
+  "working tree" -> C [style=dashed, color=black]
+
+  ".git" [style=bold, shape=folder, fontname=arial, fontsize=24, height=1, width=2]
+
+  "working tree" -> ".git" [color=red, dir=back, label="stash apply", fontcolor=red]
+
+  { rank=same; feature1; E; C; bugfix15 }
+  { rank=same; "working tree"; ".git" }
+
+}
+----
+
+* Later the stashed change can be reapplied to branch feature1
+* Stash apply applies the last stashed change
+* Older changes can be referenced by the notation 'stash@\{n\}'
+* The stash references are kept in the reflog
