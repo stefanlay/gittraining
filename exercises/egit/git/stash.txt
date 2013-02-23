@@ -1,0 +1,40 @@
+== Stashing Changes in EGit
+
+Stashing in Git refers to taking all changes made in your working directory and committing them to a separate area known as the “stash”.  Committing to the stash does not create a new commit on the currently checked out branch but instead creates a new stashed commit which includes changes made in the working directory and staged in the index.  Once stashing in complete the working directory and index are reset to the current branch’s head revision.  Stashing is common when you want to merge or rebase but don’t want to lose your local uncommitted changes but you aren’t quite ready to commit them on the current branch.  You can first stash your work, perform the merge or rebase and then apply the stash to get the changes back in your working directory.  A more in-depth explanation of stashing is available in the Git Book.
+
+Support for stashing is being added in EGit 2.0 due out with Eclipse Juno (3.8).  It will include support for listing, creating, applying, and deleting stashed commits from the Git Repositories view.
+
+This exercise assumes you have completed exercise #1 and have the egit.training repository in your Git Repositories view and have imported the org.eclipse.example.calc project into your Eclipse workspace.
+
+=== Stashing Local Changes
+
+
+* Open BinaryOperation.java from the org.eclipse.example.calc package in the org.eclipse.example.calc project in an editor
+* Add a new line with the contents “@since 1.0” to the interface Javadoc header after the “Binary operation interface” line
+* Open the Git Repositories view
+* Select the Stash Changes option from the context menu available on the egit-training repository.
+* The editor should now be updated with the “@since 1.0” line removed
+
+image:stash1.png[Stash a change]
+
+=== Browsing Stashed Changes 
+
+* Expand the egit-training node in the Git Repositories view
+* Expand the Stashed Changes node
+* The Stashed Commits node should have a single commit called stash@\{0\} which is the commit that contains the stashed changes.
+* Double-click the stash@\{0\} node to open it in the commit viewer
+* The opened commit should contain the BinaryOperation.java file in the Files section of the editor
+* Select the Compare with Working Directory option from the context menu available on the BinaryOperation.java file in the Files section
+** The opened compare editor should display the line addition of “@since 1.0” that was stashed in the previous step and is no longer present in the working directory file.
+
+
+image:stash2.png[Browse stashed changes]
+
+=== Applying Stashed Changes
+
+* Select the Switch To > New Branch... option from the context menu available on the egit-training repository.
+* Enter “javadoc” in the Branch Name:  field and select the Finish button
+* Select the Apply Stashed Changes option from the context menu available on the stash@\{0\} node under the Stashed Commits node
+* The BinaryOperation.java should now contain your previous addition of “@since 1.0” to the header comment
+
+image:stash3.png[Apply stashed change]

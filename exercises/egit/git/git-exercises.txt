@@ -26,5 +26,6 @@ include::fetch-rebase-and-push.txt[]
 
 include::detached-head-and-reflog.txt[]
 
+include::stash.txt[]
 
 
