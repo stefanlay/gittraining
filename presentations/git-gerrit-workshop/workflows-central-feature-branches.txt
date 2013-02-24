@@ -1,0 +1,15 @@
+Workflow with central feature branches
+--------------------------------------
+
+* One central repository
+* Subteams working on different features create central feature branches
+* push right can be restricted to feature branch
+* feature branches are merged from time to time
+
+Workflow
+
+* fetch remote feature branch
+* create local branch on latest state or remote feature branch
+* before pushing, fetch and rebase
+* push to remote feature branch
+* when feature is ready, feature responsible merges feature branch into master branch

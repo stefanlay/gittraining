@@ -1,0 +1,17 @@
+Workflow with pull requests
+---------------------------
+
+* One main central repository
+* Subteams/single developers fork the central repository
+* Subteams push to their fork
+* when feature is ready, a pull request is created
+* owner of central repository reviews pull request and merges the change
+
+Workflow
+
+* fetch from forked repository
+* create local branch on latest state of remote feature branch
+* before pushing, fetch and rebase
+* push to forked repository
+* when feature is ready, optionally fetch from central repository and rebase the branch in the fork
+* create pull request 

@@ -1,0 +1,20 @@
+Workflow with code review
+-------------------------
+
+* One main central repository
+* either one master branch or feature branches (for larger features)
+* a commit is pushed to a review queue
+* a commit in the review queue can be fetched by reviewer or by central build
+* a reworked commit completely replaces the former versions
+* finally, if reviewers are satisfied, the commit is merged into the central branch
+* mostly peer review, everbody can review anything
+
+Workflow
+
+* fetch from remote repository
+* create local branch on latest state of remote feature branch
+* optionally, before pushing, fetch and rebase
+* push to the review queue
+* wait for reviews
+* if rework is necessary, checkout the commit, replace it (with amend) and push to review
+* finally the commit is merged 

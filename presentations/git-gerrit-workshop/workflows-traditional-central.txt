@@ -1,0 +1,15 @@
+Central workflow like in Subversion
+-----------------------------------
+
+* One central repository
+* All developers work on the same branch in central repo (default: master)
+* Older releases have release branch
+* All developers have right to push to central branch
+
+
+Workflow
+
+* Always fetch or pull before starting
+* Create local feature branch
+* Before pushing, fetch and rebase your feature branch
+* Push to the central master branch

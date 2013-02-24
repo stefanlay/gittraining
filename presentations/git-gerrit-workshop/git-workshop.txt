@@ -201,6 +201,20 @@ include::exercises-title.txt[]
 include::exercises4-list.txt[]
 
 <<<
+[[workflows]]
+include::git-workflows.txt[]
+
+include::workflows-single-user.txt[]
+
+include::workflows-traditional-central.txt[]
+
+include::workflows-central-feature-branches.txt[]
+
+include::workflows-pull-request.txt[]
+
+include::workflows-code-review.txt[] 
+
+<<<
 [[advanced]]
 
 include::further-topics.txt[]

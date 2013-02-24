@@ -1,0 +1,12 @@
+Single user workflow
+--------------------
+
+* One central repository, several local repositories, same user
+* Central repository to synchronize changes between computers and for backup
+* No parallel changes
+* Local branches have counterparts on the central repo
+
+Workflow
+
+* Always pull before starting to work -> no conflicts because no parallel work
+* Default push strategy: Push local branches to remote counterparts
