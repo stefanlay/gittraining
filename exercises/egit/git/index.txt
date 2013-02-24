@@ -15,6 +15,8 @@
 . link:use-the-git-blame-feature.html[Use the 'git blame' feature]
 . link:fork-the-example-repository.html[Fork the example repository]
 . link:push-to-the-forked-repository.html[Push to the forked repository]
+. link:fetch-the-latest-state-from-upstream.html[Fetch The Latest
+  State From Upstream]
 . link:fetch-rebase-and-push.html[Fetch, rebase and push]
 . link:detached-head-and-reflog.html[Detached head and reflog]
 . link:stash.html[Stash]
@@ -25,8 +27,6 @@
 . link:develop-a-feature.pdf[Develop a Feature/Bug Fix]
 . link:develop-feature-use-staging-view.pdf[Develop Another Feature and Use Staging View]
 . link:work-on-branches-in-parallel.pdf[Work on branches in parallel]
-. link:fetch-the-latest-state-from-upstream.pdf[Fetch The Latest
-  State From Upstream]
 . link:merge-rebase-and-resolving-conflicts.pdf[Merge, Rebase and
   resolving Conflicts]
 . link:history-view.pdf[History View]
@@ -36,6 +36,8 @@
 . link:use-the-git-blame-feature.pdf[Use the 'git blame' feature]
 . link:fork-the-example-repository.pdf[Fork the example repository]
 . link:push-to-the-forked-repository.pdf[Push to the forked repository]
+. link:fetch-the-latest-state-from-upstream.pdf[Fetch The Latest
+  State From Upstream]
 . link:fetch-rebase-and-push.pdf[Fetch, rebase and push]
 . link:detached-head-and-reflog.pdf[Detached head and reflog]
 . link:stash.pdf[Stash]
