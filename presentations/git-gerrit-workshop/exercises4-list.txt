@@ -2,5 +2,6 @@ Exercises
 ---------
 
 [start=13]
+. Fetch the latest state
 . Fetch, Rebase and Push
 

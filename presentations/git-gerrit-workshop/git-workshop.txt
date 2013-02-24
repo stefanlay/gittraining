@@ -126,17 +126,9 @@ include::tags-definition-2.txt[]
 
 <<<
 [[clone]] +
-include::cloning-and-fetching-title.txt[]
+include::cloning-title.txt[]
 
 include::clone-remote-repo.txt[]
-
-<<<
-[[fetch]]
-include::change-in-remote-after-clone.txt[]
-
-include::fetch-updates-remote-tracking-branches.txt[]
-
-include::fetch-facts.txt[]
 
 include::git-configuration-inheritance.txt[]
 
@@ -174,8 +166,6 @@ include::cherry-pick-concept-2.txt[]
 [[rebase]]
 include::rebase.txt[]
 
-include::pull.txt[]
-
 include::exercises-title.txt[]
 
 include::exercises2-list.txt[]
@@ -193,6 +183,16 @@ include::exercises-title.txt[]
 include::exercises-landscape2.txt[]
 
 include::exercises3-list.txt[]
+
+<<<
+[[fetch]]
+include::change-in-remote-after-clone.txt[]
+
+include::fetch-updates-remote-tracking-branches.txt[]
+
+include::fetch-facts.txt[]
+
+include::pull.txt[]
 
 include::push-3.txt[]
 

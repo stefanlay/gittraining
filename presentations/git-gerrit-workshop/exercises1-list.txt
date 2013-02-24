@@ -5,4 +5,4 @@ Exercises
 . Develop a feature
 . Develop another feature and use staging view
 . Work on branches in parallel
-. Fetch the latest state
+
