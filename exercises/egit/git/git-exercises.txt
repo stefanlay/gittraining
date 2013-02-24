@@ -28,4 +28,7 @@ include::detached-head-and-reflog.txt[]
 
 include::stash.txt[]
 
+include::github-exercise.txt[]
+
+
 

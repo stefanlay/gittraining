@@ -20,6 +20,7 @@
 . link:fetch-rebase-and-push.html[Fetch, rebase and push]
 . link:detached-head-and-reflog.html[Detached head and reflog]
 . link:stash.html[Stash]
+. link:github-exercise.html[Github integration in eclipse]
 
 == Git Exercises - PDF Format
 
@@ -41,3 +42,4 @@
 . link:fetch-rebase-and-push.pdf[Fetch, rebase and push]
 . link:detached-head-and-reflog.pdf[Detached head and reflog]
 . link:stash.pdf[Stash]
+. link:github-exercise.pdf[Github integration in eclipse]
