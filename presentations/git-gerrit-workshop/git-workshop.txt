@@ -65,10 +65,22 @@ include::./dvcs/distributed-versioning-systems-4.txt[]
 [[git-info]]
 include::git.txt[]
 
+
+<<<
+[[configuration]]
+
+include::git-configuration.txt[]
+
+include::git-configuration-inheritance.txt[]
+
+include::git-configuration-commands.txt[]
+
+include::git-configuration-eclipse.txt[]
+
+
 <<<
 [[git-concepts]] +
 include::basic-git-concepts.txt[]
-
 
 <<<
 [[git-structure]]
@@ -86,9 +98,13 @@ include::making-changes2.txt[]
 
 include::staging-changes.txt[]
 
+include::committing-changes.txt[]
+
 <<<
 [[commit]]
-include::committing-changes.txt[]
+
+include::commit-concepts.txt[]
+
 
 include::commits-are-snapshots.txt[]
 
@@ -103,9 +119,9 @@ include::commits.txt[]
 <<<
 [[branches]]
 
-include::checkout-to-workingtree.txt[]
-
 include::branches-definition-1.txt[]
+
+include::checkout-to-workingtree.txt[]
 
 include::branches-definition-2.txt[]
 
@@ -135,12 +151,6 @@ include::tags-definition-2.txt[]
 include::cloning-title.txt[]
 
 include::clone-remote-repo.txt[]
-
-include::git-configuration-inheritance.txt[]
-
-include::git-configuration-commands.txt[]
-
-include::git-configuration-eclipse.txt[]
 
 include::exercises-title.txt[]
 

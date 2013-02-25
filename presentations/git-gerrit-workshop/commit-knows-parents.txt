@@ -28,5 +28,4 @@ digraph {
 }
 ----
 
-[role="incremental"]
 * each commit knows its parent

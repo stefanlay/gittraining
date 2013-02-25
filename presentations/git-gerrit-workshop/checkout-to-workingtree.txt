@@ -26,3 +26,7 @@ digraph {
 Checkout
 
 * populate the working tree with the commit you want to start working from
+--
+  git checkout
+--
+
