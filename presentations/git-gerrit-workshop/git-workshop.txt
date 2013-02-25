@@ -76,8 +76,9 @@ include::repositories.txt[]
 include::location-and-structure.txt[]
 
 <<<
-[[checkout]]
-include::checkout-to-workingtree.txt[]
+[[create]]
+
+include::./gitinit/git-init.txt[]
 
 include::making-changes.txt[]
 
@@ -99,6 +100,9 @@ include::commits.txt[]
 
 <<<
 [[branches]]
+
+include::checkout-to-workingtree.txt[]
+
 include::branches-definition-1.txt[]
 
 include::branches-definition-2.txt[]

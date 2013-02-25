@@ -1,0 +1,9 @@
+Creating a new Git repository
+-----------------------------
+
+You can turn any directory into a Git repository via the following command
+
+----
+  git init
+----
+
