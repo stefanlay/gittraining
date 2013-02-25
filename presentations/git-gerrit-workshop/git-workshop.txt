@@ -115,6 +115,10 @@ include::commit-message.txt[]
 
 include::commits.txt[]
 
+include::amend-1.txt[]
+
+include::amend-2.txt[]
+
 <<<
 [[remoterepositories]]
 include::remote-repositories-concepts.txt[]
@@ -150,9 +154,7 @@ include::head-moves-on-checkout.txt[]
 
 include::branches-reset.txt[]
 
-include::amend-1.txt[]
 
-include::amend-2.txt[]
 
 <<<
 [[cloneexercise]] +
