@@ -150,15 +150,6 @@ include::amend-1.txt[]
 
 include::amend-2.txt[]
 
-include::detached-head.txt[] 
-
-<<<
-[[tags]]
-include::tags-definition-1.txt[]
-
-include::tags-definition-2.txt[]
-
-
 <<<
 [[cloneexercise]] +
 
@@ -246,6 +237,12 @@ include::workflows-code-review.txt[]
 [[advanced]]
 
 include::further-topics.txt[]
+
+include::tags-definition-1.txt[]
+
+include::tags-definition-2.txt[]
+
+include::detached-head.txt[] 
 
 include::reflog.txt[]
 
