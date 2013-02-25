@@ -122,15 +122,17 @@ include::remote-repositories1.txt[]
 include::remote-repositories2.txt[]
 
 <<<
-[[clone]]
+[[clonepushpull]]
 include::cloning-title.txt[]
 include::clone-remote-repo1.txt[]
 include::clone-remote-repo2.txt[]
 
 include::push-simple1.txt[]
+include::pull-simple1.txt[]
 
 <<<
 [[branches]]
+
 
 include::branches-definition-1.txt[]
 
