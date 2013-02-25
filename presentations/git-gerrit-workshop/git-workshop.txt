@@ -78,9 +78,11 @@ include::location-and-structure.txt[]
 <<<
 [[create]]
 
-include::./gitinit/git-init.txt[]
+include::./gitbasics/git-init.txt[]
 
-include::making-changes.txt[]
+include::making-changes1.txt[]
+
+include::making-changes2.txt[]
 
 include::staging-changes.txt[]
 

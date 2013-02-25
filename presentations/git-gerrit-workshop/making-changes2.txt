@@ -1,0 +1,10 @@
+Marking changes
+---------------
+
+Tell Git which changes you intend to commit:
+
+----
+  git add <file-name>
+  git rm <file-name>
+----
+
