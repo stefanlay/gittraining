@@ -1,0 +1,17 @@
+Pull
+----
+
+* Pull allows to pull in changes from remote repositories
+* Default is to pull from remote origin and the master branch
+
+----
+  git pull
+----
+* Pull from another remote and branch
+----
+  git push origin training
+----
+
+from local to remote repository
+
+
