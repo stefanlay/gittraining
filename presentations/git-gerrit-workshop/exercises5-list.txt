@@ -1,0 +1,8 @@
+Exercises
+---------
+
+[start=15]
+. Detached head and reflog
+. Stash
+. Github integration in eclipse
+

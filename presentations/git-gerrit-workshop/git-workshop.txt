@@ -255,6 +255,9 @@ include::stash2.txt[]
 
 include::stash-apply.txt[]
 
+include::exercises-title.txt[]
+
+include::exercises5-list.txt[]
 
 ++++
 <style type="text/css">
