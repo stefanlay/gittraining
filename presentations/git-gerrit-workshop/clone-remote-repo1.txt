@@ -5,5 +5,9 @@ Cloning Remote Repository
   git clone [URL]
 --
 * complete repository cloned
-
-
+* difference protocols supported
+-- 
+  git clone git@github.com:vogella/gitbook.git 
+  git clone http://vogella@github.com/vogella/gitbook.git 
+  git clone https://vogella@github.com/vogella/gitbook.git 
+--
