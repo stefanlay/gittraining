@@ -127,6 +127,8 @@ include::cloning-title.txt[]
 include::clone-remote-repo1.txt[]
 include::clone-remote-repo2.txt[]
 
+include::push-simple1.txt[]
+
 <<<
 [[branches]]
 

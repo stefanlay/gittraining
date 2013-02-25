@@ -1,0 +1,15 @@
+Push
+----
+
+* Push changes to origin (to the master branch)
+
+----
+  git push
+----
+* Push to another remote and branch
+----
+  git push origin master
+----
+from local to remote repository
+
+
