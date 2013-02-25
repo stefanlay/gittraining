@@ -1,0 +1,9 @@
+Cloning Remote Repository
+-------------------------
+
+* cloned repository gets symbolic name `origin`, by default.
+* `.git/config` file will contain:
+
+  [remote "origin"]
+    url = <remote-repository-URL>
+

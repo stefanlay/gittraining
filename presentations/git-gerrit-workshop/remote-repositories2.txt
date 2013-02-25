@@ -1,0 +1,18 @@
+Adding remote repositories
+--------------------------
+
+See all remote repositories
+
+--
+  git remote 
+--
+
+Add a new remote repository
+
+--
+  git remote add [name] [path to repository]
+--
+
+The name "origin" is special and points to an repository from which the repository was originally created
+
+

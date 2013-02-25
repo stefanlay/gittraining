@@ -1,0 +1,9 @@
+Cloning Remote Repository
+-------------------------
+
+-- 
+  git clone [URL]
+--
+* complete repository cloned
+
+

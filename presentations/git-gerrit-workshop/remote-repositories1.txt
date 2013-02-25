@@ -1,0 +1,13 @@
+Remote repositories
+-------------------
+
+* Repositories hosted in the filesystem or Internet
+* Bare repositories have not working tree
+* Bare repositories should end with .git
+
+--
+  git init --bare newrepository.git
+--
+
+* you can synchronize with the remote repository
+

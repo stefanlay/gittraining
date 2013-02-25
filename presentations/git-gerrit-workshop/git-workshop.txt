@@ -105,7 +105,6 @@ include::committing-changes.txt[]
 
 include::commit-concepts.txt[]
 
-
 include::commits-are-snapshots.txt[]
 
 include::commit-knows-parents.txt[]
@@ -115,6 +114,18 @@ include::commit-object.txt[]
 include::commit-message.txt[]
 
 include::commits.txt[]
+
+<<<
+[[remoterepositories]]
+include::remote-repositories-concepts.txt[]
+include::remote-repositories1.txt[]
+include::remote-repositories2.txt[]
+
+<<<
+[[clone]]
+include::cloning-title.txt[]
+include::clone-remote-repo1.txt[]
+include::clone-remote-repo2.txt[]
 
 <<<
 [[branches]]
@@ -147,8 +158,7 @@ include::tags-definition-2.txt[]
 
 
 <<<
-[[clone]] +
-include::cloning-title.txt[]
+[[cloneexercise]] +
 
 include::clone-remote-repo.txt[]
 
