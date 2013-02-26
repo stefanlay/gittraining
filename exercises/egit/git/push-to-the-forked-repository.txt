@@ -12,7 +12,7 @@ checkout versions of your projects from the two remote repositories
 
 === Preparation
 Follow exercise 1, link:clone-the-example-repository.txt[Clone the example repository].
-Follow exercise 12, link:fork-the-example-repository.txt[Fork the example repository],
+Follow exercise 10, link:fork-the-example-repository.txt[Fork the example repository],
 to create your own copy of the training repository on github
 
 === Add a new remote
@@ -44,7 +44,7 @@ The URL will be automatically taken from the clipboard in the next dialog.
 image:githubdestination.png[Fetch URL]
 
 Now you can press finish. In order to test if everything worked well you can fetch from your new remote.
-See exercise 5, link:fetch-the-latest-state-from-upstream.txt[Fetch the latest state from upstream]
+See exercise 12, link:fetch-the-latest-state-from-upstream.txt[Fetch the latest state from upstream]
  for more details.
 
 image:github_fetch.png[Fetch from Github]

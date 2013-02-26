@@ -2,9 +2,9 @@
 
 Stashing in Git refers to taking all changes made in your working directory and committing them to a separate area known as the “stash”.  Committing to the stash does not create a new commit on the currently checked out branch but instead creates a new stashed commit which includes changes made in the working directory and staged in the index.  Once stashing in complete the working directory and index are reset to the current branch’s head revision.  Stashing is common when you want to merge or rebase but don’t want to lose your local uncommitted changes but you aren’t quite ready to commit them on the current branch.  You can first stash your work, perform the merge or rebase and then apply the stash to get the changes back in your working directory.  A more in-depth explanation of stashing is available in the Git Book.
 
-Support for stashing is being added in EGit 2.0 due out with Eclipse Juno (3.8).  It will include support for listing, creating, applying, and deleting stashed commits from the Git Repositories view.
+It includes support for listing, creating, applying, and deleting stashed commits from the Git Repositories view.
 
-This exercise assumes you have completed exercise #1 and have the egit.training repository in your Git Repositories view and have imported the org.eclipse.example.calc project into your Eclipse workspace.
+This exercise assumes you have completed exercise 1, link:clone-the-example-repository.txt[Clone the example repository] and have the egit.training repository in your Git Repositories view and have imported the org.eclipse.example.calc project into your Eclipse workspace.
 
 === Stashing Local Changes
 
