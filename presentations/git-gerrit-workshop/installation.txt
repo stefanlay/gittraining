@@ -1,0 +1,14 @@
+Installation
+------------
+
+Command line
+--
+  Ubuntu sudo apt-get install git-core 
+  Windows http://code.google.com/p/msysgit/
+  Mac OS http://code.google.com/p/git-osx-installer 
+--
+
+Eclipse IDE update site
+--
+  http://download.eclipse.org/egit/updates/
+--
