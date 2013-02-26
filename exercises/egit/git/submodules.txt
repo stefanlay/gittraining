@@ -1,0 +1,89 @@
+== Using Submodules in EGit
+
+=== Introduction
+
+Submodules are Git repositories nested inside a parent Git repository at a specific path in the parent repository’s working directory.  A submodule can be located anywhere in a parent Git repository’s working directory and is configured via a .gitmodules file located at the root of the parent repository.  This file contains which paths are submodules and what URL should be used when cloning and fetching for that submodule.  A more in-depth explanation of submodules is available in the Git Book.
+
+Submodule support includes support for adding, updating, syncing, and cloning submodules.  All of the actions available for submodules are present in the Git Repositories view.
+
+=== Cloning Submodules
+
+Cloning a repository with submodules requires cloning all submodule repositories after the parent repository clone completes to ensure all necessary files and folders are present in the working directory once cloning completes.
+
+* Open the Git Repositories view
+* Select the clone repository icon on the view’s toolbar
+* Select URI and click the Next > button
+* Paste the following value into the URI: field and click the Next > button
+** git://github.com/jquery/jquery.git
+** jQuery is being used as an example repository since it contains two submodules
+*** src/sizzle
+*** test/qunit
+* Select the Next > button on the Branch Selection wizard page
+* Check the Clone Submodules box on the Local Destination wizard page and click Finish
+** This option is shown in the screenshot below and should always be selected whenever cloning a repository with submodules.
+
+image:submodules1.png[]
+
+* The cloning operation will be displayed in the Progress view
+* Once cloning completes you will see a new Submodules node available in the Git Repositories view that lists all the submodules in the selected repository.  Shown below is the jquery repository cloned in EGit with its two submodules present.
+
+image:submodules2.png[]
+
+Submodules present in the Git Repositories view have the same actions available on them as top-level repositories.  You can create branches, switch branches, reset, fetch, pull, and many other options.
+
+=== Updating Submodules
+
+Each Git parent repository tracks the commit that should be checked out in each configured submodule.  Performing a submodule update checks out that specific revision in the submodule’s Git repository.  You commonly perform this task after you pull a change in the parent repository that updates the revision checked out in the submodule.  You would then fetch the latest changes in the submodule’s Git repository and perform a submodule update in the parent repository to check out the current revision referenced in the parent repository.
+
+Performing a submodule update is also useful when you want to restore your submodule’s repository to the current commit tracked by the parent repository.  This is common when you are experimenting with different checked out branches or tags in the submodule and you want to restore it back to the commit tracked by the parent repository.
+
+You can also change the commit that is checked out in each submodule by performing a checkout in the submodule repository and then committing the change in the parent repository.
+
+* Open  the Git Repositories view
+* Expand the jquery repository node
+* Expand the Submodules node
+* Expand the src/sizzle submodule repository node
+* Expand the Tags node
+* Double click the 1.5 tag node
+** The submodule repository will now reflect that commit b36f29f is currently checked out
+* Select the Update Submodule option from the context menu available on the src/sizzle repository node
+** This resets the submodule back to the original commit configured in the parent repository
+* Double click the 1.4.4 tag node
+* Select the Commit... option from the context menu available on the jquery repository node
+* Enter a message in the Commit message section of the dialog
+* Check the src/sizzle node in the Files section of the dialog
+* Click the Commit button
+** The jquery repository should now show a commit is available to push and the src/sizzle repository now have commit 112ff17 checked out.
+
+image:submodules3.png[]
+
+=== Adding a Submodule
+
+You can add a new submodule to a Git repository by specifying a path in the working directory to place the submodule in and specifying a URL to clone from.  The submodule will be registered in the parent repository’s .gitmodules file as well as the parent repository’s .git/config file.
+
+* Open the Git Repositories view
+* Select the Add Submodule option from the context menu on the jquery repository node
+* Enter “timeago” in the Submodule Path: field
+* Select Next >
+* Enter the following into the URI: field
+** git://github.com/rmm5t/jquery-timeago.git
+* Select Finish
+** The cloning operation should appear in the Progress view
+** Once cloning completes the time submodule should be visible under the Submodules node as well as the Working Directory folder
+
+image:submodules3.png[]
+
+* Select the Commit... option from the context menu available on the jquery repository node
+* Enter a message in the Commit message section of the dialog
+* Check the time node in the Files section of the dialog
+* Check the .gitmodules node in the Files section of the dialog
+* Click the Commit button
+** The new time submodule has now been added to the parent jquery repository
+
+=== Conclusion
+
+Submodules are one approach to keeping projects in separate repositories but still be able to reference them as folders in the working directory of other repositories.  The Update Submodule action available on submodule selections in the Git Repositories view is the most common action you will typically use.  Each time another developers updates the submodule’s checked out version you will need to run this action after you pull down the changes in the parent repository.
+
+The Sync Submodule action is also available from the Git Repositories view for when the URL of the submodule changes in the .gitmodules file.  This action copies the URL from the .gitmodules file to the remote config inside the submodule so that pull operations on the submodule repository will use the URL configured for that submodule in the parent repository.
+
+

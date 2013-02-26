@@ -28,6 +28,8 @@ include::detached-head-and-reflog.txt[]
 
 include::stash.txt[]
 
+include::submodules.txt[]
+
 include::github-exercise.txt[]
 
 
