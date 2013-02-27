@@ -9,9 +9,9 @@ Pull
 ----
 * Pull from another remote and branch
 ----
-  git push origin training
+  git pull origin training
 ----
+from remote to local repository
 
-from local to remote repository
 
 
