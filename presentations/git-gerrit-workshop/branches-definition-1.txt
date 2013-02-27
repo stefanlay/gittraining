@@ -26,5 +26,5 @@ Branch is a named pointer to a commit
 * full name: `refs/heads/master`
 [role="incremental"]
 --
-* 'Q:' what happens when a new changes is committed?
+* 'Q:' what happens when a new change is committed?
 --
