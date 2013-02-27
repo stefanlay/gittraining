@@ -49,6 +49,14 @@ Working with Remote Repositories, Branching models
 [[agenda-item]]
 Exercises: Updating from remote, rebasing local work
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[[agenda-item]]
+Advanced topics: Tags, Stash, Reflog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[[agenda-item]]
+Exercises
+~~~~~~~~~
 <<<
 [[agenda-item]]
 Q & A
@@ -145,13 +153,13 @@ include::exercises-title.txt[]
 include::branch-concepts.txt[]
 include::branches-definition-1.txt[]
 
-include::checkout-to-workingtree.txt[]
-
 include::branches-definition-2.txt[]
 
 include::branches-many.txt[]
 
 include::head.txt[]
+
+include::checkout-to-workingtree.txt[]
 
 include::head-moves-on-checkout.txt[]
 
