@@ -1,0 +1,9 @@
+== Deleting a repo ==
+
+How to delete a repository?
+
+[role="incremental"]
+--
+  rm -rf .git
+--
+

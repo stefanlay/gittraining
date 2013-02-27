@@ -1,0 +1,10 @@
+== Ignoring files ==
+
+--
+  .gitignore
+--
+
+* can contain pattern, e.g. *.png or *~ 
+* also directories, e.g. bin or target
+
+

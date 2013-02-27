@@ -1,0 +1,6 @@
+== Keeping directories ==
+
+* Git does not keep track of empty folders
+* if you want to keep a directory, create a .gitkeep file in the folder
+* Name is convention
+

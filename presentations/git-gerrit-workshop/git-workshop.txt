@@ -113,6 +113,35 @@ include::staging-changes.txt[]
 
 include::committing-changes.txt[]
 
+include::deleting-repos.txt[]
+
+<<<
+[[remoterepositories]]
+include::remote-repositories-concepts.txt[]
+include::remote-repositories1.txt[]
+include::remote-repositories2.txt[]
+
+<<<
+[[clonepushpull]]
+include::cloning-title.txt[]
+include::clone-remote-repo1.txt[]
+include::clone-remote-repo2.txt[]
+
+include::push-simple1.txt[]
+include::pull-simple1.txt[]
+
+include::exercises-title-commandline.txt[]
+
+include::exercises-title-egit.txt[]
+
+<<<
+[[gitignore]]
+
+include::gitignore.txt[]
+
+include::gitkeep.txt[]
+
+
 <<<
 [[commit]]
 
@@ -132,22 +161,6 @@ include::amend-1.txt[]
 
 include::amend-2.txt[]
 
-<<<
-[[remoterepositories]]
-include::remote-repositories-concepts.txt[]
-include::remote-repositories1.txt[]
-include::remote-repositories2.txt[]
-
-<<<
-[[clonepushpull]]
-include::cloning-title.txt[]
-include::clone-remote-repo1.txt[]
-include::clone-remote-repo2.txt[]
-
-include::push-simple1.txt[]
-include::pull-simple1.txt[]
-
-include::exercises-title.txt[]
 
 <<<
 [[branches]]
