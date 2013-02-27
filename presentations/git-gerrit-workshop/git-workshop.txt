@@ -162,6 +162,8 @@ include::branches-reset.txt[]
 <<<
 [[cloneexercise]] +
 
+include::exercise-findbugs.txt[]
+
 include::clone-remote-repo.txt[]
 
 include::exercises-title.txt[]

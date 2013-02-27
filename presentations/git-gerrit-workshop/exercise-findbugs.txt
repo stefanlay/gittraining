@@ -1,0 +1,10 @@
+Exercise preparation
+--------------------
+
+Install the Findbugs plug-in from the following URL
+
+--
+  http://findbugs.cs.umd.edu/eclipse
+-- 
+
+Remote tracking branch: origin/master points to the master in the remote repository
