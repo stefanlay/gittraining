@@ -50,10 +50,12 @@ Working with Remote Repositories, Branching models
 Exercises: Updating from remote, rebasing local work
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+<<<
 [[agenda-item]]
-Advanced topics: Tags, Stash, Reflog
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Advanced topics: Tags, Stash, Reflog, ...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+<<<
 [[agenda-item]]
 Exercises
 ~~~~~~~~~
