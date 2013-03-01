@@ -14,8 +14,6 @@ include::reset-branch-to-a-previous-state.txt[]
 
 include::change-a-series-of-commits.txt[]
 
-include::use-the-git-blame-feature.txt[]
-
 include::fork-the-example-repository.txt[]
 
 include::push-to-the-forked-repository.txt[]
@@ -25,6 +23,8 @@ include::fetch-the-latest-state-from-upstream.txt[]
 include::fetch-rebase-and-push.txt[]
 
 include::detached-head-and-reflog.txt[]
+
+include::use-the-git-blame-feature.txt[]
 
 include::stash.txt[]
 
