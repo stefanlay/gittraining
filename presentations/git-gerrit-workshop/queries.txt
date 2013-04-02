@@ -1,0 +1,8 @@
+Queries
+-------
+
+Changes can be queried:
+
+image:../../img/change-query.png[]
+
+image:../../img/gerrit-search-documentation.png[]

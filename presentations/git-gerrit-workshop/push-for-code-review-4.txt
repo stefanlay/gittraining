@@ -1,0 +1,168 @@
+Push for Code Review
+--------------------
+
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  D -> C
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", fillcolor=lightskyblue]
+
+  { rank=same; HEAD; feature; D }
+  feature -> D [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B }
+  master -> B [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting
+  node [style=invis]
+  edge [style=invis]
+  I -> B
+  C -> I2
+  { rank=same; A; I2 }
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master1 [label="master"]
+  { rank=same; master1; B1}
+  master1 -> B1 [weight=0]
+
+  // graph name
+  remote [label="Gerrit hosted 'origin' repo", shape=box, style=none, color=none]
+  A1 -> remote [style=invis]
+
+  // align left and right graph
+  { rank=same; A; A1; }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; master; space}
+  space [label="some space here"]
+  space -> master [weight=0]
+}
+----
+
+`Q:` What if the feature branch has two commits?
+
+`Q:` Remember Git semantics for Push?
+
+Push for Code Review
+--------------------
+
+[graphviz]
+----
+digraph {
+  // commit graph left
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  D -> C
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  HEAD [fillcolor="#555555", fontcolor=white]
+  master [label="origin/master", fillcolor=lightskyblue]
+
+  { rank=same; HEAD; feature; D }
+  feature -> D [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B }
+  master -> B [weight=0]
+
+  // graph name
+  local [label="local repo", style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting
+  I2 [style=invis]
+  C -> I2 [style=invis]
+  { rank=same; A; I2 }
+
+  // the "push" arrow
+  node [style=invis]
+  L -> R [label="push", style=dotted, penwidth=2, arrowhead=vee,
+          color=red, fontname=arial, fontsize=30]
+
+  // commit graph right
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  A1 [label="A"]
+  B1 [label="B"]
+  C1 [label="C"]
+  D1 [label="D"]
+  D1 -> C1
+  C1 -> B1 [weight=0]
+  B1 -> A1
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  { rank=same; master1; B1}
+  master1 [label="master"]
+  B1 -> master1 [dir=back]
+
+  // change pointers
+  { rank=same; change1; C1}
+  change1 [label="refs/changes/35/134/1", fillcolor=gold]
+  change1 -> C1 [weight=0]
+
+  { rank=same; change2; D1}
+  change2 [label="refs/changes/35/135/1", fillcolor=gold]
+  change2 -> D1 [weight=0]
+  change2 -> change1 [label="depends on", penwidth=4, color=gold]
+
+  // formatting
+  I3 [style=invis]
+  I3 -> B1 [style=invis]
+  I4 [style=invis]
+  C1 -> I4 [style=invis]
+  { rank=same; A1; I4}
+  master1 -> I4 [style=invis]
+
+  // align left, right and arrow graph
+  { rank=same; A; A1; L; R }
+
+  // spacing in between the left and right graph
+  node [style=invis, shape=box]
+  edge [style=invis]
+  { rank=same; master; space}
+  space [label="some space here"]
+  space -> master [weight=0]
+
+  { rank=same; HEAD; space2 }
+  space2 [label="spaace"]
+  space2 -> HEAD [weight=0]
+}
+----
+
+`Q:` What if the feature branch has two commits?
+
+`A:` *ALL* commits from the local branch not available in the remote
+branch [red]#-> 2 changes in Gerrit!#

@@ -1,0 +1,15 @@
+Path Conflict
+-------------
+
+Submit fails with:
+
+image:../../img/path-conflict.png[]
+
+Means:
+
+* the remote branch has evolved since this change was started
+* code changes in the change conflict with changes done in the remote
+  branch
+
+CAUTION: manual conflict resolution required
+

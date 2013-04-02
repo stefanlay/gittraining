@@ -1,0 +1,16 @@
+New Change vs. new Patch Set
+----------------------------
+
+Example Commit Message with Change-Id
+
+----
+Make lib.Repository abstract and lib.FileRepository its implementation
+
+To support other storage models other than just the local filesystem,
+will rename it into storage.file.FileRepository, but to do that we
+need to also move a number of other related class, which we aren't
+quite ready to do.
+
+Change-Id: I1bd54ea0500337799a8e792874c272eb14d555f7
+Signed-off-by: Joe Developer <joe@example.org>
+----

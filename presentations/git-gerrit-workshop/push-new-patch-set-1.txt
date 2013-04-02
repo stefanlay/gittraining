@@ -1,0 +1,49 @@
+Push new Patch Set
+------------------
+
+No dependencies between patch sets
+
+* can't push a successor commit as the next patch set
+* commit D can't be Patch Set 2 of change 134
+
+[graphviz]
+----
+digraph {
+  // commit graph
+  node [style=bold, shape=circle, color="#385d8a", fontname=arial, fontsize=18]
+  edge [style=bold, color="#385d8a", arrowhead=none]
+  D
+  D -> C
+  C -> B [weight=0]
+  B -> A
+
+  // branch pointers
+  edge [arrowhead=normal]
+  node [shape=box, style=filled, fillcolor=lightgrey, color=black]
+  master [label="origin/master", fillcolor=lightskyblue]
+  HEAD [fillcolor="#555555", fontcolor=white]
+
+  { rank=same; D; feature; HEAD}
+  feature -> D [weight=0]
+  HEAD -> feature [weight=0]
+
+  { rank=same; master; B}
+  master -> B [weight=0]
+
+  // change pointers
+  change [label="refs/changes/34/134/1", fillcolor=gold]
+  { rank=same; change; C}
+  change -> C [weight=0]
+
+  // graph name
+  local [label="local repo", shape=box, style=none, color=none]
+  A -> local [style=invis]
+
+  // formatting: Add invisible node to
+  // a) have commits on feature branch in own column
+  // b) have the feature branch column on the right
+  I [style=invis]
+  C -> I [style=invis]
+  { rank=same; A; I}
+}
+----
