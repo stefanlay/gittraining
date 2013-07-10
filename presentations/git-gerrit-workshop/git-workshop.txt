@@ -39,16 +39,20 @@ Push
 ~~~~
 <<<
 [[agenda-item]]
-Exercises: Pushing to Github, Pull Request
+Gerrit Code Review
+~~~~~~~~~~~~~~~~~~
+<<<
+[[agenda-item]]
+Exercises: Push to Gerrit, Review a Change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <<<
 [[agenda-item]]
-Working with Remote Repositories, Branching models
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Reworking Changes, Submit
+~~~~~~~~~~~~~~~~~~~~~~~~~
 <<<
 [[agenda-item]]
-Exercises: Updating from remote, rebasing local work
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exercises
+~~~~~~~~~
 
 <<<
 [[agenda-item]]
@@ -231,12 +235,6 @@ include::push-1.txt[]
 
 include::push-2.txt[]
 
-include::exercises-title.txt[]
-
-include::exercises-landscape2.txt[]
-
-include::exercises3-list.txt[]
-
 <<<
 [[fetch]]
 include::change-in-remote-after-clone.txt[]
@@ -248,47 +246,6 @@ include::fetch-facts.txt[]
 include::pull.txt[]
 
 include::push-3.txt[]
-
-include::exercises-title.txt[]
-
-include::exercises4-list.txt[]
-
-<<<
-[[workflows]]
-include::git-workflows.txt[]
-
-include::workflows-single-user.txt[]
-
-include::workflows-traditional-central.txt[]
-
-include::workflows-central-feature-branches.txt[]
-
-include::workflows-pull-request.txt[]
-
-include::workflows-code-review.txt[] 
-
-<<<
-[[advanced]]
-
-include::further-topics.txt[]
-
-include::tags-definition-1.txt[]
-
-include::tags-definition-2.txt[]
-
-include::detached-head.txt[] 
-
-include::reflog.txt[]
-
-include::stash.txt[]
-
-include::stash2.txt[]
-
-include::stash-apply.txt[]
-
-include::exercises-title.txt[]
-
-include::exercises5-list.txt[]
 
 <<<
 [[gerrit-intro]] +
@@ -393,6 +350,43 @@ include::bypassing-code-review.txt[]
 <<<
 [[best-practices]] +
 include::../gerrit-and-code-review-best-practices/gerrit-and-code-review-best-practices-slides.txt[]
+
+<<<
+[[workflows]]
+include::git-workflows.txt[]
+
+include::workflows-single-user.txt[]
+
+include::workflows-traditional-central.txt[]
+
+include::workflows-central-feature-branches.txt[]
+
+include::workflows-pull-request.txt[]
+
+include::workflows-code-review.txt[] 
+
+<<<
+[[advanced]]
+
+include::further-topics.txt[]
+
+include::tags-definition-1.txt[]
+
+include::tags-definition-2.txt[]
+
+include::detached-head.txt[] 
+
+include::reflog.txt[]
+
+include::stash.txt[]
+
+include::stash2.txt[]
+
+include::stash-apply.txt[]
+
+include::exercises-title.txt[]
+
+include::exercises5-list.txt[]
 
 ++++
 <style type="text/css">
