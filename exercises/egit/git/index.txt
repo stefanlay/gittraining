@@ -1,11 +1,9 @@
 == Git Exercises
 
-. link:clone-the-example-repository.html[Clone the example repository and import projects into Eclipse]
-. link:develop-a-feature.html[Develop a Feature/Bug Fix]
-. link:develop-feature-use-staging-view.html[Develop Another Feature and Use Staging View]
-. link:work-on-branches-in-parallel.html[Work on branches in parallel]
-. link:fetch-the-latest-state-from-upstream.html[Fetch The Latest
-  State From Upstream]
+. link:010_clone-the-example-repository.html[Clone the example repository and import projects into Eclipse]
+. link:020_develop-a-feature.html[Develop a Feature/Bug Fix]
+. link:030_develop-feature-use-staging-view.html[Develop Another Feature and Use Staging View]
+. link:040_work-on-branches-in-parallel.html[Work on branches in parallel]
 . link:merge-rebase-and-resolving-conflicts.html[Merge, Rebase and
   resolving Conflicts]
 . link:history-view.html[History View]
@@ -25,10 +23,10 @@
 
 == Git Exercises - PDF Format
 
-. link:clone-the-example-repository.pdf[Clone the example repository and import projects into Eclipse]
-. link:develop-a-feature.pdf[Develop a Feature/Bug Fix]
-. link:develop-feature-use-staging-view.pdf[Develop Another Feature and Use Staging View]
-. link:work-on-branches-in-parallel.pdf[Work on branches in parallel]
+. link:010_clone-the-example-repository.pdf[Clone the example repository and import projects into Eclipse]
+. link:020_develop-a-feature.pdf[Develop a Feature/Bug Fix]
+. link:030_develop-feature-use-staging-view.pdf[Develop Another Feature and Use Staging View]
+. link:040_work-on-branches-in-parallel.pdf[Work on branches in parallel]
 . link:merge-rebase-and-resolving-conflicts.pdf[Merge, Rebase and
   resolving Conflicts]
 . link:history-view.pdf[History View]

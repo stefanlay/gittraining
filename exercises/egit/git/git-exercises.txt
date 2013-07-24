@@ -1,10 +1,10 @@
-include::clone-the-example-repository.txt[]
+include::010_clone-the-example-repository.txt[]
 
-include::develop-a-feature.txt[]
+include::020_develop-a-feature.txt[]
 
-include::develop-feature-use-staging-view.txt[]
+include::030_develop-feature-use-staging-view.txt[]
 
-include::work-on-branches-in-parallel.txt[]
+include::040_work-on-branches-in-parallel.txt[]
 
 include::merge-rebase-and-resolving-conflicts.txt[]
 
