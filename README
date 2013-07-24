@@ -12,8 +12,15 @@ Open a presentation:
 - open the resulting *.html document in a web browser
 - use the same keys like in PowerPoint to move forward and back
 
+Current main branch is training
+
 Building exercises:
 - from exercise folder run:
-    make html
+    make clean html
   or
+    make clean 
     make pdf
+
+You currently must also copy manully the images before creating the pdf files
+For example:
+    cp *.png ../../../target/exercises/egit/git/
