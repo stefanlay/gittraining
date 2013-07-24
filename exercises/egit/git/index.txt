@@ -4,13 +4,13 @@
 . link:020_develop-a-feature.html[Develop a Feature/Bug Fix]
 . link:030_develop-feature-use-staging-view.html[Develop Another Feature and Use Staging View]
 . link:040_work-on-branches-in-parallel.html[Work on branches in parallel]
-. link:merge-rebase-and-resolving-conflicts.html[Merge, Rebase and
+. link:050_merge-rebase-and-resolving-conflicts.html[Merge, Rebase and
   resolving Conflicts]
-. link:history-view.html[History View]
-. link:reset-branch-to-a-previous-state.html[Reset branch to a
+. link:060_history-view.html[History View]
+. link:070_reset-branch-to-a-previous-state.html[Reset branch to a
   previous state]
-. link:change-a-series-of-commits.html[Change a series of commits]
-. link:use-the-git-blame-feature.html[Use the 'git blame' feature]
+. link:080_change-a-series-of-commits.html[Change a series of commits]
+. link:090_use-the-git-blame-feature.html[Use the 'git blame' feature]
 . link:fork-the-example-repository.html[Fork the example repository]
 . link:push-to-the-forked-repository.html[Push to the forked repository]
 . link:fetch-the-latest-state-from-upstream.html[Fetch The Latest
@@ -27,13 +27,13 @@
 . link:020_develop-a-feature.pdf[Develop a Feature/Bug Fix]
 . link:030_develop-feature-use-staging-view.pdf[Develop Another Feature and Use Staging View]
 . link:040_work-on-branches-in-parallel.pdf[Work on branches in parallel]
-. link:merge-rebase-and-resolving-conflicts.pdf[Merge, Rebase and
+. link:050_merge-rebase-and-resolving-conflicts.pdf[Merge, Rebase and
   resolving Conflicts]
-. link:history-view.pdf[History View]
-. link:reset-branch-to-a-previous-state.pdf[Reset branch to a
+. link:060_history-view.pdf[History View]
+. link:070_reset-branch-to-a-previous-state.pdf[Reset branch to a
   previous state]
-. link:change-a-series-of-commits.pdf[Change a series of commits]
-. link:use-the-git-blame-feature.pdf[Use the 'git blame' feature]
+. link:080_change-a-series-of-commits.pdf[Change a series of commits]
+. link:090_use-the-git-blame-feature.pdf[Use the 'git blame' feature]
 . link:fork-the-example-repository.pdf[Fork the example repository]
 . link:push-to-the-forked-repository.pdf[Push to the forked repository]
 . link:fetch-the-latest-state-from-upstream.pdf[Fetch The Latest

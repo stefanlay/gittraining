@@ -6,13 +6,13 @@ include::030_develop-feature-use-staging-view.txt[]
 
 include::040_work-on-branches-in-parallel.txt[]
 
-include::merge-rebase-and-resolving-conflicts.txt[]
+include::050_merge-rebase-and-resolving-conflicts.txt[]
 
-include::history-view.txt[History View]
+include::060_history-view.txt[History View]
 
-include::reset-branch-to-a-previous-state.txt[]
+include::070_reset-branch-to-a-previous-state.txt[]
 
-include::change-a-series-of-commits.txt[]
+include::080_change-a-series-of-commits.txt[]
 
 include::fork-the-example-repository.txt[]
 
