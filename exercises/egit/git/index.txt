@@ -11,15 +11,15 @@
   previous state]
 . link:080_change-a-series-of-commits.html[Change a series of commits]
 . link:090_use-the-git-blame-feature.html[Use the 'git blame' feature]
-. link:fork-the-example-repository.html[Fork the example repository]
-. link:push-to-the-forked-repository.html[Push to the forked repository]
-. link:fetch-the-latest-state-from-upstream.html[Fetch The Latest
+. link:100_fork-the-example-repository.html[Fork the example repository]
+. link:110_push-to-the-forked-repository.html[Push to the forked repository]
+. link:120_fetch-the-latest-state-from-upstream.html[Fetch The Latest
   State From Upstream]
-. link:fetch-rebase-and-push.html[Fetch, rebase and push]
-. link:detached-head-and-reflog.html[Detached head and reflog]
-. link:stash.html[Stash]
-. link:submodules.html[Submodules]
-. link:github-exercise.html[Github integration in eclipse]
+. link:130_fetch-rebase-and-push.html[Fetch, rebase and push]
+. link:140_detached-head-and-reflog.html[Detached head and reflog]
+. link:150_stash.html[Stash]
+. link:160_submodules.html[Submodules]
+. link:170_github-exercise.html[Github integration in eclipse]
 
 == Git Exercises - PDF Format
 
@@ -34,12 +34,12 @@
   previous state]
 . link:080_change-a-series-of-commits.pdf[Change a series of commits]
 . link:090_use-the-git-blame-feature.pdf[Use the 'git blame' feature]
-. link:fork-the-example-repository.pdf[Fork the example repository]
-. link:push-to-the-forked-repository.pdf[Push to the forked repository]
-. link:fetch-the-latest-state-from-upstream.pdf[Fetch The Latest
+. link:100_fork-the-example-repository.pdf[Fork the example repository]
+. link:110_push-to-the-forked-repository.pdf[Push to the forked repository]
+. link:120_fetch-the-latest-state-from-upstream.pdf[Fetch The Latest
   State From Upstream]
-. link:fetch-rebase-and-push.pdf[Fetch, rebase and push]
-. link:detached-head-and-reflog.pdf[Detached head and reflog]
-. link:stash.pdf[Stash]
-. link:submodules.pdf[Submodules]
-. link:github-exercise.pdf[Github integration in eclipse]
+. link:130_fetch-rebase-and-push.pdf[Fetch, rebase and push]
+. link:140_detached-head-and-reflog.pdf[Detached head and reflog]
+. link:150_stash.pdf[Stash]
+. link:160_submodules.pdf[Submodules]
+. link:170_github-exercise.pdf[Github integration in eclipse]
