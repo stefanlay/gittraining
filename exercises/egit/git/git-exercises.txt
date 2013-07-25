@@ -6,31 +6,32 @@ include::030_develop-feature-use-staging-view.txt[]
 
 include::040_work-on-branches-in-parallel.txt[]
 
-include::merge-rebase-and-resolving-conflicts.txt[]
+include::050_merge-rebase-and-resolving-conflicts.txt[]
 
-include::history-view.txt[History View]
+include::060_history-view.txt[History View]
 
-include::reset-branch-to-a-previous-state.txt[]
+include::070_reset-branch-to-a-previous-state.txt[]
 
-include::change-a-series-of-commits.txt[]
+include::080_change-a-series-of-commits.txt[]
 
-include::fork-the-example-repository.txt[]
+include::090_use-the-git-blame-feature.txt[]
 
-include::push-to-the-forked-repository.txt[]
+include::100_fork-the-example-repository.txt[]
 
-include::fetch-the-latest-state-from-upstream.txt[]
+include::110_push-to-the-forked-repository.txt[]
 
-include::fetch-rebase-and-push.txt[]
+include::120_fetch-the-latest-state-from-upstream.txt[]
 
-include::detached-head-and-reflog.txt[]
+include::130_fetch-rebase-and-push.txt[]
 
-include::use-the-git-blame-feature.txt[]
+include::140_detached-head-and-reflog.txt[]
 
-include::stash.txt[]
+include::150_stash.txt[]
 
-include::submodules.txt[]
+include::160_submodules.txt[]
 
-include::github-exercise.txt[]
+include::170_github-exercise.txt[]
+
 
 
 
