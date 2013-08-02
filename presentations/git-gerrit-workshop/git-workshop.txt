@@ -5,64 +5,9 @@ Git Workshop
 :data-uri:
 
 [[title-page]]
-Git Workshop
-------------
+Introduction to Git
+-------------------
 
-Agenda 
-------
-
-[[agenda-item]]
-Introduction
-~~~~~~~~~~~~
-<<<
-[[agenda-item]]
-Basic Git Concepts
-~~~~~~~~~~~~~~~~~~
-<<<
-[[agenda-item]]
-Exercises: Local Development, Branches
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<<<
-[[agenda-item]]
-Merge & Rebase
-~~~~~~~~~~~~~~
-<<<
-[[agenda-item]]
-Exercises: Merge, Rebase, History Rewriting
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Agenda
-------
-<<<
-[[agenda-item]]
-Push
-~~~~
-<<<
-[[agenda-item]]
-Exercises: Pushing to Github, Pull Request
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<<<
-[[agenda-item]]
-Working with Remote Repositories, Branching models
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<<<
-[[agenda-item]]
-Exercises: Updating from remote, rebasing local work
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-<<<
-[[agenda-item]]
-Advanced topics: Tags, Stash, Reflog, ...
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-<<<
-[[agenda-item]]
-Exercises
-~~~~~~~~~
-<<<
-[[agenda-item]]
-Q & A
-~~~~~
 
 include::./dvcs/distributed-versioning-systems-1.txt[]
 
@@ -128,9 +73,6 @@ include::commit-message.txt[]
 
 include::commits.txt[]
 
-include::amend-1.txt[]
-
-include::amend-2.txt[]
 
 <<<
 [[remoterepositories]]
@@ -143,11 +85,10 @@ include::remote-repositories2.txt[]
 include::cloning-title.txt[]
 include::clone-remote-repo1.txt[]
 include::clone-remote-repo2.txt[]
+include::clone-remote-repo.txt[]
 
 include::push-simple1.txt[]
 include::pull-simple1.txt[]
-
-include::exercises-title.txt[]
 
 <<<
 [[branches]]
@@ -167,22 +108,10 @@ include::head-moves-on-checkout.txt[]
 
 include::branches-reset.txt[]
 
+include::amend-1.txt[]
 
+include::amend-2.txt[]
 
-<<<
-[[cloneexercise]] +
-
-include::exercise-findbugs.txt[]
-
-include::clone-remote-repo.txt[]
-
-include::exercises-title.txt[]
-
-include::sample-application.txt[]
-
-include::exercises-landscape.txt[]
-
-include::exercises1-list.txt[]
 
 <<<
 [[merge]] +
@@ -206,10 +135,6 @@ include::cherry-pick-concept-2.txt[]
 [[rebase]]
 include::rebase.txt[]
 
-include::exercises-title.txt[]
-
-include::exercises2-list.txt[]
-
 <<<
 [[push]] +
 include::push-0.txt[]
@@ -217,12 +142,6 @@ include::push-0.txt[]
 include::push-1.txt[]
 
 include::push-2.txt[]
-
-include::exercises-title.txt[]
-
-include::exercises-landscape2.txt[]
-
-include::exercises3-list.txt[]
 
 <<<
 [[fetch]]
@@ -235,10 +154,6 @@ include::fetch-facts.txt[]
 include::pull.txt[]
 
 include::push-3.txt[]
-
-include::exercises-title.txt[]
-
-include::exercises4-list.txt[]
 
 <<<
 [[workflows]]
@@ -272,10 +187,6 @@ include::stash.txt[]
 include::stash2.txt[]
 
 include::stash-apply.txt[]
-
-include::exercises-title.txt[]
-
-include::exercises5-list.txt[]
 
 ++++
 <style type="text/css">
